@@ -1,6 +1,6 @@
 package alex.wilton.cs4303.p2.game;
 
-import alex.wilton.cs4303.p2.game.entity.Planet;
+import alex.wilton.cs4303.p2.game.screen.Screen;
 import processing.core.*;
 
 /**
@@ -9,32 +9,24 @@ import processing.core.*;
  * mouse pressed handlers specified.
  */
 public class App extends PApplet{
-    /**
-     * app object is made globally accessible in order that specific screens can load images into the app
-     */
-    public static App app;
-    public static int WINDOW_WIDTH, WINDOW_HEIGHT;
+    public static App app; //app object is made globally accessible in order that specific screens can load images into the app
+    public App(){app = this;}
 
-    public App(){app = this; WINDOW_WIDTH = app.width; WINDOW_HEIGHT = app.height;}
-
-    private GameModel gameModel;
+    private GameState gameState;
+    private Screen currentScreen;
 
     public void setup() {
-        double scalor = 0.8;
-        size((int) (displayWidth * scalor), (int)(displayHeight * scalor));
-        int numberOfCities = 4;
-        Planet planet = new Planet(numberOfCities);
-        gameModel = new GameModel(planet);
+        double screenSizeScalar = 0.5;
+        size((int) (displayWidth * screenSizeScalar), (int)(displayHeight * screenSizeScalar));
+        gameState = new GameState();
     }
 
-
-    public void draw() {
-        gameModel.draw();
+    public void draw(){
+        currentScreen = gameState.generateScreen();
+        currentScreen.draw();
     }
 
-    public void mousePressed() {
-        gameModel.mousePressed();
-    }
-
+    public void mousePressed(){ currentScreen.mousePressed();}
+    public void keyPressed(){ currentScreen.keyPressed();}
 
 }
