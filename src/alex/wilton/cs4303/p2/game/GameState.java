@@ -1,9 +1,6 @@
 package alex.wilton.cs4303.p2.game;
 
-import alex.wilton.cs4303.p2.game.screen.CustomPlayScreen;
-import alex.wilton.cs4303.p2.game.screen.MainMenuScreen;
-import alex.wilton.cs4303.p2.game.screen.Screen;
-import alex.wilton.cs4303.p2.game.screen.UnImplementedScreen;
+import alex.wilton.cs4303.p2.game.screen.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,10 +38,11 @@ public class GameState{
     public Screen generateScreen(){
         switch(gameStage){
             case MAIN_MENU: return new MainMenuScreen(this);
+            case CAMPAIGN: return new CampaignScreen(this);
             case CUSTOM_PLAY: return new CustomPlayScreen(this);
             //... generate relevant screen for each stage
-
-            default: return new UnImplementedScreen(this);
+            case EXIT_GAME: System.exit(0);
+            default: return new UnImplementedScreen(gameStage.name(), this);
         }
     }
 

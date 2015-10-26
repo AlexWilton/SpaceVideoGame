@@ -8,7 +8,7 @@ import processing.core.PImage;
 import java.awt.*;
 
 public class MainMenuScreen extends Screen {
-    private static PImage img = App.app.loadImage("logoWhite.png");
+    private static PImage logoImg = App.app.loadImage("images/logoWhite.png");
     public MainMenuScreen(GameState state) {
         super(state);
     }
@@ -18,16 +18,16 @@ public class MainMenuScreen extends Screen {
      */
     @Override
     public void draw() {
-        app.text("main", 100, 100);
+        app.background(Color.BLACK.getRGB());
+        app.imageMode(App.CENTER);
+        app.image(logoImg, app.width / 2, 120);
+        createButton("CAMPAIGN (SINGLE PLAYER)",    app.width / 2, 250, 330, 40, Stage.CAMPAIGN);
+        createButton("CUSTOM (MULTIPLAYER)",        app.width / 2, 310, 330, 40, Stage.CUSTOM_PLAY);
+        createButton("GAME OPTIONS",                app.width / 2, 370, 330, 40, Stage.GAME_OPTIONS);
+        createButton("EXIT",                        app.width / 2, 430, 330, 40, Stage.EXIT_GAME);
+
     }
 
-    /**
-     * Respond to mouse click events (e.g. listen for button clicks)
-     */
-    @Override
-    public void mousePressed() {
-        state.setGameStage(Stage.CUSTOM_PLAY);
-    }
 
     /**
      * Respond to key press events

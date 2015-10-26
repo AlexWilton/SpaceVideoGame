@@ -10,6 +10,7 @@ import processing.core.*;
  */
 public class App extends PApplet{
     public static App app; //app object is made globally accessible in order that specific screens can load images into the app
+    public static PFont font;
     public App(){app = this;}
 
     private GameState gameState;
@@ -19,11 +20,13 @@ public class App extends PApplet{
         double screenSizeScalar = 0.5;
         size((int) (displayWidth * screenSizeScalar), (int)(displayHeight * screenSizeScalar));
         gameState = new GameState();
+        font = App.app.loadFont("fonts/DejaVuSansCondensed-Bold-48.vlw");
+        app.textFont(font);
     }
 
     public void draw(){
         currentScreen = gameState.generateScreen();
-        currentScreen.draw();
+        currentScreen.drawScreen();
     }
 
     public void mousePressed(){ currentScreen.mousePressed();}
