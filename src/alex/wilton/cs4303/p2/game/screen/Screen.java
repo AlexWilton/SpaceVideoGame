@@ -4,6 +4,7 @@ import alex.wilton.cs4303.p2.game.App;
 import alex.wilton.cs4303.p2.game.GameState;
 import alex.wilton.cs4303.p2.game.Stage;
 import alex.wilton.cs4303.p2.util.Button;
+import processing.event.KeyEvent;
 
 import java.awt.*;
 import java.util.HashSet;
@@ -40,6 +41,7 @@ public abstract class Screen{
     public void mousePressed(){
         int x = app.mouseX, y = app.mouseY;
         for(Button button : screenButtons){
+            if(button.getNewStageOnClick() == null) continue;
             if(button.containsPoint(x,y)){
                 state.setGameStage(button.getNewStageOnClick());
                 return;
@@ -48,9 +50,10 @@ public abstract class Screen{
     }
 
     /**
-     * Respond to key press events
+     * Respond to key press events (Method to be overridden)
+     * @param e
      */
-    public abstract void keyPressed();
+    public void keyPressed(KeyEvent e){}
 
     private void drawButtons(){
         app.rectMode(App.CENTER);
@@ -67,7 +70,10 @@ public abstract class Screen{
 
     protected void createButton(String text, int x, int y, int width, int height, Stage newStageOnClick){
         screenButtons.add(new Button(text, x, y, width, height, newStageOnClick));
+    }
 
+    protected void createTextBox(String text, int x, int y, int width, int height){
+       createButton(text, x, y, width, height, null);
     }
 
 }

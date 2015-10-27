@@ -1,7 +1,9 @@
 package alex.wilton.cs4303.p2.game;
 
 import alex.wilton.cs4303.p2.game.screen.Screen;
+import controlP5.ControlEvent;
 import processing.core.*;
+import processing.event.KeyEvent;
 
 /**
  * App class represents the Application as a whole.
@@ -17,11 +19,13 @@ public class App extends PApplet{
     private Screen currentScreen;
 
     public void setup() {
+        frame.setResizable(true);
         double screenSizeScalar = 0.5;
         size((int) (displayWidth * screenSizeScalar), (int)(displayHeight * screenSizeScalar));
         gameState = new GameState();
         font = App.app.loadFont("fonts/DejaVuSansCondensed-Bold-48.vlw");
         app.textFont(font);
+        gameState.setGameStage(Stage.NEW_CAMPAIGN);
     }
 
     public void draw(){
@@ -30,6 +34,9 @@ public class App extends PApplet{
     }
 
     public void mousePressed(){ currentScreen.mousePressed();}
-    public void keyPressed(){ currentScreen.keyPressed();}
+    public void keyPressed(KeyEvent e){ currentScreen.keyPressed(e);}
 
+    public void controlEvent(ControlEvent theEvent) {
+        System.out.println(theEvent.getController().getName());
+    }
 }

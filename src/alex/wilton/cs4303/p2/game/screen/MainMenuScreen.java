@@ -4,6 +4,7 @@ import alex.wilton.cs4303.p2.game.App;
 import alex.wilton.cs4303.p2.game.GameState;
 import alex.wilton.cs4303.p2.game.Stage;
 import processing.core.PImage;
+import processing.event.KeyEvent;
 
 import java.awt.*;
 
@@ -28,12 +29,4 @@ public class MainMenuScreen extends Screen {
 
     }
 
-
-    /**
-     * Respond to key press events
-     */
-    @Override
-    public void keyPressed() {
-
-    }
 }

@@ -24,13 +24,4 @@ public class UnImplementedScreen extends Screen {
         createButton("EXIT", app.width / 2, 430, 330, 40, Stage.EXIT_GAME);
     }
 
-
-    /**
-     * Respond to key press events
-     */
-    @Override
-    public void keyPressed() {
-
-    }
-
 }
