@@ -1,7 +1,6 @@
 package alex.wilton.cs4303.p2.game;
 
 import alex.wilton.cs4303.p2.game.screen.Screen;
-import controlP5.ControlEvent;
 import processing.core.*;
 import processing.event.KeyEvent;
 
@@ -36,7 +35,4 @@ public class App extends PApplet{
     public void mousePressed(){ currentScreen.mousePressed();}
     public void keyPressed(KeyEvent e){ currentScreen.keyPressed(e);}
 
-    public void controlEvent(ControlEvent theEvent) {
-        System.out.println(theEvent.getController().getName());
-    }
 }
