@@ -3,15 +3,20 @@ package alex.wilton.cs4303.p2.game;
 import alex.wilton.cs4303.p2.game.screen.*;
 import alex.wilton.cs4303.p2.game.ships.Ship;
 
+import alex.wilton.cs4303.p2.util.JSONconvertable;
+import alex.wilton.cs4303.p2.util.ShipSelector;
+import processing.data.JSONArray;
+import processing.data.JSONObject;
+
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Class for representing the entire state of the game
  */
-public class GameState{
+public class GameState implements JSONconvertable {
     private Galaxy galaxy;
-    private List<Ship> playerFleet;
+    private GalaxySystem playerLocation;
+    private ArrayList<Ship> playerFleet;
     private String playerName;
     private int numberOfGalacticCredits;
     private Faction leadsFaction; //null if leads no faction
@@ -21,36 +26,87 @@ public class GameState{
     private int reputationWithVillt;
     private int reputationWithQalz;
     private int reputationWithDoleo;
-    private Stage stage;
 
-    public GameState(){
-        galaxy = new Galaxy();
-        playerFleet = new ArrayList<>();
-        playerName = "[ENTER PLAYER NAME HERE]";
-        numberOfGalacticCredits = 0;
-        leadsFaction = null;
-        reputationWithVillt = 50;
-        reputationWithQalz = 50;
-        reputationWithDoleo = 50;
-        gameStage = Stage.MAIN_MENU;
+    private boolean isGameSetupCompleted;
+    private ShipSelector gameSetupShipSelector;
+
+
+    public GameState(Galaxy galaxy, GalaxySystem playerLocation, ArrayList<Ship> playerFleet, String playerName, int numberOfGalacticCredits, Faction leadsFaction, Stage gameStage, int reputationWithVillt, int reputationWithQalz, int reputationWithDoleo, boolean isGameSetupCompleted, ShipSelector gameSetupShipSelector) {
+        this.galaxy = galaxy;
+        this.playerLocation = playerLocation;
+        this.playerFleet = playerFleet;
+        this.playerName = playerName;
+        this.numberOfGalacticCredits = numberOfGalacticCredits;
+        this.leadsFaction = leadsFaction;
+        this.gameStage = gameStage;
+        this.reputationWithVillt = reputationWithVillt;
+        this.reputationWithQalz = reputationWithQalz;
+        this.reputationWithDoleo = reputationWithDoleo;
+        this.isGameSetupCompleted = isGameSetupCompleted;
+        this.gameSetupShipSelector = gameSetupShipSelector;
     }
 
 
 
-    public Screen generateScreen(){
+    public static GameState createNewGameState(){
+        Galaxy galaxy = Galaxy.createRandomGalaxy();
+        return new GameState(
+        galaxy,
+        galaxy.selectRandomSystem(),
+        new ArrayList<Ship>(),
+        "", //empty name
+        0, //no credits
+        null, //leads no faction
+        Stage.MAIN_MENU, //begin with main menu
+        50, //neutral Villt reputation
+        50, //neutral Qalz reputation
+        50, //netural Dol'eo reputation
+        false, //game not yet set up
+        ShipSelector.createDefaultSelector()
+        );
+    }
+
+    /**
+     * For the current frame and game state, process stage then generate appropriate Screen
+     * @return
+     */
+    public Screen processStageThenGenerateScreen(){
         switch(gameStage){
-            case MAIN_MENU: return new MainMenuScreen(this);
-            case CAMPAIGN: return new CampaignScreen(this);
-            case CUSTOM_PLAY: return new CustomPlayScreen(this);
-            case NEW_CAMPAIGN: return new NewCampaignScreen(this);
+            case MAIN_MENU:     return new MainMenuScreen(this);
+            case CAMPAIGN:      return new CampaignScreen(this);
+            case CUSTOM_PLAY:   return new CustomPlayScreen(this);
+            case NEW_CAMPAIGN:  return new NewCampaignScreen(this);
+            case SYSTEM:
+                if(!isGameSetupCompleted){ setupGame(); break;}
+                else return new SystemScreen(this);
+
             //... generate relevant screen for each stage
+
+            case LOAD_SAVED_GAME: App.app.loadGame(); break;
+            case GOTO_GC_WEBSITE:
+                App.app.link("http://galacticconquests.com/");
+                gameStage = Stage.MAIN_MENU;
+                return processStageThenGenerateScreen();
             case EXIT_GAME: System.exit(0);
             default: return new UnImplementedScreen(gameStage.name(), this);
         }
+
+        return processStageThenGenerateScreen();
     }
+
+    private void setupGame() {
+        playerFleet.add(gameSetupShipSelector.getSelectedShip());
+        playerLocation = galaxy.selectRandomSystem();
+        isGameSetupCompleted = true;
+        setGameStage(Stage.SYSTEM);
+    }
+
+
 
     public void setGameStage(Stage gameStage){
         this.gameStage = gameStage;
+
+        if(gameStage == Stage.SYSTEM) App.app.saveGame();
     }
 
     public String getPlayerName() {
@@ -61,7 +117,35 @@ public class GameState{
         this.playerName = playerName;
     }
 
-    public Stage getStage() {
-        return stage;
+    public ShipSelector getGameSetupShipSelector() {
+        return gameSetupShipSelector;
+    }
+
+
+    public JSONObject asJSONObject() {
+        JSONObject state = new JSONObject();
+        state.setJSONObject("galaxy", galaxy.asJSONObject());
+        state.setJSONObject("playerLocation", playerLocation.asJSONObject());
+        JSONArray fleetArray = new JSONArray();
+        for(Ship ship : playerFleet) fleetArray.append(ship.asJsonObject());
+        state.setJSONArray("playerFleet", fleetArray);
+        state.setString("playerName", playerName);
+        state.setInt("numberOfGalacticCredits", numberOfGalacticCredits);
+        state.setString("leadsFaction", (leadsFaction == null) ? "NONE" : leadsFaction.name());
+        state.setString("gameStage", gameStage.name());
+        state.setInt("reputationWithVillt", reputationWithVillt);
+        state.setInt("reputationWithQalz", reputationWithQalz);
+        state.setInt("reputationWithDoleo", reputationWithDoleo);
+        state.setBoolean("isGameSetupCompleted", isGameSetupCompleted);
+        state.setJSONObject("gameSetupShipSelector", gameSetupShipSelector.asJSONObject());
+        return state;
+    }
+
+    public static GameState parseJson(JSONObject jsonState) {
+//        Galaxy galaxy = Galaxy.parseJson(jsonState.getString("galaxy"));
+//        GalaxySystem playerLocation = GalaxySystem.parseJson(jsonState.getString("playerLocation"));
+//        ArrayList<Ship> playerFleet = new ArrayList<>();
+//        return new GameState(galaxy, playerLocation, playerFleet);
+        return createNewGameState();
     }
 }

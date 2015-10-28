@@ -7,16 +7,17 @@ public enum Stage {
     HOST_CUSTOM_PLAY,
     JOIN_CUSTOM_PLAY,
     CAMPAIGN,               //done
-    NEW_CAMPAIGN,
+    NEW_CAMPAIGN,           //done
     SYSTEM,
     HYPER_JUMP,
     REQUEST_MISSION,
     FIGHT,
     BRIBE,
-    EXIT_GAME,
     GAME_OPTIONS,
     LOAD_SAVED_GAME,
-    HANGAR
+    HANGAR,
 
+    GOTO_GC_WEBSITE,
+    EXIT_GAME
 
 }

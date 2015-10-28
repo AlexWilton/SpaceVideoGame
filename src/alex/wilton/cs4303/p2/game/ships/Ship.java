@@ -6,15 +6,19 @@ import alex.wilton.cs4303.p2.game.ships.QalzShip.QalzShip;
 import alex.wilton.cs4303.p2.game.ships.VilltShip.VilltShip;
 import alex.wilton.cs4303.p2.game.ships.playerShip.PlayerShip;
 import alex.wilton.cs4303.p2.util.ImageCache;
+import alex.wilton.cs4303.p2.util.JSONconvertable;
 import processing.core.PImage;
+import processing.core.PVector;
+import processing.data.JSONObject;
 
-public abstract class Ship {
+public abstract class Ship{
     App app = App.app;
     public PImage image;
-
     public Ship(){
         image = ImageCache.getImage(imageFilePath());
     }
+
+
 
     /**
      * Determine Filepath of Ship image. (Based on
@@ -33,4 +37,20 @@ public abstract class Ship {
     public void drawShip(int x, int y){
         app.image(image, x,  y, 80, 100);
     }
+
+    public DrawableShip createDrawableShipInstance(){
+        return new DrawableShip(this);
+    }
+
+    public PImage getImage() {
+        return image;
+    }
+
+    public JSONObject asJsonObject(){
+        JSONObject ship = new JSONObject();
+        ship.setString("imageFilePath", imageFilePath());
+        ship.setString("shipName", this.getClass().getSimpleName());
+        return ship;
+    }
+
 }

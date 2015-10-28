@@ -2,6 +2,7 @@ package alex.wilton.cs4303.p2.game;
 
 import alex.wilton.cs4303.p2.game.screen.Screen;
 import processing.core.*;
+import processing.data.JSONObject;
 import processing.event.KeyEvent;
 
 /**
@@ -15,6 +16,7 @@ public class App extends PApplet{
     public App(){app = this;}
 
     public static final int SCREEN_WIDTH = 960, SCREEN_HEIGHT = 540;
+    private static final String SAVED_GAME_FILE_PATH = "savedGame.json";
 
     private GameState gameState;
     private Screen currentScreen;
@@ -22,15 +24,25 @@ public class App extends PApplet{
     public void setup() {
         frame.setResizable(true);
         size(SCREEN_WIDTH,SCREEN_HEIGHT);
-        gameState = new GameState();
+        gameState = GameState.createNewGameState();
         font = App.app.loadFont("fonts/DejaVuSansCondensed-Bold-48.vlw");
         app.textFont(font);
         gameState.setGameStage(Stage.NEW_CAMPAIGN);
     }
 
     public void draw(){
-        currentScreen = gameState.generateScreen();
+        currentScreen = gameState.processStageThenGenerateScreen();
         currentScreen.drawScreen();
+    }
+
+    public void loadGame(){
+        JSONObject jsonState = app.loadJSONObject(SAVED_GAME_FILE_PATH);
+        gameState = GameState.parseJson(jsonState);
+    }
+
+
+    public void saveGame() {
+        app.saveJSONObject(gameState.asJSONObject(), SAVED_GAME_FILE_PATH);
     }
 
     public void mousePressed(){ currentScreen.mousePressed();}

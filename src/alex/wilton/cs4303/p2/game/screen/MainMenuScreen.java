@@ -25,8 +25,8 @@ public class MainMenuScreen extends Screen {
         createButton("CAMPAIGN (SINGLE PLAYER)",    app.width / 2, 250, 330, 40, Stage.CAMPAIGN);
         createButton("CUSTOM (MULTIPLAYER)",        app.width / 2, 310, 330, 40, Stage.CUSTOM_PLAY);
         createButton("GAME OPTIONS",                app.width / 2, 370, 330, 40, Stage.GAME_OPTIONS);
-        createButton("EXIT",                        app.width / 2, 430, 330, 40, Stage.EXIT_GAME);
-
+        createButton("GalacticConquests.com",       app.width / 2, 430, 330, 40,Stage.GOTO_GC_WEBSITE);
+        createButton("EXIT",                        app.width / 2, 490, 330, 40, Stage.EXIT_GAME);
     }
 
 }
