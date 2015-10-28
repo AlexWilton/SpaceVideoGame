@@ -1,0 +1,116 @@
+{
+  "reputationWithDoleo": 50,
+  "playerLocation": {
+    "faction": "Qalz",
+    "id": 16
+  },
+  "gameSetupShipSelector": {
+    "useDefault": true,
+    "selectShipIndex": 2
+  },
+  "leadsFaction": "NONE",
+  "playerName": "Alex",
+  "reputationWithVillt": 50,
+  "reputationWithQalz": 50,
+  "isGameSetupCompleted": true,
+  "galaxy": {"systems": [
+    {
+      "faction": "Villt",
+      "id": 0
+    },
+    {
+      "faction": "Qalz",
+      "id": 1
+    },
+    {
+      "faction": "Doloe",
+      "id": 2
+    },
+    {
+      "faction": "Villt",
+      "id": 3
+    },
+    {
+      "faction": "Qalz",
+      "id": 4
+    },
+    {
+      "faction": "Doloe",
+      "id": 5
+    },
+    {
+      "faction": "Villt",
+      "id": 6
+    },
+    {
+      "faction": "Qalz",
+      "id": 7
+    },
+    {
+      "faction": "Doloe",
+      "id": 8
+    },
+    {
+      "faction": "Villt",
+      "id": 9
+    },
+    {
+      "faction": "Qalz",
+      "id": 10
+    },
+    {
+      "faction": "Doloe",
+      "id": 11
+    },
+    {
+      "faction": "Villt",
+      "id": 12
+    },
+    {
+      "faction": "Qalz",
+      "id": 13
+    },
+    {
+      "faction": "Doloe",
+      "id": 14
+    },
+    {
+      "faction": "Villt",
+      "id": 15
+    },
+    {
+      "faction": "Qalz",
+      "id": 16
+    },
+    {
+      "faction": "Doloe",
+      "id": 17
+    },
+    {
+      "faction": "Villt",
+      "id": 18
+    },
+    {
+      "faction": "Qalz",
+      "id": 19
+    },
+    {
+      "faction": "Doloe",
+      "id": 20
+    },
+    {
+      "faction": "Villt",
+      "id": 21
+    },
+    {
+      "faction": "Qalz",
+      "id": 22
+    }
+  ]},
+  "playerFleet": [{
+    "imageFilePath": "images/ships/playerShip/ShipC.png",
+    "shipName": "ShipC"
+  }],
+  "numberOfGalacticCredits": 0,
+  "gameStage": "SYSTEM"
+}
