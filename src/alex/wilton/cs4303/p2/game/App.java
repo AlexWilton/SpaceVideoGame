@@ -14,13 +14,14 @@ public class App extends PApplet{
     public static PFont font;
     public App(){app = this;}
 
+    public static final int SCREEN_WIDTH = 960, SCREEN_HEIGHT = 540;
+
     private GameState gameState;
     private Screen currentScreen;
 
     public void setup() {
         frame.setResizable(true);
-        double screenSizeScalar = 0.5;
-        size((int) (displayWidth * screenSizeScalar), (int)(displayHeight * screenSizeScalar));
+        size(SCREEN_WIDTH,SCREEN_HEIGHT);
         gameState = new GameState();
         font = App.app.loadFont("fonts/DejaVuSansCondensed-Bold-48.vlw");
         app.textFont(font);

@@ -13,13 +13,21 @@ public abstract class Ship {
     public PImage image;
 
     public Ship(){
+        image = ImageCache.getImage(imageFilePath());
+    }
+
+    /**
+     * Determine Filepath of Ship image. (Based on
+     * @return
+     */
+    private String imageFilePath(){
         String imgFilePath = "images/ships/";
         if(this instanceof PlayerShip) imgFilePath += "playerShip/";
         if(this instanceof VilltShip) imgFilePath += "VilltShip/";
         if(this instanceof QalzShip) imgFilePath += "QalzShip/";
         if(this instanceof DoloeShip) imgFilePath += "DoloeShip/";
         imgFilePath += this.getClass().getSimpleName() + ".png";
-        image = ImageCache.getImage(imgFilePath);
+        return imgFilePath;
     }
 
     public void drawShip(int x, int y){
