@@ -2,14 +2,14 @@
   "reputationWithDoleo": 50,
   "playerLocation": {
     "faction": "Qalz",
-    "id": 16
+    "id": 13
   },
   "gameSetupShipSelector": {
     "useDefault": true,
-    "selectShipIndex": 2
+    "selectShipIndex": 0
   },
   "leadsFaction": "NONE",
-  "playerName": "Alex",
+  "playerName": "",
   "reputationWithVillt": 50,
   "reputationWithQalz": 50,
   "isGameSetupCompleted": true,
@@ -108,8 +108,8 @@
     }
   ]},
   "playerFleet": [{
-    "imageFilePath": "images/ships/playerShip/ShipC.png",
-    "shipName": "ShipC"
+    "imageFilePath": "images/ships/playerShip/ShipA.png",
+    "shipName": "ShipA"
   }],
   "numberOfGalacticCredits": 0,
   "gameStage": "SYSTEM"

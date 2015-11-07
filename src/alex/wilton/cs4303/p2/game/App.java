@@ -27,7 +27,7 @@ public class App extends PApplet{
         gameState = GameState.createNewGameState();
         font = App.app.loadFont("fonts/DejaVuSansCondensed-Bold-48.vlw");
         app.textFont(font);
-        gameState.setGameStage(Stage.NEW_CAMPAIGN);
+        gameState.setGameStage(Stage.SYSTEM);
     }
 
     public void draw(){

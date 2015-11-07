@@ -16,7 +16,7 @@ public class Galaxy implements JSONconvertable{
     }
 
     public GalaxySystem selectRandomSystem() {
-        int randomSystemNum = (int) (systems.length * Math.random() + 1);
+        int randomSystemNum = (int) (systems.length * Math.random());
         return systems[randomSystemNum];
     }
 
@@ -27,12 +27,23 @@ public class Galaxy implements JSONconvertable{
         for(int systemIndex=0; systemIndex< galaxySystems.length; systemIndex++){
             int id = systemIndex;
             Faction faction = factionIterator.next();
-            galaxySystems[systemIndex] = new GalaxySystem(id, faction);
+            galaxySystems[systemIndex] = new GalaxySystem(id, faction, getPlanetName(id));
         }
 
 
         return new Galaxy(galaxySystems);
     }
+
+    /**
+     * Method Maps a unique planet id, to its name
+     * @param id Planet ID
+     * @return Planet Name
+     */
+    public static String getPlanetName(int id){
+        String[] names = {  "Fepraulara","Fathouria","Pebleshan","Watrorix","Oynus","Sunia","Stufalia","Grabalea","Fronoe","Crore","Muchoazuno","Yebliulara","Badreon","Ocrurn","Yoaliv","Mouliv","Dreceruta","Prabogantu","Clilia","Shurn","Eflemia","Yecronerth","Vegrolla","Moprora","Leutis","Suyama","Brufocury","Brabunus","Thurn","Blars"};
+        return names[id % names.length];
+    }
+
 
     public JSONObject asJSONObject() {
         JSONObject galaxy = new JSONObject();

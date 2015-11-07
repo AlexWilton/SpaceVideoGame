@@ -1,5 +1,8 @@
 package alex.wilton.cs4303.p2.game;
 
+import com.sun.istack.internal.NotNull;
+
+import java.awt.*;
 import java.util.Iterator;
 
 public enum Faction {
@@ -22,5 +25,18 @@ public enum Faction {
         };
     }
 
-
-} //Dol'eo is the proper name (requires ')
+    @NotNull
+    public Color getFactionColour() {
+        switch (this){
+            case Villt:
+                return Color.RED;
+            case Qalz:
+                return Color.CYAN;
+            case Doloe:
+                return Color.MAGENTA;
+            default:
+                System.out.println("ERROR: Unknown Faction");
+                return Color.WHITE;
+        }
+    }
+}

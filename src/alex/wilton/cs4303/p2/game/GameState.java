@@ -148,4 +148,8 @@ public class GameState implements JSONconvertable {
 //        return new GameState(galaxy, playerLocation, playerFleet);
         return createNewGameState();
     }
+
+    public GalaxySystem getPlayerLocation() {
+        return playerLocation;
+    }
 }
