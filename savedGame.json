@@ -2,14 +2,14 @@
   "reputationWithDoleo": 50,
   "playerLocation": {
     "faction": "Qalz",
-    "id": 13
+    "id": 10
   },
   "gameSetupShipSelector": {
     "useDefault": true,
     "selectShipIndex": 0
   },
   "leadsFaction": "NONE",
-  "playerName": "",
+  "playerName": "Alex Testing Name 123",
   "reputationWithVillt": 50,
   "reputationWithQalz": 50,
   "isGameSetupCompleted": true,

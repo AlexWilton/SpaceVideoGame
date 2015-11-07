@@ -29,11 +29,11 @@ public enum Faction {
     public Color getFactionColour() {
         switch (this){
             case Villt:
-                return Color.RED;
+                return new Color(231, 76, 60);
             case Qalz:
-                return Color.CYAN;
+                return new Color(52, 152, 219);
             case Doloe:
-                return Color.MAGENTA;
+                return new Color(155, 89, 182);
             default:
                 System.out.println("ERROR: Unknown Faction");
                 return Color.WHITE;

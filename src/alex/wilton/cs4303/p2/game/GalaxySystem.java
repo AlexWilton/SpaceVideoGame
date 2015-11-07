@@ -34,4 +34,8 @@ public class GalaxySystem implements JSONconvertable {
     public String getName() {
         return name;
     }
+
+    public void drawPlanetInTopRight() {
+
+    }
 }

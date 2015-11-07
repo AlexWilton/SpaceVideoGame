@@ -152,4 +152,13 @@ public class GameState implements JSONconvertable {
     public GalaxySystem getPlayerLocation() {
         return playerLocation;
     }
+
+    public int getPlayerStanding(Faction faction) {
+        switch (faction){
+            case Doloe: return reputationWithDoleo;
+            case Qalz: return reputationWithQalz;
+            case Villt: return reputationWithVillt;
+            default: return -1; //faction doesn't exist
+        }
+    }
 }

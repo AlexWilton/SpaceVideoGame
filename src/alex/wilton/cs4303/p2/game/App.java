@@ -28,6 +28,7 @@ public class App extends PApplet{
         font = App.app.loadFont("fonts/DejaVuSansCondensed-Bold-48.vlw");
         app.textFont(font);
         gameState.setGameStage(Stage.SYSTEM);
+        gameState.setPlayerName("Alex Testing Name 123");
     }
 
     public void draw(){
