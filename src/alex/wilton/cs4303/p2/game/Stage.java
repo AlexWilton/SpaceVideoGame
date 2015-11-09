@@ -15,6 +15,7 @@ public enum Stage {
     BRIBE,
     GAME_OPTIONS,
     LOAD_SAVED_GAME,
+    LOADING,
     HANGAR,
 
     GOTO_GC_WEBSITE,

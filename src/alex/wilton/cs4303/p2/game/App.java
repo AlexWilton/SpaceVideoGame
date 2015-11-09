@@ -22,12 +22,12 @@ public class App extends PApplet{
     private Screen currentScreen;
 
     public void setup() {
-        frame.setResizable(true);
+        frame.setResizable(false);
         size(SCREEN_WIDTH,SCREEN_HEIGHT);
         gameState = GameState.createNewGameState();
         font = App.app.loadFont("fonts/DejaVuSansCondensed-Bold-48.vlw");
         app.textFont(font);
-        gameState.setGameStage(Stage.SYSTEM);
+        gameState.setGameStage(Stage.HYPER_JUMP);
         gameState.setPlayerName("Alex Testing Name 123");
     }
 
@@ -38,6 +38,7 @@ public class App extends PApplet{
 
     public void loadGame(){
         JSONObject jsonState = app.loadJSONObject(SAVED_GAME_FILE_PATH);
+        gameState.setGameStage(Stage.LOADING);
         gameState = GameState.parseJson(jsonState);
     }
 

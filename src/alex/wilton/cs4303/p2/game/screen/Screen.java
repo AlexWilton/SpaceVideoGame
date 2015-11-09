@@ -18,6 +18,8 @@ public abstract class Screen{
     protected GameState state;
     protected App app = App.app;
 
+    protected static int BUTTON_TEXT_PADDING = 1;
+
     public Screen(GameState state){this.state = state;}
 
     private Set<Button> screenButtons = new HashSet<>();
@@ -58,13 +60,17 @@ public abstract class Screen{
     private void drawButtons(){
         app.rectMode(App.CENTER);
         app.strokeWeight(3);
+        app.fill(Color.WHITE.getRGB());
         app.noFill();
         app.stroke(Color.WHITE.getRGB());
         app.textAlign(App.CENTER, App.CENTER);
-        app.textSize(20);
+        app.textSize(18);
         for(Button button : screenButtons){
             app.rect(button.getX(), button.getY(), button.getWidth(), button.getHeight());
-            app.text(button.getText(), button.getX(), button.getY());
+            app.text(   button.getText(), button.getX() + BUTTON_TEXT_PADDING,
+                        button.getY() + BUTTON_TEXT_PADDING,
+                        button.getWidth() - BUTTON_TEXT_PADDING*2,
+                        button.getHeight() - BUTTON_TEXT_PADDING*2);
         }
     }
 

@@ -76,9 +76,10 @@ public class GameState implements JSONconvertable {
             case CAMPAIGN:      return new CampaignScreen(this);
             case CUSTOM_PLAY:   return new CustomPlayScreen(this);
             case NEW_CAMPAIGN:  return new NewCampaignScreen(this);
+            case HYPER_JUMP:    return new HyperJumpScreen(this);
             case SYSTEM:
-                if(!isGameSetupCompleted){ setupGame(); break;}
-                else return new SystemScreen(this);
+                                if(!isGameSetupCompleted){ setupGame(); break;}
+                                return new SystemScreen(this);
 
             //... generate relevant screen for each stage
 
@@ -146,6 +147,8 @@ public class GameState implements JSONconvertable {
 //        GalaxySystem playerLocation = GalaxySystem.parseJson(jsonState.getString("playerLocation"));
 //        ArrayList<Ship> playerFleet = new ArrayList<>();
 //        return new GameState(galaxy, playerLocation, playerFleet);
+        GameState gameState = createNewGameState(); //replace with parsed game state
+        gameState.isGameSetupCompleted = true;
         return createNewGameState();
     }
 
@@ -160,5 +163,14 @@ public class GameState implements JSONconvertable {
             case Villt: return reputationWithVillt;
             default: return -1; //faction doesn't exist
         }
+    }
+
+
+    public ArrayList<Ship> getPlayerFleet() {
+        return playerFleet;
+    }
+
+    public Galaxy getGalaxy() {
+        return galaxy;
     }
 }

@@ -22,13 +22,18 @@ public class DrawableShip {
     }
 
     public void draw(){
-
         /*Rotate image around its center then draw it*/
-//        app.translate(width / 2 - img.width / 2, height / 2 - img.height / 2);
-//        app.rotate(orientation);
-//        app.translate(-img.width / 2, -img.height / 2);
+        app.translate(centerPosition.x, centerPosition.y);
+        app.rotate(orientation);
+
+        /* Draw */
         app.imageMode(App.CENTER);
-        app.image(img, centerPosition.x, centerPosition.y, width, height);
+        app.image(img, 0, 0, width, height);
+
+        /* Return to normal orientation/translation*/
+        app.rotate(-orientation);
+        app.translate(-centerPosition.x, -centerPosition.y);
+
     }
 
 
