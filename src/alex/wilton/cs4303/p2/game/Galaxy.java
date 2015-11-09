@@ -54,6 +54,7 @@ public class Galaxy implements JSONconvertable{
         return connectingLinks;
     }
 
+
     public static class Link{
         public int leftId, rightId;
 
@@ -123,8 +124,8 @@ public class Galaxy implements JSONconvertable{
             app.fill(sys.getFaction().getFactionColour().getRGB());
             app.strokeWeight(0);
             app.ellipse(location.x, location.y, 15, 15);
-//            app.fill(Color.WHITE.getRGB());
-//            app.text(sys.getId(), location.x, location.y);
+            app.fill(Color.WHITE.getRGB());
+            app.text(sys.getId(), location.x, location.y);
         }
     }
 
@@ -145,4 +146,50 @@ public class Galaxy implements JSONconvertable{
         PVector start = systems[startId].getMapLocation(), end = systems[endId].getMapLocation();
         DashedLineDrawer.dashline(start.x, start.y, end.x, end.y, 10,10);
     }
+
+    /**
+     * Use Breadth-first search to calculate distance between two systems in galaxy
+     * @param startLocation Starting System
+     * @param endLocation Destination System
+     * @return Minimum number of jumps to get from start to end system
+     */
+    public int calculateMinimumNumberOfJumps(GalaxySystem startLocation, GalaxySystem endLocation) {
+        HashMap<GalaxySystem, GalaxySystem> cameFrom = new HashMap<>(); //map id to parent id
+        Queue<GalaxySystem> queue = new LinkedList<>();
+        queue.add(startLocation);
+        cameFrom.put(startLocation, null);
+        while(!queue.isEmpty()){
+            GalaxySystem current = queue.poll();
+            if(current == endLocation) break;
+
+            ArrayList<GalaxySystem> adjacentSystems = findAdjacentSystems(current);
+            for(GalaxySystem adjSystem : adjacentSystems){
+                if(!cameFrom.containsKey(adjSystem)){
+                    queue.add(adjSystem);
+                    cameFrom.put(adjSystem, current);
+                }
+
+            }
+        }
+
+        //trace back path from end to start and count steps to find distance
+        int distance = 0;
+        GalaxySystem sys = endLocation;
+        while(true){
+            sys = cameFrom.get(sys);
+            if(sys == null) break;
+            distance++;
+        }
+        return distance;
+    }
+
+    private ArrayList<GalaxySystem> findAdjacentSystems(GalaxySystem system) {
+        ArrayList<GalaxySystem> adjSystems = new ArrayList<>();
+        ArrayList<Link> sysLinks = findLinks(system.getId());
+        for(Link link : sysLinks){
+            adjSystems.add(systems[(link.leftId != system.getId()) ? link.leftId : link.rightId]);
+        }
+        return adjSystems;
+    }
+
 }

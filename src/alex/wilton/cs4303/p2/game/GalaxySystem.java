@@ -52,9 +52,15 @@ public class GalaxySystem implements JSONconvertable {
 
 
     public void drawAsWhiteOnMap() {
-        app.stroke(Color.WHITE.getRGB(), 1000);
+        app.stroke(Color.WHITE.getRGB(), 1000); app.noFill();
         app.strokeWeight(5);
         app.ellipse(mapLocation.x, mapLocation.y, 20, 20);
+    }
+
+    public void drawWhiteLineOnMap(PVector from){
+        app.stroke(Color.WHITE.getRGB(), 1000);
+        app.strokeWeight(3);
+        app.line(mapLocation.x, mapLocation.y, from.x, from.y);
     }
 
     public void drawAsBlackOnMap() {

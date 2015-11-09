@@ -1,8 +1,8 @@
 {
   "reputationWithDoleo": 50,
   "playerLocation": {
-    "faction": "Qalz",
-    "id": 4
+    "faction": "Doloe",
+    "id": 5
   },
   "gameSetupShipSelector": {
     "useDefault": true,
@@ -107,10 +107,16 @@
       "id": 22
     }
   ]},
-  "playerFleet": [{
-    "imageFilePath": "images/ships/playerShip/ShipA.png",
-    "shipName": "ShipA"
-  }],
+  "playerFleet": [
+    {
+      "imageFilePath": "images/ships/playerShip/ShipB.png",
+      "shipName": "ShipB"
+    },
+    {
+      "imageFilePath": "images/ships/playerShip/ShipA.png",
+      "shipName": "ShipA"
+    }
+  ],
   "numberOfGalacticCredits": 0,
   "gameStage": "SYSTEM"
 }

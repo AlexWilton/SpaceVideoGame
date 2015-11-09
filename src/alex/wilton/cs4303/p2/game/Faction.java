@@ -39,4 +39,6 @@ public enum Faction {
                 return Color.WHITE;
         }
     }
+
+
 }

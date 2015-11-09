@@ -1,6 +1,7 @@
 package alex.wilton.cs4303.p2.game;
 
 import alex.wilton.cs4303.p2.game.screen.Screen;
+import alex.wilton.cs4303.p2.game.ships.playerShip.ShipB;
 import processing.core.*;
 import processing.data.JSONObject;
 import processing.event.KeyEvent;
@@ -23,11 +24,12 @@ public class App extends PApplet{
 
     public void setup() {
         frame.setResizable(false);
-        size(SCREEN_WIDTH,SCREEN_HEIGHT);
+        size(SCREEN_WIDTH, SCREEN_HEIGHT);
         gameState = GameState.createNewGameState();
         font = App.app.loadFont("fonts/DejaVuSansCondensed-Bold-48.vlw");
         app.textFont(font);
-        gameState.setGameStage(Stage.HYPER_JUMP);
+        gameState.setGameStage(Stage.REQUEST_MISSION);
+        gameState.getPlayerFleet().add(new ShipB());
         gameState.setPlayerName("Alex Testing123");
     }
 

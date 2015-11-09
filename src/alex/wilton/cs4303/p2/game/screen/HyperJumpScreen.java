@@ -37,9 +37,12 @@ public class HyperJumpScreen extends Screen {
         drawInfoBar();
         galaxy.drawConnectionsOnMap();
         app.stroke(Color.WHITE.getRGB(), 1000);
+        if(destinationSystem != null){
+            destinationSystem.drawWhiteLineOnMap(currentSystem.getMapLocation());
+            destinationSystem.drawAsWhiteOnMap(); //draw around destination
+        }
         galaxy.drawSystemsOnMap();
         currentSystem.drawAsBlackOnMap(); //draw around origin
-        if(destinationSystem != null) destinationSystem.drawAsWhiteOnMap(); //draw around destination
         drawOnHoverForAllowedJumps();
 
         drawButtons();
@@ -122,7 +125,7 @@ public class HyperJumpScreen extends Screen {
             int otherSysId = (link.leftId == currentSystem.getId()) ? link.rightId : link.leftId;
             GalaxySystem otherSystem = galaxy.getSystems()[otherSysId];
             if(otherSystem.mouseOver()) {
-                if(destinationSystem == null)
+                if(destinationSystem != otherSystem)
                     state.setDestinationSystem(otherSystem);
                 else
                     state.setDestinationSystem(null);
