@@ -46,8 +46,8 @@ public class Galaxy implements JSONconvertable{
      * @param id System Id
      * @return Links which connect to the system
      */
-    public Set<Link> findLinks(int id) {
-        Set<Link> connectingLinks = new HashSet<>();
+    public ArrayList<Link> findLinks(int id) {
+        ArrayList<Link> connectingLinks = new ArrayList<>();
         for(Link link : links){
             if(link.leftId == id || link.rightId == id) connectingLinks.add(link);
         }
@@ -60,6 +60,10 @@ public class Galaxy implements JSONconvertable{
         public Link(int leftId, int rightId) {
             this.leftId = leftId;
             this.rightId = rightId;
+        }
+
+        public boolean containsSystem(int id) {
+            return (leftId == id || rightId == id);
         }
     }
     

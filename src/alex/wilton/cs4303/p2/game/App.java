@@ -28,7 +28,7 @@ public class App extends PApplet{
         font = App.app.loadFont("fonts/DejaVuSansCondensed-Bold-48.vlw");
         app.textFont(font);
         gameState.setGameStage(Stage.HYPER_JUMP);
-        gameState.setPlayerName("Alex Testing Name 123");
+        gameState.setPlayerName("Alex Testing123");
     }
 
     public void draw(){

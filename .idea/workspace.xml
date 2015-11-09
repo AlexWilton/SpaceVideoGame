@@ -7,18 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f30673d-14c5-46f7-8eaf-097976ee67f1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/screen/Screen.class" afterPath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/screen/Screen.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/util/Button.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/util/Button.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/CampaignScreen.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/CampaignScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/CustomPlayScreen.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/CustomPlayScreen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/App.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/App.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Galaxy.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Galaxy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/GalaxySystem.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/GalaxySystem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/GameState.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/GameState.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/HyperJumpScreen.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/HyperJumpScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/NewCampaignScreen.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/NewCampaignScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/Screen.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/Screen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Stage.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Stage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/UnImplementedScreen.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/UnImplementedScreen.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/savedGame.json" afterPath="$PROJECT_DIR$/savedGame.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -48,7 +39,7 @@
         <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/App.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="49" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
+              <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -59,8 +50,8 @@
       <file leaf-file-name="HyperJumpScreen.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/HyperJumpScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.63265306">
-              <caret line="56" column="35" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.06887755">
+              <caret line="138" column="40" selection-start-line="138" selection-start-column="40" selection-end-line="138" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -95,12 +86,24 @@
         <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Galaxy.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="57" column="15" selection-start-line="57" selection-start-column="15" selection-end-line="57" selection-end-column="15" />
+              <caret line="59" column="46" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4717#4718#0" expanded="true" />
-                <element signature="e#4760#4761#0" expanded="true" />
+                <element signature="e#2030#2031#0" expanded="true" />
+                <element signature="e#2092#2093#0" expanded="true" />
+                <element signature="e#4842#4843#0" expanded="true" />
+                <element signature="e#4885#4886#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NewCampaignScreen.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/NewCampaignScreen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="90" column="5" selection-start-line="60" selection-start-column="3" selection-end-line="90" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -144,6 +147,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShipSelector.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/util/ShipSelector.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="36" column="33" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -214,13 +227,13 @@
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/UnImplementedScreen.java" />
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/CampaignScreen.java" />
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/NewCampaignScreen.java" />
-        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/App.java" />
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/util/Button.java" />
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/Screen.java" />
-        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Galaxy.java" />
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/GalaxySystem.java" />
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Stage.java" />
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/GameState.java" />
+        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Galaxy.java" />
+        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/App.java" />
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/HyperJumpScreen.java" />
       </list>
     </option>
@@ -988,7 +1001,7 @@
       <workItem from="1446041887805" duration="14118000" />
       <workItem from="1446137947604" duration="120000" />
       <workItem from="1446914217970" duration="5359000" />
-      <workItem from="1447070213502" duration="16605000" />
+      <workItem from="1447070213502" duration="19039000" />
     </task>
     <task id="LOCAL-00001" summary="cities can now be destroyed">
       <created>1443199942094</created>
@@ -1122,11 +1135,17 @@
       <option name="project" value="LOCAL" />
       <updated>1447082741795</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Basic jumping now works!">
+      <created>1447087822984</created>
+      <option name="number" value="00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1447087822984</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113878000" />
+    <option name="totallyTimeSpent" value="116312000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1922" height="1081" extended-state="6" />
@@ -1222,11 +1241,12 @@
     <MESSAGE value="extras" />
     <MESSAGE value="system screen minor progress" />
     <MESSAGE value="galaxy screen started" />
-    <option name="LAST_COMMIT_MESSAGE" value="galaxy screen started" />
+    <MESSAGE value="Basic jumping now works!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Basic jumping now works!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="12" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1355,14 +1375,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/util/ShipSelector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="33" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1488,14 +1500,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/NewCampaignScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41993636">
-          <caret line="35" column="72" selection-start-line="35" selection-start-column="72" selection-end-line="35" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/CampaignScreen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26723224">
@@ -1560,42 +1564,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="49" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Galaxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="15" selection-start-line="57" selection-start-column="15" selection-end-line="57" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4717#4718#0" expanded="true" />
-            <element signature="e#4760#4761#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/GalaxySystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="68" column="30" selection-start-line="68" selection-start-column="30" selection-end-line="68" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#821#822#0" expanded="true" />
-            <element signature="e#846#847#0" expanded="true" />
-            <element signature="e#881#882#0" expanded="true" />
-            <element signature="e#911#912#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Stage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1628,10 +1596,64 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/util/ShipSelector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="33" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/NewCampaignScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="90" column="5" selection-start-line="60" selection-start-column="3" selection-end-line="90" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/GalaxySystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="68" column="30" selection-start-line="68" selection-start-column="30" selection-end-line="68" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#821#822#0" expanded="true" />
+            <element signature="e#846#847#0" expanded="true" />
+            <element signature="e#881#882#0" expanded="true" />
+            <element signature="e#911#912#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Galaxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="59" column="46" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2030#2031#0" expanded="true" />
+            <element signature="e#2092#2093#0" expanded="true" />
+            <element signature="e#4842#4843#0" expanded="true" />
+            <element signature="e#4885#4886#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/HyperJumpScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63265306">
-          <caret line="56" column="35" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.06887755">
+          <caret line="138" column="40" selection-start-line="138" selection-start-column="40" selection-end-line="138" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -7,16 +7,18 @@ import alex.wilton.cs4303.p2.util.ImageCache;
 import processing.core.PConstants;
 import processing.core.PImage;
 import processing.core.PVector;
+import processing.event.KeyEvent;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Set;
 
 
 public class HyperJumpScreen extends Screen {
 
-    private GalaxySystem currentSystem;
-    private GalaxySystem destinationSystem;
-    private Galaxy galaxy;
+    private final GalaxySystem currentSystem;
+    private final GalaxySystem destinationSystem;
+    private final Galaxy galaxy;
 
     public HyperJumpScreen(GameState state) {
         super(state);
@@ -52,7 +54,7 @@ public class HyperJumpScreen extends Screen {
     }
 
     private void drawOnHoverForAllowedJumps() {
-        Set<Galaxy.Link> allowedLinks = galaxy.findLinks(currentSystem.getId());
+        ArrayList<Galaxy.Link> allowedLinks = galaxy.findLinks(currentSystem.getId());
         for(Galaxy.Link link : allowedLinks){
             int otherSysId = (link.leftId == currentSystem.getId()) ? link.rightId : link.leftId;
             GalaxySystem otherSystem = galaxy.getSystems()[otherSysId];
@@ -115,7 +117,7 @@ public class HyperJumpScreen extends Screen {
         super.mousePressed();
 
         /* Allow a destination system to be selected*/
-        Set<Galaxy.Link> allowedLinks = galaxy.findLinks(currentSystem.getId());
+        ArrayList<Galaxy.Link> allowedLinks = galaxy.findLinks(currentSystem.getId());
         for(Galaxy.Link link : allowedLinks){
             int otherSysId = (link.leftId == currentSystem.getId()) ? link.rightId : link.leftId;
             GalaxySystem otherSystem = galaxy.getSystems()[otherSysId];
@@ -126,6 +128,47 @@ public class HyperJumpScreen extends Screen {
                     state.setDestinationSystem(null);
                 break;
             }
+        }
+    }
+
+    /**
+     * Respond to key press events
+     * @param e Key Event
+     */
+    @Override
+    public void keyPressed(KeyEvent e) {
+        /* Allowing cycling through options using arrow keys */
+        if(e.getKeyCode() == App.LEFT || e.getKeyCode() == App.UP || (e.getKeyCode() == App.RIGHT || e.getKeyCode() == App.DOWN)){
+            ArrayList<Galaxy.Link> allowedLinks = galaxy.findLinks(currentSystem.getId());
+            Galaxy.Link selectedLink;
+            if(destinationSystem == null){
+                selectedLink = allowedLinks.get(allowedLinks.size()-1);
+            }else{
+                int currentIndex = 0;
+                for(int i=0; i<allowedLinks.size(); i++){
+                    if(allowedLinks.get(i).containsSystem(destinationSystem.getId())){
+                        currentIndex = i; break;
+                    }
+                }
+                int newIndex;
+                if(e.getKeyCode() == App.LEFT || e.getKeyCode() == App.UP)
+                    newIndex = (allowedLinks.size() + currentIndex - 1) % allowedLinks.size();
+                else
+                    newIndex = (currentIndex + 1) % allowedLinks.size();
+
+                selectedLink = allowedLinks.get(newIndex);
+            }
+
+            int otherSysId = (selectedLink.leftId == currentSystem.getId()) ? selectedLink.rightId : selectedLink.leftId;
+            GalaxySystem otherSystem = galaxy.getSystems()[otherSysId];
+            state.setDestinationSystem(otherSystem);
+        }
+
+
+        /* Allow progression to next stage when enter/return is hit and minimum player name is reached */
+        if((e.getKey() == App.ENTER || e.getKey() == App.RETURN) ){
+            if(destinationSystem != null)
+                state.setGameStage(Stage.MAKE_JUMP);
         }
     }
 
