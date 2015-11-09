@@ -19,7 +19,7 @@ public class CustomPlayScreen extends Screen {
     public void draw() {
         app.background(Color.BLACK.getRGB());
         PlanetLogo.draw();
-        app.textSize(50);
+        app.textSize(50); app.fill(Color.WHITE.getRGB());
         app.text("CUSTOM MODE", app.width / 2, 130);
         createButton("HOST GAME", app.width / 4, 280, 330, 80, Stage.HOST_CUSTOM_PLAY);
         createButton("JOIN GAME",       3 * app.width / 4, 280, 330, 80, Stage.JOIN_CUSTOM_PLAY);

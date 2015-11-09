@@ -33,7 +33,7 @@ public class NewCampaignScreen extends Screen{
         app.background(Color.BLACK.getRGB());
         PlanetLogo.draw();
 
-        app.textSize(50);
+        app.textSize(50);  app.fill(Color.WHITE.getRGB()); app.noFill();
         app.text("NEW GAME", app.width / 2, 50);
         app.textSize(25);
         app.text("PLAYER NAME: ", app.width / 3, 150);

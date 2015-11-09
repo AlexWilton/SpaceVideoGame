@@ -17,8 +17,7 @@ public enum Stage {
     LOAD_SAVED_GAME,
     LOADING,
     HANGAR,
-
     GOTO_GC_WEBSITE,
-    EXIT_GAME
+    MAKE_JUMP, EXIT_GAME
 
 }

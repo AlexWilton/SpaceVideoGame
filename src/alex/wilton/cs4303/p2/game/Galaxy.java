@@ -41,8 +41,21 @@ public class Galaxy implements JSONconvertable{
         return new Galaxy(galaxySystems, links);
     }
 
+    /**
+     * Find all links which has the given id as an endpoint
+     * @param id System Id
+     * @return Links which connect to the system
+     */
+    public Set<Link> findLinks(int id) {
+        Set<Link> connectingLinks = new HashSet<>();
+        for(Link link : links){
+            if(link.leftId == id || link.rightId == id) connectingLinks.add(link);
+        }
+        return connectingLinks;
+    }
+
     public static class Link{
-        int leftId, rightId;
+        public int leftId, rightId;
 
         public Link(int leftId, int rightId) {
             this.leftId = leftId;
@@ -113,11 +126,19 @@ public class Galaxy implements JSONconvertable{
 
     public void drawConnectionsOnMap() {
         for(Link link : links){
-            int startId = link.leftId;
-            int endId = link.rightId;
-            PVector start = systems[startId].getMapLocation(), end = systems[endId].getMapLocation();
-            DashedLineDrawer.dashline(start.x, start.y, end.x, end.y, 10,10);
+            drawLink(link, 100f);
         }
+    }
 
+    /**
+     * Draw Link
+     * @param alpha Set Transparency of drawing for link
+     */
+    public void drawLink(Link link, float alpha){
+        app.stroke(Color.WHITE.getRGB(), alpha);
+        int startId = link.leftId;
+        int endId = link.rightId;
+        PVector start = systems[startId].getMapLocation(), end = systems[endId].getMapLocation();
+        DashedLineDrawer.dashline(start.x, start.y, end.x, end.y, 10,10);
     }
 }

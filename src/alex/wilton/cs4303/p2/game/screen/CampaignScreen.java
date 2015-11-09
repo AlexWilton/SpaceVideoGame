@@ -18,7 +18,7 @@ public class CampaignScreen extends Screen{
     protected void draw() {
         app.background(Color.BLACK.getRGB());
         PlanetLogo.draw();
-        app.textSize(50);
+        app.textSize(50);  app.fill(Color.WHITE.getRGB());
         app.text("CAMPAIGN MODE", app.width / 2, 130);
         createButton("LOAD SAVED GAME",    app.width / 4, 280, 330, 80, Stage.LOAD_SAVED_GAME);
         createButton("NEW GAME",       3 * app.width / 4, 280, 330, 80, Stage.NEW_CAMPAIGN);

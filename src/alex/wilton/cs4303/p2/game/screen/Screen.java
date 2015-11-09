@@ -4,6 +4,7 @@ import alex.wilton.cs4303.p2.game.App;
 import alex.wilton.cs4303.p2.game.GameState;
 import alex.wilton.cs4303.p2.game.Stage;
 import alex.wilton.cs4303.p2.util.Button;
+import processing.core.PConstants;
 import processing.event.KeyEvent;
 
 import java.awt.*;
@@ -60,13 +61,23 @@ public abstract class Screen{
     private void drawButtons(){
         app.rectMode(App.CENTER);
         app.strokeWeight(3);
-        app.fill(Color.WHITE.getRGB());
-        app.noFill();
         app.stroke(Color.WHITE.getRGB());
         app.textAlign(App.CENTER, App.CENTER);
         app.textSize(18);
         for(Button button : screenButtons){
+            boolean disabled = button.getDisabled();
+            app.stroke(Color.WHITE.getRGB(), (disabled) ? 100 : 1000);
+
+            boolean mouseOver = button.containsPoint(app.mouseX, app.mouseY);
+            if(mouseOver && !disabled){
+                app.fill(Color.WHITE.getRGB());
+            }else{
+                app.fill(Color.WHITE.getRGB());
+                app.noFill();
+            }
+
             app.rect(button.getX(), button.getY(), button.getWidth(), button.getHeight());
+            app.fill(((mouseOver && !disabled) ? (Color.BLACK) : (Color.WHITE)).getRGB()); app.noFill();
             app.text(   button.getText(), button.getX() + BUTTON_TEXT_PADDING,
                         button.getY() + BUTTON_TEXT_PADDING,
                         button.getWidth() - BUTTON_TEXT_PADDING*2,
@@ -76,6 +87,13 @@ public abstract class Screen{
 
     protected void createButton(String text, int x, int y, int width, int height, Stage newStageOnClick){
         screenButtons.add(new Button(text, x, y, width, height, newStageOnClick));
+    }
+
+    protected void createdDisabledButton(String text, int x, int y, int width, int height){
+        screenButtons.add(new Button(text, x, y, width, height, state.getGameStage(), true));
+        app.noFill(); app.stroke(Color.WHITE.getRGB(), 100);
+        app.rectMode(PConstants.CENTER);
+        app.rect(130, (int) (app.height * 0.75), 180, 50);
     }
 
     protected void createTextBox(String text, int x, int y, int width, int height){

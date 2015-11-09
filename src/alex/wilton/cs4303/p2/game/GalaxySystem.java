@@ -4,7 +4,10 @@ import alex.wilton.cs4303.p2.util.JSONconvertable;
 import processing.core.PVector;
 import processing.data.JSONObject;
 
+import java.awt.*;
+
 public class GalaxySystem implements JSONconvertable {
+    private App app = App.app;
     private int id;
     private Faction faction;
     private String name;
@@ -48,4 +51,26 @@ public class GalaxySystem implements JSONconvertable {
     }
 
 
+    public void drawAsWhiteOnMap() {
+        app.stroke(Color.WHITE.getRGB(), 1000);
+        app.strokeWeight(5);
+        app.ellipse(mapLocation.x, mapLocation.y, 20, 20);
+    }
+
+    public void drawAsBlackOnMap() {
+        app.stroke(Color.BLACK.getRGB(), 1000);
+        app.strokeWeight(5);
+        app.ellipse(mapLocation.x, mapLocation.y, 20, 20);
+    }
+
+
+    public void drawOnHoverOnMap() {
+        if(mouseOver()) {
+           drawAsWhiteOnMap();
+        }
+    }
+
+    public boolean mouseOver(){
+        return Math.pow(app.mouseX - mapLocation.x,2) + Math.pow(app.mouseY - mapLocation.y,2) < Math.pow(15,2);
+    }
 }

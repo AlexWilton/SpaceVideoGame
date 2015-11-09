@@ -9,6 +9,7 @@ import processing.core.PImage;
 import processing.core.PVector;
 
 import java.awt.*;
+import java.util.Set;
 
 
 public class HyperJumpScreen extends Screen {
@@ -20,8 +21,8 @@ public class HyperJumpScreen extends Screen {
     public HyperJumpScreen(GameState state) {
         super(state);
         currentSystem = state.getPlayerLocation();
+        destinationSystem = state.getDestinationSystem();
         galaxy = state.getGalaxy();
-        destinationSystem = currentSystem;
     }
 
     /**
@@ -33,18 +34,30 @@ public class HyperJumpScreen extends Screen {
         drawGalaxyMapBackground();
         drawInfoBar();
         galaxy.drawConnectionsOnMap();
+        app.stroke(Color.WHITE.getRGB(), 1000);
         galaxy.drawSystemsOnMap();
+        currentSystem.drawAsBlackOnMap(); //draw around origin
+        if(destinationSystem != null) destinationSystem.drawAsWhiteOnMap(); //draw around destination
+        drawOnHoverForAllowedJumps();
 
-//        app.fill(system.getFaction().getFactionColour().getRGB());
-//        app.text("System Controlled by " + system.getFaction().name(), app.width / 2, 60);
-//
-//
-//
-//        app.fill(Color.WHITE.getRGB()); app.textAlign(PConstants.LEFT); app.textSize(20);
-//        app.text("Message from the " + system.getFaction().name() + " Faction:", 10 + app.width / 5, 135);
+        drawButtons();
+    }
 
+    private void drawButtons() {
+        if(destinationSystem != null)
+            createButton("MAKE JUMP", 130, (int) (app.height * 0.75), 180, 50, Stage.MAKE_JUMP);
+        else
+            createdDisabledButton("MAKE JUMP", 130, (int) (app.height * 0.75), 180, 50);
         createButton("RETURN TO\nSYSTEM VIEW", 130, (int) (app.height * 0.9), 180, 50, Stage.SYSTEM);
+    }
 
+    private void drawOnHoverForAllowedJumps() {
+        Set<Galaxy.Link> allowedLinks = galaxy.findLinks(currentSystem.getId());
+        for(Galaxy.Link link : allowedLinks){
+            int otherSysId = (link.leftId == currentSystem.getId()) ? link.rightId : link.leftId;
+            GalaxySystem otherSystem = galaxy.getSystems()[otherSysId];
+            otherSystem.drawOnHoverOnMap();
+        }
     }
 
     private void drawInfoBar() {
@@ -86,7 +99,8 @@ public class HyperJumpScreen extends Screen {
             }
         }
 
-        app.rectMode(App.CORNER); app.noFill(); app.strokeWeight(4);
+
+        app.rectMode(App.CORNER); app.stroke(Color.WHITE.getRGB(), 1000); app.noFill(); app.strokeWeight(4);
         app.rect(40, 8, app.textWidth(info) + 20, 38, 10); app.strokeWeight(3);
     }
 
@@ -96,9 +110,23 @@ public class HyperJumpScreen extends Screen {
         app.image(img, 0, 0, app.width, app.height);
     }
 
-//    @Override
-//    public void mousePressed(){
-//        System.out.print("new PVector("+app.mouseX+","+app.mouseY+"), ");
-//    }
+    @Override
+    public void mousePressed() {
+        super.mousePressed();
+
+        /* Allow a destination system to be selected*/
+        Set<Galaxy.Link> allowedLinks = galaxy.findLinks(currentSystem.getId());
+        for(Galaxy.Link link : allowedLinks){
+            int otherSysId = (link.leftId == currentSystem.getId()) ? link.rightId : link.leftId;
+            GalaxySystem otherSystem = galaxy.getSystems()[otherSysId];
+            if(otherSystem.mouseOver()) {
+                if(destinationSystem == null)
+                    state.setDestinationSystem(otherSystem);
+                else
+                    state.setDestinationSystem(null);
+                break;
+            }
+        }
+    }
 
 }

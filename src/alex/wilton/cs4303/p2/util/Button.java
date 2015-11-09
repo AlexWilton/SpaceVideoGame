@@ -6,6 +6,7 @@ public class Button {
     private String text;
     private int x,y,width, height;
     private Stage newStageOnClick;
+    private boolean disabled = false;
 
     public Button(String text, int x, int y, int width, int height, Stage newStageOnClick) {
         this.text = text;
@@ -14,6 +15,11 @@ public class Button {
         this.width = width;
         this.height = height;
         this.newStageOnClick = newStageOnClick;
+    }
+
+    public Button(String text, int x, int y, int width, int height, Stage gameStage, boolean disabled) {
+        this(text, x, y, width, height, gameStage);
+        this.disabled = disabled;
     }
 
     public boolean containsPoint(int ptX, int ptY) {
@@ -48,5 +54,9 @@ public class Button {
 
     public Stage getNewStageOnClick() {
         return newStageOnClick;
+    }
+
+    public boolean getDisabled() {
+        return disabled;
     }
 }

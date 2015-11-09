@@ -29,6 +29,7 @@ public class GameState implements JSONconvertable {
 
     private boolean isGameSetupCompleted;
     private ShipSelector gameSetupShipSelector;
+    private GalaxySystem destinationSystem; //used for selecting a target system in a hyper-space jump
 
 
     public GameState(Galaxy galaxy, GalaxySystem playerLocation, ArrayList<Ship> playerFleet, String playerName, int numberOfGalacticCredits, Faction leadsFaction, Stage gameStage, int reputationWithVillt, int reputationWithQalz, int reputationWithDoleo, boolean isGameSetupCompleted, ShipSelector gameSetupShipSelector) {
@@ -87,7 +88,12 @@ public class GameState implements JSONconvertable {
             case GOTO_GC_WEBSITE:
                 App.app.link("http://galacticconquests.com/");
                 gameStage = Stage.MAIN_MENU;
-                return processStageThenGenerateScreen();
+                break;
+            case MAKE_JUMP:
+                playerLocation = destinationSystem;
+                destinationSystem = null;
+                gameStage = Stage.SYSTEM;
+                break;
             case EXIT_GAME: System.exit(0);
             default: return new UnImplementedScreen(gameStage.name(), this);
         }
@@ -172,5 +178,17 @@ public class GameState implements JSONconvertable {
 
     public Galaxy getGalaxy() {
         return galaxy;
+    }
+
+    public Stage getGameStage() {
+        return gameStage;
+    }
+
+    public void setDestinationSystem(GalaxySystem destinationSystem) {
+        this.destinationSystem = destinationSystem;
+    }
+
+    public GalaxySystem getDestinationSystem() {
+        return destinationSystem;
     }
 }
