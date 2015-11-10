@@ -31,7 +31,7 @@ public class GameState implements JSONconvertable {
     private ShipSelector gameSetupShipSelector;
     private GalaxySystem destinationSystem; //used for selecting a target system in a hyper-space jump
 
-    private Mission playersMission;
+    private Mission playersMission; //either accepted mission that the player's on or a mission currently on offer.
 
 
     public GameState(Galaxy galaxy, GalaxySystem playerLocation, ArrayList<Ship> playerFleet, String playerName, int numberOfGalacticCredits, Faction leadsFaction, Stage gameStage, int reputationWithVillt, int reputationWithQalz, int reputationWithDoleo, boolean isGameSetupCompleted, ShipSelector gameSetupShipSelector) {
@@ -80,10 +80,22 @@ public class GameState implements JSONconvertable {
             case CUSTOM_PLAY:   return new CustomPlayScreen(this);
             case NEW_CAMPAIGN:  return new NewCampaignScreen(this);
             case HYPER_JUMP:    return new HyperJumpScreen(this);
+            case MISSION: return new MissionScreen(this);
             case SYSTEM:
-                                if(!isGameSetupCompleted){ setupGame(); break;}
-                                return new SystemScreen(this);
-            case REQUEST_MISSION: return new MissionScreen(this);
+                if(!isGameSetupCompleted){ setupGame(); break;}
+                return new SystemScreen(this);
+            case MISSION_DECLINED:
+                playersMission = null;
+                gameStage = Stage.SYSTEM;
+                break;
+            case MISSION_ACCEPTED:
+                playersMission.setStatus(Mission.Status.ACCEPTED);
+                gameStage = Stage.SYSTEM;
+                break;
+            case ABANDON_MISSION:
+                playersMission.abandonMission(this);
+                gameStage = Stage.SYSTEM;
+                break;
 
             //... generate relevant screen for each stage
 
@@ -171,6 +183,14 @@ public class GameState implements JSONconvertable {
             case Qalz: return reputationWithQalz;
             case Villt: return reputationWithVillt;
             default: return -1; //faction doesn't exist
+        }
+    }
+
+    public void setPlayerStanding(Faction faction, int newReputation) {
+        switch (faction){
+            case Doloe: reputationWithDoleo = newReputation; break;
+            case Qalz: reputationWithQalz = newReputation; break;
+            case Villt: reputationWithVillt = newReputation; break;
         }
     }
 

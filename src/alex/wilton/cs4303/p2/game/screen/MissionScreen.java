@@ -31,14 +31,12 @@ public class MissionScreen extends Screen {
     protected void draw() {
         app.background(Color.BLACK.getRGB());
 
-
         app.textSize(30); app.fill(mission.getOriginFaction().getFactionColour().getRGB());
         app.text("MISSION", app.width / 2, 30);
         app.textSize(18);
         app.text("Offered by " + mission.getOriginFaction().name() + " Faction", app.width / 2, 60);
 
-        //todo Replace generic planet logo with specific planet image. Use: currentSystem.drawPlanetInTopRight();
-        PlanetLogo.draw();
+        state.getPlayerLocation().drawPlanetInTopRight();
         DrawableShip ship = state.getPlayerFleet().get(0).createDrawableShipInstance();
         ship.setCenterPosition(new PVector(app.width / 10, 250));
         ship.setOrientation(PConstants.PI / 2);
@@ -65,23 +63,35 @@ public class MissionScreen extends Screen {
     }
 
     private void showCurrentMissionInfo() {
+        String msg = "STATUS: In Progress" +
+                "\n\nBRIEF: Neutralise enemy presence" +
+                "\n\nTARGET: "+mission.getTargetSystem().getName() + " (Controlled by "+mission.getTargetFaction().name()+" Faction)" +
+                "\n\nREWARD: "+mission.getReward()+" GC";
+        app.text(msg, 10 + app.width / 5, 120, (float) (app.width * 0.6 - 20), 200);
+        app.fill(Color.WHITE.getRGB());
+        String additionInfo = "Target System is highlighted in green on the Galaxy Map.";
+        additionInfo += "\n\nNote: Abandoning the mission will slightly damage your \nreputation with the " + mission.getOriginFaction().name() + " Faction";
+        app.textAlign(PConstants.CENTER);app.textSize(15);
+        app.text(additionInfo, app.width/2, 310);
 
+        createButton("SYSTEM SCREEN", (int) (app.width * 0.35), 400, 200, 50, Stage.SYSTEM);
+        createButton("ABANDON MISSION", (int) (app.width * 0.65), 400, 200, 50, Stage.ABANDON_MISSION);
     }
 
     private void showOffer() {
         String msg = "Captain " + state.getPlayerName() + ",\n";
         msg +=  "There is a system "+mission.getDistance()+" jumps away called " + mission.getTargetSystem().getName() + " which is currently controlled by the "+mission.getTargetFaction()+" Faction." +
-                "\n\nWe require you to go to this system, naturalise any enemy presence and hand over control to our faction." +
+                "\n\nWe require you to go to this system, neutralise any enemy presence and hand over control to our faction." +
                 "\nReward: "+mission.getReward()+" GC";
         app.text(msg, 10 + app.width / 5, 120, (float) (app.width * 0.6 - 20), 200);
         app.fill(Color.WHITE.getRGB());
         String additionInfo = "Success will improve relations with " + mission.getOriginFaction().name() + " \nwhile damaging relations with " + mission.getTargetFaction().name();
+        additionInfo += "\n\nTarget System (" + mission.getTargetSystem().getName() + ") will be highlighted in green on the Galaxy Map.";
         app.textAlign(PConstants.CENTER);app.textSize(14);
         app.text(additionInfo, app.width/2, 310);
 
-        createButton("JUMP", (int) (app.width * 0.3), 400, 100, 50, Stage.HYPER_JUMP);
-        createButton("REQUEST\nMISSION", (int) (app.width * 0.5), 400, 100, 50, Stage.REQUEST_MISSION);
-        createButton("HANGAR", (int) (app.width * 0.7), 400, 100, 50, Stage.HANGAR);
+        createButton("ACCEPT MISSION", (int) (app.width * 0.35), 400, 200, 50, Stage.MISSION_ACCEPTED);
+        createButton("DECLINE MISSION", (int) (app.width * 0.65), 400, 200, 50, Stage.MISSION_DECLINED);
     }
 
 }

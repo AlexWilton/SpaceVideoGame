@@ -35,8 +35,7 @@ public class SystemScreen extends Screen {
         app.fill(system.getFaction().getFactionColour().getRGB());
         app.text("System Controlled by " + system.getFaction().name(), app.width / 2, 60);
 
-        //todo Replace generic planet logo with specific planet image. Use: system.drawPlanetInTopRight();
-        PlanetLogo.draw();
+        system.drawPlanetInTopRight();
         DrawableShip ship = state.getPlayerFleet().get(0).createDrawableShipInstance();
         ship.setCenterPosition(new PVector(app.width/10, 250));
         ship.setOrientation(PConstants.PI/2);
@@ -76,12 +75,14 @@ public class SystemScreen extends Screen {
         String msg = "Welcome to the " + system.getName() + " System Captain " + state.getPlayerName() + ".";
         msg += "\n\nWe Have no quarrel with you. Our services are available to you (for a charge). You are cleared" +
                 " to use the hyper-jump link to jump to nearby systems.";
-        msg += "\n\nWe may even have a mission for you, if you think you can hack it that is!";
+        if(state.getPlayersMission() == null)
+            msg += "\n\nWant to prove yourself! Undertake a mission for us!";
 
         app.text(msg, 10 + app.width / 5, 150, (float) (app.width * 0.6 - 20), 200);
         app.fill(Color.WHITE.getRGB());
         createButton("JUMP", (int) (app.width * 0.3), 400, 100, 50, Stage.HYPER_JUMP);
-        createButton("REQUEST\nMISSION", (int) (app.width * 0.5), 400, 100, 50, Stage.REQUEST_MISSION);
+        String missionBtnText = (state.getPlayersMission() == null) ? "REQUEST\nMISSION" : "CURRENT\nMISSION";
+        createButton(missionBtnText, (int) (app.width * 0.5), 400, 100, 50, Stage.MISSION);
         createButton("HANGAR", (int) (app.width * 0.7), 400, 100, 50, Stage.HANGAR);
     }
 }

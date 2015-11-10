@@ -1,8 +1,8 @@
 {
   "reputationWithDoleo": 50,
   "playerLocation": {
-    "faction": "Doloe",
-    "id": 5
+    "faction": "Qalz",
+    "id": 4
   },
   "gameSetupShipSelector": {
     "useDefault": true,

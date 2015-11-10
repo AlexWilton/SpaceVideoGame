@@ -30,7 +30,19 @@ public class Mission {
         return reward;
     }
 
-    public enum Status {OFFERED, ACCEPTED;}
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public void abandonMission(GameState state) {
+        status = Status.ABANDONED;
+        state.setPlayersMission(null);
+        int standing = state.getPlayerStanding(originFaction);
+        standing -= 10; //damage standing by 10
+        state.setPlayerStanding(originFaction, standing);
+    }
+
+    public enum Status {OFFERED, ACCEPTED, ABANDONED}
     private Status status;
 
     public Status getStatus() {
@@ -57,7 +69,7 @@ public class Mission {
 
         //calculate distance+reward
         int distance = state.getGalaxy().calculateMinimumNumberOfJumps(currentLocation, targetSystem);
-        int reward = 100 + distance * 11;
+        int reward = 100 + distance * 115;
 
         return new Mission(originFaction, targetSystem, distance, reward);
     }

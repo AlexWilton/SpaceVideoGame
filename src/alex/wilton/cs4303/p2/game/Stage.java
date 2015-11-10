@@ -8,9 +8,14 @@ public enum Stage {
     JOIN_CUSTOM_PLAY,
     CAMPAIGN,               //done
     NEW_CAMPAIGN,           //done
-    SYSTEM,
-    HYPER_JUMP,
-    REQUEST_MISSION,
+    SYSTEM,                 //done
+    HYPER_JUMP,             //done
+
+    MISSION,
+    MISSION_ACCEPTED,
+    MISSION_DECLINED,
+    ABANDON_MISSION,
+
     FIGHT,
     BRIBE,
     GAME_OPTIONS,

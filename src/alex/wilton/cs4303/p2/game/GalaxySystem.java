@@ -1,5 +1,6 @@
 package alex.wilton.cs4303.p2.game;
 
+import alex.wilton.cs4303.p2.game.entity.staticImage.Planet;
 import alex.wilton.cs4303.p2.util.JSONconvertable;
 import processing.core.PVector;
 import processing.data.JSONObject;
@@ -47,7 +48,7 @@ public class GalaxySystem implements JSONconvertable {
 
 
     public void drawPlanetInTopRight() {
-
+        Planet.draw(id);
     }
 
 
