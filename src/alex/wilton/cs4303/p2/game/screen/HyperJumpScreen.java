@@ -1,29 +1,28 @@
 package alex.wilton.cs4303.p2.game.screen;
 
 import alex.wilton.cs4303.p2.game.*;
-import alex.wilton.cs4303.p2.game.entity.staticImage.PlanetLogo;
-import alex.wilton.cs4303.p2.game.ships.DrawableShip;
 import alex.wilton.cs4303.p2.util.ImageCache;
 import processing.core.PConstants;
 import processing.core.PImage;
-import processing.core.PVector;
 import processing.event.KeyEvent;
 
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Set;
 
 
 public class HyperJumpScreen extends Screen {
 
     private final GalaxySystem currentSystem;
     private final GalaxySystem destinationSystem;
+    private final GalaxySystem missionTargetSystem;
     private final Galaxy galaxy;
 
     public HyperJumpScreen(GameState state) {
         super(state);
         currentSystem = state.getPlayerLocation();
         destinationSystem = state.getDestinationSystem();
+        Mission mission = state.getPlayersMission();
+        missionTargetSystem = (mission == null) ? null : mission.getTargetSystem();
         galaxy = state.getGalaxy();
     }
 
@@ -43,6 +42,8 @@ public class HyperJumpScreen extends Screen {
         }
         galaxy.drawSystemsOnMap();
         currentSystem.drawAsBlackOnMap(); //draw around origin
+        if(missionTargetSystem != null) missionTargetSystem.drawOnMap(Color.green);
+
         drawOnHoverForAllowedJumps();
 
         drawButtons();

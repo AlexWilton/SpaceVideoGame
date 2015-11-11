@@ -123,9 +123,9 @@ public class Galaxy implements JSONconvertable{
             PVector location = sys.getMapLocation();
             app.fill(sys.getFaction().getFactionColour().getRGB());
             app.strokeWeight(0);
-            app.ellipse(location.x, location.y, 15, 15);
-            app.fill(Color.WHITE.getRGB());
-            app.text(sys.getId(), location.x, location.y);
+            app.ellipse(location.x, location.y, 18, 18);
+//            app.fill(Color.WHITE.getRGB());
+//            app.text(sys.getId(), location.x, location.y);
         }
     }
 
