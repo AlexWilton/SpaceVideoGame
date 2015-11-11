@@ -7,28 +7,399 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f30673d-14c5-46f7-8eaf-097976ee67f1" name="Default" comment="Planets are now drawn">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/planets/planet1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/planets/planet3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/entity/staticImage/Planet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/planets/planet2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/planets/planet5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/planets/planet4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/planets/planet6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/planets/planet7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/planets/planet10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/planets/planet8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/planets/planet9.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/SystemScreen.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/SystemScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/App.class" afterPath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/App.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/GameState.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/GameState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Mission.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Mission.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/App.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/GalaxySystem.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/GalaxySystem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/UnImplementedScreen.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/UnImplementedScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/savedGame.json" afterPath="$PROJECT_DIR$/savedGame.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/MissionScreen.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/MissionScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Stage.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Stage.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/ParticleCommander_jar.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/description.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/project-template.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CS4303-Practical-3.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SpaceVideoGame.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fonts/DejaVuSansCondensed-Bold-48.vlw" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/galaxy.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/galaxy.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/logoBlack.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/logoWhite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/planetLogoWhite.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/planets/planet0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/planets/planet1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/planets/planet2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/planets/planet3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/planets/planet4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/planets/planet5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/planets/planet6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/planets/planet7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/planets/planet8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/planets/planet9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/ships/DoloeShip/DoloeShipA.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/ships/DoloeShip/DoloeShipB.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/ships/DoloeShip/DoloeShipC.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/ships/DoloeShip/DoloeShipD.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/ships/QalzShip/QalzShipA.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/ships/QalzShip/QalzShipB.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/ships/QalzShip/QalzShipC.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/ships/QalzShip/QalzShipD.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/ships/VilltShip/VilltShipA.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/ships/VilltShip/VilltShipB.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/ships/VilltShip/VilltShipC.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/ships/VilltShip/VilltShipD.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/ships/playerShip/ShipA.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/ships/playerShip/ShipB.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/ships/playerShip/ShipC.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/ships/playerShip/ShipD.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/ships/playerShip/ShipE.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/controlP5.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/core.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/minim/jl1.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/minim/jsminim.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/minim/minim.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/minim/mp3spi1.9.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/minim/tritonus_aos.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/minim/tritonus_share.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/allclasses-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/allclasses-noframe.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/constant-values.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/deprecated-list.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/help-doc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/index-all.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/overview-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/overview-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/overview-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/package-list" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/Base.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/Formatter.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/Language.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/Library.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/Mode.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/Platform.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/Preferences.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/RunnerListener.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/Settings.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/SingleInstance.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/Sketch.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/SketchCode.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/SketchException.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/SketchReference.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/UpdateCheck.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/WebServer.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/contrib/AvailableContribution.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/contrib/Contribution.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/contrib/ContributionListing.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/contrib/ContributionManager.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/contrib/ContributionManagerDialog.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/contrib/ContributionType.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/contrib/ExamplesContribution.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/contrib/LocalContribution.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/contrib/ModeContribution.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/contrib/ToolContribution.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/contrib/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/contrib/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/contrib/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/exec/LineProcessor.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/exec/ProcessHelper.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/exec/ProcessRegistry.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/exec/ProcessResult.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/exec/StreamPump.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/exec/StreamRedirectThread.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/exec/SystemOutSiphon.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/exec/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/exec/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/exec/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/platform/LinuxPlatform.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/platform/MacPlatform.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/platform/ThinkDifferent.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/platform/WindowsPlatform.WinLibC.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/platform/WindowsPlatform.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/platform/WindowsRegistry.REGISTRY_ROOT_KEY.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/platform/WindowsRegistry.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/platform/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/platform/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/platform/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/Brackets.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/DefaultInputHandler.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/HtmlSelection.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/InputHandler.MacroRecorder.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/InputHandler.NonRecordable.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/InputHandler.NonRepeatable.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/InputHandler.Wrapper.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/InputHandler.backspace.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/InputHandler.backspace_word.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/InputHandler.clipboard_copy.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/InputHandler.clipboard_cut.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/InputHandler.clipboard_paste.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/InputHandler.delete.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/InputHandler.delete_word.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/InputHandler.document_end.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/InputHandler.document_home.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/InputHandler.end.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/InputHandler.home.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/InputHandler.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/InputHandler.insert_break.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/InputHandler.insert_char.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/InputHandler.insert_tab.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/InputHandler.next_char.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/InputHandler.next_line.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/InputHandler.next_page.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/InputHandler.next_word.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/InputHandler.overwrite.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/InputHandler.prev_char.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/InputHandler.prev_line.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/InputHandler.prev_page.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/InputHandler.prev_word.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/InputHandler.repeat.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/InputHandler.toggle_rect.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/JEditTextArea.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/KeywordMap.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/PdeInputHandler.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/PdeKeywords.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/PdeTextAreaDefaults.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/SyntaxDocument.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/SyntaxStyle.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/TextAreaDefaults.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/TextAreaPainter.Highlight.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/TextAreaPainter.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/Token.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/TokenMarker.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/im/CompositionTextManager.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/im/CompositionTextPainter.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/im/InputMethodSupport.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/im/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/im/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/im/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/syntax/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/tools/Archiver.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/tools/ColorSelector.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/tools/CreateFont.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/tools/InstallCommander.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/tools/Tool.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/tools/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/tools/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/app/tools/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/core/PApplet.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/core/PConstants.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/core/PFont.Glyph.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/core/PFont.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/core/PGraphics.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/core/PImage.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/core/PMatrix.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/core/PMatrix2D.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/core/PMatrix3D.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/core/PShape.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/core/PShapeOBJ.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/core/PShapeSVG.Font.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/core/PShapeSVG.FontGlyph.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/core/PShapeSVG.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/core/PStyle.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/core/PSurface.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/core/PSurfaceNone.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/core/PVector.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/core/ThinkDifferent.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/core/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/core/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/core/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/data/FloatDict.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/data/FloatList.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/data/IntDict.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/data/IntList.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/data/JSONArray.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/data/JSONObject.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/data/Sort.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/data/StringDict.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/data/StringList.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/data/Table.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/data/TableRow.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/data/XML.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/data/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/data/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/data/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/event/Event.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/event/KeyEvent.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/event/MouseEvent.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/event/TouchEvent.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/event/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/event/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/event/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/mode/java/preproc/JavaLexer.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/mode/java/preproc/JavaRecognizer.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/mode/java/preproc/JavaTokenTypes.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/mode/java/preproc/PdeLexer.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/mode/java/preproc/PdePartialTokenTypes.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/mode/java/preproc/PdeRecognizer.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/mode/java/preproc/PdeTokenTypes.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/mode/java/preproc/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/mode/java/preproc/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/mode/java/preproc/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/opengl/FrameBuffer.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/opengl/LinePath.PathIterator.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/opengl/LinePath.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/opengl/LineStroker.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/opengl/PGL.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/opengl/PGraphics2D.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/opengl/PGraphics3D.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/opengl/PGraphicsOpenGL.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/opengl/PJOGL.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/opengl/PShader.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/opengl/PShapeOpenGL.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/opengl/PSurfaceJOGL.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/opengl/Texture.Parameters.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/opengl/Texture.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/opengl/package-frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/opengl/package-summary.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/processing/opengl/package-tree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/script.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/serialized-form.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/processingJavadoc/everything/stylesheet.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ParticleCommander/alex/wilton/cs4303/p1/game/App.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ParticleCommander/alex/wilton/cs4303/p1/game/CollisionChecker.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ParticleCommander/alex/wilton/cs4303/p1/game/GameModel$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ParticleCommander/alex/wilton/cs4303/p1/game/GameModel$Stage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ParticleCommander/alex/wilton/cs4303/p1/game/GameModel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ParticleCommander/alex/wilton/cs4303/p1/game/SoundEffects.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ParticleCommander/alex/wilton/cs4303/p1/game/Vector.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ParticleCommander/alex/wilton/cs4303/p1/game/entity/Bomber.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ParticleCommander/alex/wilton/cs4303/p1/game/entity/City.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ParticleCommander/alex/wilton/cs4303/p1/game/entity/CrossHair.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ParticleCommander/alex/wilton/cs4303/p1/game/entity/Entity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ParticleCommander/alex/wilton/cs4303/p1/game/entity/Missile.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ParticleCommander/alex/wilton/cs4303/p1/game/entity/MissileBase.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ParticleCommander/alex/wilton/cs4303/p1/game/entity/Particle.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ParticleCommander/alex/wilton/cs4303/p1/game/entity/Planet.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ParticleCommander/alex/wilton/cs4303/p1/game/entity/collection/BomberWave.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ParticleCommander/alex/wilton/cs4303/p1/game/entity/collection/MissileSet.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ParticleCommander/alex/wilton/cs4303/p1/game/entity/collection/ParticleWave.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ParticleCommander/alex/wilton/cs4303/p1/game/screen/EndOfLvlScreen.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ParticleCommander/alex/wilton/cs4303/p1/game/screen/GameOverScreen.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ParticleCommander/alex/wilton/cs4303/p1/game/screen/GamePlayScreen.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ParticleCommander/alex/wilton/cs4303/p1/game/screen/PreGameScreen.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ParticleCommander/alex/wilton/cs4303/p1/game/screen/Screen.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ParticleCommander/alex/wilton/cs4303/p1/game/screen/ShopScreen.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ParticleCommander/alex/wilton/cs4303/p1/main/Main.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/App.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/Faction$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/Faction$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/Faction.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/Galaxy$Link.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/Galaxy.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/GalaxySystem.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/GameState$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/GameState.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/Mission$Status.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/Mission.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/Ship.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/SoundEffects.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/Stage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/Vector.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/entity/Entity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/entity/staticImage/Planet.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/entity/staticImage/PlanetLogo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/screen/AbstractSystemScreen.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/screen/CampaignScreen.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/screen/CustomPlayScreen.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/screen/HyperJumpScreen.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/screen/MainMenuScreen.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/screen/MissionScreen$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/screen/MissionScreen.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/screen/NewCampaignScreen.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/screen/Screen.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/screen/SystemScreen.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/screen/UnImplementedScreen.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/ships/DoloeShip/DoloeShip.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/ships/DoloeShip/DoloeShipA.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/ships/DoloeShip/DoloeShipB.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/ships/DoloeShip/DoloeShipC.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/ships/DoloeShip/DoloeShipD.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/ships/DrawableShip.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/ships/QalzShip/QalzShip.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/ships/QalzShip/QalzShipA.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/ships/QalzShip/QalzShipB.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/ships/QalzShip/QalzShipC.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/ships/QalzShip/QalzShipD.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/ships/Ship.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/ships/VilltShip/VilltShip.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/ships/VilltShip/VilltShipA.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/ships/VilltShip/VilltShipB.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/ships/VilltShip/VilltShipC.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/ships/VilltShip/VilltShipD.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/ships/playerShip/PlayerShip.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/ships/playerShip/ShipA.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/ships/playerShip/ShipB.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/ships/playerShip/ShipC.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/ships/playerShip/ShipD.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/ships/playerShip/ShipE.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/main/Main.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/util/Button.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/util/ButtonFactory.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/util/DashedLineDrawer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/util/ImageCache.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/util/JSONconvertable.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/util/ShipSelector.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/savedGame.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sounds/bigExplosion.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sounds/missileLaunch.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sounds/smallExplosion.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/App.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Faction.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Galaxy.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/GalaxySystem.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/GameState.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Mission.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/SoundEffects.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Stage.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Vector.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/entity/Entity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/entity/staticImage/Planet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/entity/staticImage/PlanetLogo.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/AbstractSystemScreen.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/CampaignScreen.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/CustomPlayScreen.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/HyperJumpScreen.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/MainMenuScreen.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/MissionScreen.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/NewCampaignScreen.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/Screen.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/SystemScreen.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/UnImplementedScreen.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/DoloeShip/DoloeShip.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/DoloeShip/DoloeShipA.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/DoloeShip/DoloeShipB.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/DoloeShip/DoloeShipC.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/DoloeShip/DoloeShipD.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/DrawableShip.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/QalzShip/QalzShip.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/QalzShip/QalzShipA.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/QalzShip/QalzShipB.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/QalzShip/QalzShipC.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/QalzShip/QalzShipD.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/Ship.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/VilltShip/VilltShip.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/VilltShip/VilltShipA.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/VilltShip/VilltShipB.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/VilltShip/VilltShipC.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/VilltShip/VilltShipD.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/playerShip/PlayerShip.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/playerShip/ShipA.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/playerShip/ShipB.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/playerShip/ShipC.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/playerShip/ShipD.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/playerShip/ShipE.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/main/Main.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/util/Button.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/util/DashedLineDrawer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/util/ImageCache.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/util/JSONconvertable.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/util/ShipSelector.java" afterPath="" />
     </list>
     <ignored path="ParticleCommander.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -86,10 +457,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SystemScreen.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SystemScreen.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/SystemScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3531746">
+            <state vertical-scroll-proportion="0.0">
               <caret line="54" column="17" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -108,15 +479,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GalaxySystem.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GalaxySystem.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/GalaxySystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.075566754">
+              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1146#1147#0" expanded="true" />
-                <element signature="e#1177#1178#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -486,7 +855,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/json-simple/1.1.1" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="true" />
@@ -525,6 +894,121 @@
       <recent name="alex.wilton.cs4303.p2.game.ships.QalzShip" />
       <recent name="alex.wilton.cs4303.p1.game.screen" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Galaxy.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/GalaxySystem.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/entity/staticImage/Planet.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/HyperJumpScreen.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/images/planets/planet0.png</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/images/planets/planet10.png</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunManager" selected="Application.Main (2)">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true">
@@ -917,7 +1401,7 @@
       <workItem from="1447070213502" duration="19070000" />
       <workItem from="1447104531320" duration="6580000" />
       <workItem from="1447156144860" duration="5024000" />
-      <workItem from="1447261919994" duration="613000" />
+      <workItem from="1447261919994" duration="943000" />
     </task>
     <task id="LOCAL-00001" summary="cities can now be destroyed">
       <created>1443199942094</created>
@@ -1073,7 +1557,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128560000" />
+    <option name="totallyTimeSpent" value="128890000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="725" extended-state="6" />
@@ -1082,10 +1566,11 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16220473" sideWeight="0.5088853" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328594" sideWeight="0.503231" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.328594" sideWeight="0.49676898" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16246057" sideWeight="0.4911147" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31885594" sideWeight="0.49583334" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24717286" sideWeight="0.49340865" order="0" side_tool="false" content_ui="combo" />
@@ -1094,15 +1579,14 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24717286" sideWeight="0.5065913" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.60865086" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.60865086" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32521185" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="2029" y="159" width="1722" height="854" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16246057" sideWeight="0.4911147" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32838982" sideWeight="0.49791667" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -1433,6 +1917,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="112" column="27" selection-start-line="112" selection-start-column="27" selection-end-line="112" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1526,18 +2013,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/GalaxySystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1146#1147#0" expanded="true" />
-            <element signature="e#1177#1178#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/MissionScreen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1558,8 +2033,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/SystemScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3531746">
+        <state vertical-scroll-proportion="0.0">
           <caret line="54" column="17" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/GalaxySystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.075566754">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1577,7 +2062,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
