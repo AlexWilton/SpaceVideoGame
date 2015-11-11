@@ -9,7 +9,7 @@ import processing.core.PVector;
 import java.awt.*;
 
 
-public class MissionScreen extends Screen {
+public class MissionScreen extends AbstractSystemScreen {
 
     private Faction sysFaction;
     private Mission mission;
@@ -29,29 +29,29 @@ public class MissionScreen extends Screen {
      */
     @Override
     protected void draw() {
-        app.background(Color.BLACK.getRGB());
+        super.draw();
 
         app.textSize(30); app.fill(mission.getOriginFaction().getFactionColour().getRGB());
         app.text("MISSION", app.width / 2, 30);
         app.textSize(18);
-        app.text("Offered by " + mission.getOriginFaction().name() + " Faction", app.width / 2, 60);
+        app.text("For " + mission.getOriginFaction().name() + " Faction", app.width / 2, 60);
 
-        state.getPlayerLocation().drawPlanetInTopRight();
-        DrawableShip ship = state.getPlayerFleet().get(0).createDrawableShipInstance();
-        ship.setCenterPosition(new PVector(app.width / 10, 250));
-        ship.setOrientation(PConstants.PI / 2);
-        ship.draw();
+//        state.getPlayerLocation().drawPlanetInTopRight();
+//        DrawableShip ship = state.getPlayerFleet().get(0).createDrawableShipInstance();
+//        ship.setCenterPosition(new PVector(app.width / 10, 250));
+//        ship.setOrientation(PConstants.PI / 2);
+//        ship.draw();
 
-        app.rectMode(App.CORNER);
-        app.noFill();
-        app.rect((float) (0.2 * app.width), 100, (float) (0.6 * app.width), app.height - 200);
-
-        app.fill(Color.WHITE.getRGB());
+//        app.rectMode(App.CORNER);
+//        app.noFill();
+//        app.rect((float) (0.2 * app.width), 100, (float) (0.6 * app.width), app.height - 200);
+//
+//        app.fill(Color.WHITE.getRGB());
+//        app.textAlign(PConstants.LEFT);
+//        app.textSize(20);
+//
         app.textAlign(PConstants.LEFT);
-        app.textSize(20);
-
-        app.textAlign(PConstants.LEFT);
-        app.fill(sysFaction.getFactionColour().getRGB());
+        app.fill(mission.getOriginFaction().getFactionColour().getRGB());
         app.textSize(20);
 
         switch (mission.getStatus()){

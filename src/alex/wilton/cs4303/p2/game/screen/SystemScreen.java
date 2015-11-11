@@ -12,13 +12,10 @@ import processing.core.PVector;
 import java.awt.*;
 
 
-public class SystemScreen extends Screen {
-
-    private GalaxySystem system;
+public class SystemScreen extends AbstractSystemScreen {
 
     public SystemScreen(GameState state) {
         super(state);
-        system = state.getPlayerLocation();
     }
 
     /**
@@ -26,8 +23,7 @@ public class SystemScreen extends Screen {
      */
     @Override
     protected void draw() {
-        app.background(Color.BLACK.getRGB());
-
+        super.draw();
 
         app.textSize(30); app.fill(Color.WHITE.getRGB());
         app.text(system.getName().toUpperCase() + " SYSTEM", app.width / 2, 30);
@@ -35,20 +31,14 @@ public class SystemScreen extends Screen {
         app.fill(system.getFaction().getFactionColour().getRGB());
         app.text("System Controlled by " + system.getFaction().name(), app.width / 2, 60);
 
-        system.drawPlanetInTopRight();
-        DrawableShip ship = state.getPlayerFleet().get(0).createDrawableShipInstance();
-        ship.setCenterPosition(new PVector(app.width/10, 250));
-        ship.setOrientation(PConstants.PI/2);
-        ship.draw();
-
-        app.rectMode(App.CORNER); app.noFill();
-        app.rect((float) (0.2 * app.width), 100, (float) (0.6 * app.width), app.height - 200);
-
         app.fill(Color.WHITE.getRGB()); app.textAlign(PConstants.LEFT); app.textSize(20);
         app.text("Message from the " + system.getFaction().name() + " Faction:", 10 + app.width / 5, 135);
 
         boolean doesPlayerHaveNegativeStandingWithOwningFaction = state.getPlayerStanding(system.getFaction()) < 50;
-        if(doesPlayerHaveNegativeStandingWithOwningFaction)
+        boolean atMissionTargetSystem = state.getPlayersMission() != null && state.getPlayersMission().getTargetSystem() == system;
+        if(atMissionTargetSystem){
+            drawPrepareForBattleTextAndButtons();
+        }else if(doesPlayerHaveNegativeStandingWithOwningFaction)
             drawPrepareForBattleTextAndButtons();
         else
             drawFriendlyMsgAndButtons();
