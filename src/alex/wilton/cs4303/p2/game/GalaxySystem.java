@@ -53,9 +53,7 @@ public class GalaxySystem implements JSONconvertable {
 
 
     public void drawAsWhiteOnMap() {
-        app.stroke(Color.WHITE.getRGB(), 1000); app.noFill();
-        app.strokeWeight(5);
-        app.ellipse(mapLocation.x, mapLocation.y, 20, 20);
+        drawOnMap(Color.WHITE);
     }
 
     public void drawWhiteLineOnMap(PVector from){
@@ -65,9 +63,7 @@ public class GalaxySystem implements JSONconvertable {
     }
 
     public void drawAsBlackOnMap() {
-        app.stroke(Color.BLACK.getRGB(), 1000);
-        app.strokeWeight(5);
-        app.ellipse(mapLocation.x, mapLocation.y, 20, 20);
+        drawOnMap(Color.BLACK);
     }
 
 
@@ -79,5 +75,11 @@ public class GalaxySystem implements JSONconvertable {
 
     public boolean mouseOver(){
         return Math.pow(app.mouseX - mapLocation.x,2) + Math.pow(app.mouseY - mapLocation.y,2) < Math.pow(15,2);
+    }
+
+    public void drawOnMap(Color color) {
+        app.stroke(color.getRGB(), 1000); app.noFill();
+        app.strokeWeight(5);
+        app.ellipse(mapLocation.x, mapLocation.y, 20, 20);
     }
 }

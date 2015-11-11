@@ -23,7 +23,7 @@ public class Planet {
     }
 
     public static void draw(int systemId){
-        int planetNumber = systemId % 11;
+        int planetNumber = systemId % 10;
         Planet planet;
         if(planets.containsKey(planetNumber)){
             planet = planets.get(planetNumber);
