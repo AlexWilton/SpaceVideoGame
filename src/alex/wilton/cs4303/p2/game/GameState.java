@@ -32,9 +32,11 @@ public class GameState implements JSONconvertable {
     private GalaxySystem destinationSystem; //used for selecting a target system in a hyper-space jump
 
     private Mission playersMission; //either accepted mission that the player's on or a mission currently on offer.
+    private int bribeAmount;
+    private int playerCredits;
 
 
-    public GameState(Galaxy galaxy, GalaxySystem playerLocation, ArrayList<Ship> playerFleet, String playerName, int numberOfGalacticCredits, Faction leadsFaction, Stage gameStage, int reputationWithVillt, int reputationWithQalz, int reputationWithDoleo, boolean isGameSetupCompleted, ShipSelector gameSetupShipSelector) {
+    public GameState(Galaxy galaxy, GalaxySystem playerLocation, ArrayList<Ship> playerFleet, String playerName, int numberOfGalacticCredits, Faction leadsFaction, Stage gameStage, int reputationWithVillt, int reputationWithQalz, int reputationWithDoleo, boolean isGameSetupCompleted, ShipSelector gameSetupShipSelector, GalaxySystem destinationSystem, int bribeAmount, int playerCredits) {
         this.galaxy = galaxy;
         this.playerLocation = playerLocation;
         this.playerFleet = playerFleet;
@@ -47,6 +49,9 @@ public class GameState implements JSONconvertable {
         this.reputationWithDoleo = reputationWithDoleo;
         this.isGameSetupCompleted = isGameSetupCompleted;
         this.gameSetupShipSelector = gameSetupShipSelector;
+        this.destinationSystem = destinationSystem;
+        this.bribeAmount = bribeAmount;
+        this.playerCredits = playerCredits;
     }
 
 
@@ -65,7 +70,10 @@ public class GameState implements JSONconvertable {
         50, //neutral Qalz reputation
         50, //netural Dol'eo reputation
         false, //game not yet set up
-        ShipSelector.createDefaultSelector()
+        ShipSelector.createDefaultSelector(),
+        null,
+        0, //init bribe amount to zero
+        0  //no starting credits
         );
     }
 
@@ -80,10 +88,15 @@ public class GameState implements JSONconvertable {
             case CUSTOM_PLAY:   return new CustomPlayScreen(this);
             case NEW_CAMPAIGN:  return new NewCampaignScreen(this);
             case HYPER_JUMP:    return new HyperJumpScreen(this);
-            case MISSION: return new MissionScreen(this);
+            case MISSION:       return new MissionScreen(this);
+            case BRIBE:         return new BribeScreen(this);
             case SYSTEM:
                 if(!isGameSetupCompleted){ setupGame(); break;}
                 return new SystemScreen(this);
+            case OFFER_BRIBE:
+                processBribe();
+                gameStage = Stage.SYSTEM;
+                break;
             case MISSION_DECLINED:
                 playersMission = null;
                 gameStage = Stage.SYSTEM;
@@ -116,6 +129,21 @@ public class GameState implements JSONconvertable {
         return processStageThenGenerateScreen();
     }
 
+    private void processBribe() {
+        Faction faction = playerLocation.getFaction();
+
+        /* Increase Reputation*/
+        int standing = getPlayerStanding(faction);
+        standing += (bribeAmount/10) * Math.random();
+        int maxAllowedStanding = 65;
+        if(standing > maxAllowedStanding) standing = maxAllowedStanding;
+        setPlayerStanding(faction, standing);
+
+        /* Remove Funds */
+        playerCredits -= bribeAmount;
+        bribeAmount = 0;
+    }
+
     private void setupGame() {
         playerFleet.add(gameSetupShipSelector.getSelectedShip());
         playerLocation = galaxy.selectRandomSystem();
@@ -127,8 +155,7 @@ public class GameState implements JSONconvertable {
 
     public void setGameStage(Stage gameStage){
         this.gameStage = gameStage;
-
-        if(gameStage == Stage.SYSTEM) App.app.saveGame();
+        if(gameStage == Stage.SYSTEM) App.app.saveGame(); //save game at every transition to System screen
     }
 
     public String getPlayerName() {
@@ -160,6 +187,8 @@ public class GameState implements JSONconvertable {
         state.setInt("reputationWithDoleo", reputationWithDoleo);
         state.setBoolean("isGameSetupCompleted", isGameSetupCompleted);
         state.setJSONObject("gameSetupShipSelector", gameSetupShipSelector.asJSONObject());
+        state.setInt("playerCredits", playerCredits);
+        state.setInt("bribeAmount", bribeAmount);
         return state;
     }
 
@@ -221,5 +250,21 @@ public class GameState implements JSONconvertable {
 
     public void setPlayersMission(Mission playersMission) {
         this.playersMission = playersMission;
+    }
+
+    public int getBribeAmount() {
+        return bribeAmount;
+    }
+
+    public int getPlayerCredits() {
+        return playerCredits;
+    }
+
+    public void setBribeAmount(int bribeAmount) {
+        this.bribeAmount = bribeAmount;
+    }
+
+    public void setPlayerCredits(int playerCredits) {
+        this.playerCredits = playerCredits;
     }
 }

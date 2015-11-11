@@ -28,9 +28,10 @@ public class App extends PApplet{
         gameState = GameState.createNewGameState();
         font = App.app.loadFont("fonts/DejaVuSansCondensed-Bold-48.vlw");
         app.textFont(font);
-        gameState.setGameStage(Stage.SYSTEM);
+        gameState.setGameStage(Stage.BRIBE);
         gameState.getPlayerFleet().add(new ShipB());
         gameState.setPlayerName("Alex Testing123");
+        gameState.setPlayerCredits(100);
     }
 
     public void draw(){

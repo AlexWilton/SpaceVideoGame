@@ -17,7 +17,10 @@ public enum Stage {
     ABANDON_MISSION,
 
     FIGHT,
+
     BRIBE,
+    OFFER_BRIBE,
+
     GAME_OPTIONS,
     LOAD_SAVED_GAME,
     LOADING,

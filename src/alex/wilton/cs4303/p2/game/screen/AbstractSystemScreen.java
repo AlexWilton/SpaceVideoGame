@@ -27,7 +27,7 @@ public abstract class AbstractSystemScreen extends Screen {
     protected void draw() {
         app.background(Color.BLACK.getRGB());
 
-
+        createdDisabledButton("Credits: " + state.getPlayerCredits() + " GC", 130,30, 200, 40);
 
         system.drawPlanetInTopRight();
         DrawableShip ship = state.getPlayerFleet().get(0).createDrawableShipInstance();

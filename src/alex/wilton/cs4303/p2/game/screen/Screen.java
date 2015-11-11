@@ -69,6 +69,7 @@ public abstract class Screen{
             app.stroke(Color.WHITE.getRGB(), (disabled) ? 100 : 1000);
 
             boolean mouseOver = button.containsPoint(app.mouseX, app.mouseY);
+
             if(mouseOver && !disabled){
                 app.fill(Color.WHITE.getRGB());
             }else{
@@ -93,7 +94,6 @@ public abstract class Screen{
         screenButtons.add(new Button(text, x, y, width, height, state.getGameStage(), true));
         app.noFill(); app.stroke(Color.WHITE.getRGB(), 100);
         app.rectMode(PConstants.CENTER);
-        app.rect(130, (int) (app.height * 0.75), 180, 50);
     }
 
     protected void createTextBox(String text, int x, int y, int width, int height){
