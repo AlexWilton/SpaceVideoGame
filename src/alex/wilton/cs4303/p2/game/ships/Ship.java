@@ -18,7 +18,8 @@ public abstract class Ship{
         image = ImageCache.getImage(imageFilePath());
     }
 
-
+    private float engineStrength = 0.5f;
+    private float maxSpeed = 1.5f;
 
     /**
      * Determine Filepath of Ship image. (Based on
@@ -53,4 +54,11 @@ public abstract class Ship{
         return ship;
     }
 
+    public float getEngineStrength() {
+        return engineStrength;
+    }
+
+    public float getMaxSpeed() {
+        return maxSpeed;
+    }
 }

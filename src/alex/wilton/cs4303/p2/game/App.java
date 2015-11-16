@@ -28,10 +28,14 @@ public class App extends PApplet{
         gameState = GameState.createNewGameState();
         font = App.app.loadFont("fonts/DejaVuSansCondensed-Bold-48.vlw");
         app.textFont(font);
-        gameState.setGameStage(Stage.BRIBE);
+        gameState.setGameStage(Stage.SYSTEM);
         gameState.getPlayerFleet().add(new ShipB());
         gameState.setPlayerName("Alex Testing123");
         gameState.setPlayerCredits(100);
+        gameState.setPlayerStanding(Faction.Villt, 0);
+        gameState.setPlayerStanding(Faction.Doloe, 0);
+        gameState.setPlayerStanding(Faction.Qalz, 0);
+
     }
 
     public void draw(){
@@ -52,5 +56,5 @@ public class App extends PApplet{
 
     public void mousePressed(){ currentScreen.mousePressed();}
     public void keyPressed(KeyEvent e){ currentScreen.keyPressed(e);}
-
+    public void keyReleased(KeyEvent e){ currentScreen.keyReleased(e);}
 }

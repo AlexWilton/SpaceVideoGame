@@ -58,6 +58,8 @@ public abstract class Screen{
      */
     public void keyPressed(KeyEvent e){}
 
+    public void keyReleased(KeyEvent e){}
+
     private void drawButtons(){
         app.rectMode(App.CENTER);
         app.strokeWeight(3);
@@ -99,5 +101,6 @@ public abstract class Screen{
     protected void createTextBox(String text, int x, int y, int width, int height){
        createButton(text, x, y, width, height, null);
     }
+
 
 }

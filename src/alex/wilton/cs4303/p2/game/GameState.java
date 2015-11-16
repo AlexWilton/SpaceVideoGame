@@ -1,8 +1,13 @@
 package alex.wilton.cs4303.p2.game;
 
 import alex.wilton.cs4303.p2.game.screen.*;
+import alex.wilton.cs4303.p2.game.ships.DoloeShip.DoloeShipA;
+import alex.wilton.cs4303.p2.game.ships.DrawableShip;
+import alex.wilton.cs4303.p2.game.ships.QalzShip.QalzShipA;
 import alex.wilton.cs4303.p2.game.ships.Ship;
 
+import alex.wilton.cs4303.p2.game.ships.VilltShip.VilltShip;
+import alex.wilton.cs4303.p2.game.ships.VilltShip.VilltShipA;
 import alex.wilton.cs4303.p2.util.JSONconvertable;
 import alex.wilton.cs4303.p2.util.ShipSelector;
 import processing.data.JSONArray;
@@ -34,6 +39,7 @@ public class GameState implements JSONconvertable {
     private Mission playersMission; //either accepted mission that the player's on or a mission currently on offer.
     private int bribeAmount;
     private int playerCredits;
+    private FightState fightState;
 
 
     public GameState(Galaxy galaxy, GalaxySystem playerLocation, ArrayList<Ship> playerFleet, String playerName, int numberOfGalacticCredits, Faction leadsFaction, Stage gameStage, int reputationWithVillt, int reputationWithQalz, int reputationWithDoleo, boolean isGameSetupCompleted, ShipSelector gameSetupShipSelector, GalaxySystem destinationSystem, int bribeAmount, int playerCredits) {
@@ -90,6 +96,9 @@ public class GameState implements JSONconvertable {
             case HYPER_JUMP:    return new HyperJumpScreen(this);
             case MISSION:       return new MissionScreen(this);
             case BRIBE:         return new BribeScreen(this);
+            case FIGHT:
+                if(fightState == null) { fightState = FightState.setupFight(this); break;}
+                return new FightScreen(this);
             case SYSTEM:
                 if(!isGameSetupCompleted){ setupGame(); break;}
                 return new SystemScreen(this);
@@ -266,5 +275,9 @@ public class GameState implements JSONconvertable {
 
     public void setPlayerCredits(int playerCredits) {
         this.playerCredits = playerCredits;
+    }
+
+    public FightState getFightState() {
+        return fightState;
     }
 }

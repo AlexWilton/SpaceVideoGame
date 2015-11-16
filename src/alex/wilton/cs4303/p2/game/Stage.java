@@ -18,8 +18,8 @@ public enum Stage {
 
     FIGHT,
 
-    BRIBE,
-    OFFER_BRIBE,
+    BRIBE,                  //done
+    OFFER_BRIBE,            //done
 
     GAME_OPTIONS,
     LOAD_SAVED_GAME,
