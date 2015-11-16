@@ -125,8 +125,8 @@
       <file leaf-file-name="DrawableShip.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/DrawableShip.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.77380955">
-              <caret line="78" column="22" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.6845238">
+              <caret line="75" column="22" selection-start-line="75" selection-start-column="22" selection-end-line="75" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -943,7 +943,7 @@
       <workItem from="1447156144860" duration="5024000" />
       <workItem from="1447261919994" duration="6175000" />
       <workItem from="1447667745692" duration="6084000" />
-      <workItem from="1447676225810" duration="10006000" />
+      <workItem from="1447676225810" duration="10331000" />
     </task>
     <task id="LOCAL-00001" summary="cities can now be destroyed">
       <created>1443199942094</created>
@@ -1107,11 +1107,17 @@
       <option name="project" value="LOCAL" />
       <updated>1447270128660</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="fight screen started">
+      <created>1447696202190</created>
+      <option name="number" value="00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1447696202190</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150212000" />
+    <option name="totallyTimeSpent" value="150537000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="726" extended-state="6" />
@@ -1128,7 +1134,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16088328" sideWeight="0.4911147" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31885594" sideWeight="0.49583334" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24717286" sideWeight="0.4868421" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24717286" sideWeight="0.4868421" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1185,7 +1191,6 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="work started on missles" />
     <MESSAGE value="missles move (needs improving)" />
     <MESSAGE value="missile now can shot down particles" />
     <MESSAGE value="Shop added" />
@@ -1210,7 +1215,8 @@
     <MESSAGE value="Planets are now drawn" />
     <MESSAGE value="Re-init commit" />
     <MESSAGE value="Bribe screen added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bribe screen added" />
+    <MESSAGE value="fight screen started" />
+    <option name="LAST_COMMIT_MESSAGE" value="fight screen started" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1579,8 +1585,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/DrawableShip.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.77380955">
-          <caret line="78" column="22" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.6845238">
+          <caret line="75" column="22" selection-start-line="75" selection-start-column="22" selection-end-line="75" selection-end-column="22" />
           <folding />
         </state>
       </provider>
