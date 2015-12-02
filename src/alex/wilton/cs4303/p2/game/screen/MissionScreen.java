@@ -1,10 +1,7 @@
 package alex.wilton.cs4303.p2.game.screen;
 
 import alex.wilton.cs4303.p2.game.*;
-import alex.wilton.cs4303.p2.game.entity.staticImage.PlanetLogo;
-import alex.wilton.cs4303.p2.game.ships.DrawableShip;
 import processing.core.PConstants;
-import processing.core.PVector;
 
 import java.awt.*;
 
@@ -70,7 +67,10 @@ public class MissionScreen extends AbstractSystemScreen {
         app.text(msg, 10 + app.width / 5, 120, (float) (app.width * 0.6 - 20), 200);
         app.fill(Color.WHITE.getRGB());
         String additionInfo = "Target System is highlighted in green on the Galaxy Map.";
-        additionInfo += "\n\nNote: Abandoning the mission will slightly damage your \nreputation with the " + mission.getOriginFaction().name() + " Faction";
+        if(state.getLeadsFaction() == mission.getOriginFaction())
+            additionInfo += "\n\nNote: You can freely abandon your own factions missions.";
+        else
+            additionInfo += "\n\nNote: Abandoning the mission will slightly damage your \nreputation with the " + mission.getOriginFaction().name() + " Faction";
         app.textAlign(PConstants.CENTER);app.textSize(15);
         app.text(additionInfo, app.width/2, 310);
 
@@ -91,7 +91,7 @@ public class MissionScreen extends AbstractSystemScreen {
         app.text(additionInfo, app.width/2, 310);
 
         createButton("ACCEPT MISSION", (int) (app.width * 0.35), 400, 200, 50, Stage.MISSION_ACCEPTED);
-        createButton("DECLINE MISSION", (int) (app.width * 0.65), 400, 200, 50, Stage.MISSION_DECLINED);
+        createButton("DECLINE MISSION", (int) (app.width * 0.65), 400, 200, 50, Stage.DISCARD_MISSION);
     }
 
 }

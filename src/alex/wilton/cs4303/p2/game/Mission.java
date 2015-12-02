@@ -38,11 +38,12 @@ public class Mission {
         status = Status.ABANDONED;
         state.setPlayersMission(null);
         int standing = state.getPlayerStanding(originFaction);
-        standing -= 10; //damage standing by 10
-        state.setPlayerStanding(originFaction, standing);
+        standing -= 5; //damage standing by 5
+        //don't lose rep with you lead this faction
+        if(state.getLeadsFaction() != originFaction) state.setPlayerStanding(originFaction, standing);
     }
 
-    public enum Status {OFFERED, ACCEPTED, ABANDONED}
+    public enum Status {OFFERED, ACCEPTED, ABANDONED, COMPLETED}
     private Status status;
 
     public Status getStatus() {
@@ -72,6 +73,26 @@ public class Mission {
         int reward = 100 + distance * 115;
 
         return new Mission(originFaction, targetSystem, distance, reward);
+    }
+
+    public void processMissionAsWon(GameState state){
+        if(status != Status.ACCEPTED) return;
+        status = Status.COMPLETED;
+
+        //get reward
+        state.setPlayerCredits(state.getPlayerCredits() + reward);
+
+        //update standing
+        int newOriginStanding = state.getPlayerStanding(originFaction);
+        if(newOriginStanding < 45) newOriginStanding = 45;
+        newOriginStanding += 10;
+        int newTargetStanding = state.getPlayerStanding(targetFaction);
+        newTargetStanding -= 10;
+        state.setPlayerStanding(originFaction, newOriginStanding);
+        state.setPlayerStanding(targetFaction, newTargetStanding);
+
+        //set new owner of system
+        state.getPlayerLocation().setFaction(originFaction);
     }
 
 

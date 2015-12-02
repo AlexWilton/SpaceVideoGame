@@ -31,12 +31,17 @@ public class SystemScreen extends AbstractSystemScreen {
 
         boolean doesPlayerHaveNegativeStandingWithOwningFaction = state.getPlayerStanding(system.getFaction()) < 50;
         boolean atMissionTargetSystem = state.getPlayersMission() != null && state.getPlayersMission().getTargetSystem() == system;
+
+
         if(atMissionTargetSystem){
             drawMissionTargetTextAndButtons();
-        }else if(doesPlayerHaveNegativeStandingWithOwningFaction)
-            drawPrepareForBattleTextAndButtons();
-        else
-            drawFriendlyMsgAndButtons();
+        }else {
+            if(state.getLeadsFaction() == system.getFaction()) { drawFactionLeaderMsgAndButtons(); return;}
+            if(doesPlayerHaveNegativeStandingWithOwningFaction)
+                drawPrepareForBattleTextAndButtons();
+            else
+                drawFriendlyMsgAndButtons();
+        }
 
     }
 
@@ -79,6 +84,23 @@ public class SystemScreen extends AbstractSystemScreen {
         app.fill(Color.WHITE.getRGB());
         createButton("JUMP", (int) (app.width * 0.3), 400, 100, 50, Stage.HYPER_JUMP);
         String missionBtnText = (state.getPlayersMission() == null) ? "REQUEST\nMISSION" : "CURRENT\nMISSION";
+        createButton(missionBtnText, (int) (app.width * 0.5), 400, 100, 50, Stage.MISSION);
+        createButton("HANGAR", (int) (app.width * 0.7), 400, 100, 50, Stage.HANGAR);
+    }
+
+    private void drawFactionLeaderMsgAndButtons() {
+        app.textAlign(PConstants.LEFT);
+        app.fill(system.getFaction().getFactionColour().getRGB());
+        app.textSize(20);
+        String msg = "All Hail our mighty Faction Leader " + state.getPlayerName() + "!";
+        msg += "\n\nYou have the full undivided support of the Faction. Make yourself at home.";
+        msg += "\n\nIn order to make you The Galactic Ruler, oh benevolent leader,  " +
+                "please help us take the remaining systems not yet under our control!";
+
+        app.text(msg, 10 + app.width / 5, 150, (float) (app.width * 0.6 - 20), 200);
+        app.fill(Color.WHITE.getRGB());
+        createButton("JUMP", (int) (app.width * 0.3), 400, 100, 50, Stage.HYPER_JUMP);
+        String missionBtnText = (state.getPlayersMission() == null) ? "DEMAND\nMISSION" : "CURRENT\nMISSION";
         createButton(missionBtnText, (int) (app.width * 0.5), 400, 100, 50, Stage.MISSION);
         createButton("HANGAR", (int) (app.width * 0.7), 400, 100, 50, Stage.HANGAR);
     }

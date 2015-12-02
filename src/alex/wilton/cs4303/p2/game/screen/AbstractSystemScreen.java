@@ -29,6 +29,11 @@ public abstract class AbstractSystemScreen extends Screen {
 
         createdDisabledButton("Credits: " + state.getPlayerCredits() + " GC", 130,30, 200, 40);
 
+        String factionRepInfo = "Reputation with Faction: " + state.getPlayerStanding(system.getFaction());
+        if(state.getLeadsFaction() == state.getPlayerLocation().getFaction())
+            factionRepInfo = "You are the " + state.getLeadsFaction().name() + " Faction Leader.";
+        createdDisabledButton( factionRepInfo, app.width/2,500, 400, 30);
+
         system.drawPlanetInTopRight();
         DrawableShip ship = state.getPlayerFleet().get(0).createDrawableShipInstance();
         ship.setCenterPosition(new PVector(app.width/10, 250));

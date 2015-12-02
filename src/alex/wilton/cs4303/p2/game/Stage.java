@@ -13,7 +13,7 @@ public enum Stage {
 
     MISSION,
     MISSION_ACCEPTED,
-    MISSION_DECLINED,
+    DISCARD_MISSION,
     ABANDON_MISSION,
 
     FIGHT,
@@ -26,6 +26,6 @@ public enum Stage {
     LOADING,
     HANGAR,
     GOTO_GC_WEBSITE,
-    MAKE_JUMP, EXIT_GAME
+    MAKE_JUMP, FIGHT_WON, PROCESS_FIGHT_WIN, EXIT_GAME
 
 }

@@ -38,10 +38,17 @@ public class FightScreen extends Screen {
         drawNonShipObjects();
         ship.draw();
         for(DrawableShip enemyShip : enemies) enemyShip.draw();
+        fState.checkForCollision();
+        checkForEndFight();
 
         app.translate(fState.cameraLocation.x, fState.cameraLocation.y);
 
-        fState.checkForCollision();
+    }
+
+    private void checkForEndFight() {
+        boolean playerWins = true;
+        for(DrawableShip enemy : enemies) if(!enemy.isExploded()) playerWins = false;
+        if(playerWins) state.setGameStage(Stage.FIGHT_WON);
     }
 
     private void drawNonShipObjects() {

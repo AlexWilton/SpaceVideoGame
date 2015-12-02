@@ -1,13 +1,8 @@
 package alex.wilton.cs4303.p2.game;
 
 import alex.wilton.cs4303.p2.game.screen.*;
-import alex.wilton.cs4303.p2.game.ships.DoloeShip.DoloeShipA;
-import alex.wilton.cs4303.p2.game.ships.DrawableShip;
-import alex.wilton.cs4303.p2.game.ships.QalzShip.QalzShipA;
 import alex.wilton.cs4303.p2.game.ships.Ship;
 
-import alex.wilton.cs4303.p2.game.ships.VilltShip.VilltShip;
-import alex.wilton.cs4303.p2.game.ships.VilltShip.VilltShipA;
 import alex.wilton.cs4303.p2.util.JSONconvertable;
 import alex.wilton.cs4303.p2.util.ShipSelector;
 import processing.data.JSONArray;
@@ -23,7 +18,7 @@ public class GameState implements JSONconvertable {
     private GalaxySystem playerLocation;
     private ArrayList<Ship> playerFleet;
     private String playerName;
-    private int numberOfGalacticCredits;
+    private int playerCredits;
     private Faction leadsFaction; //null if leads no faction
     private Stage gameStage;
 
@@ -38,7 +33,6 @@ public class GameState implements JSONconvertable {
 
     private Mission playersMission; //either accepted mission that the player's on or a mission currently on offer.
     private int bribeAmount;
-    private int playerCredits;
     private FightState fightState;
 
 
@@ -47,7 +41,7 @@ public class GameState implements JSONconvertable {
         this.playerLocation = playerLocation;
         this.playerFleet = playerFleet;
         this.playerName = playerName;
-        this.numberOfGalacticCredits = numberOfGalacticCredits;
+        this.playerCredits = numberOfGalacticCredits;
         this.leadsFaction = leadsFaction;
         this.gameStage = gameStage;
         this.reputationWithVillt = reputationWithVillt;
@@ -96,9 +90,11 @@ public class GameState implements JSONconvertable {
             case HYPER_JUMP:    return new HyperJumpScreen(this);
             case MISSION:       return new MissionScreen(this);
             case BRIBE:         return new BribeScreen(this);
+            case FIGHT_WON:     return new FightWonScreen(this);
             case FIGHT:
                 if(fightState == null) { fightState = FightState.setupFight(this); break;}
                 return new FightScreen(this);
+
             case SYSTEM:
                 if(!isGameSetupCompleted){ setupGame(); break;}
                 return new SystemScreen(this);
@@ -106,7 +102,8 @@ public class GameState implements JSONconvertable {
                 processBribe();
                 gameStage = Stage.SYSTEM;
                 break;
-            case MISSION_DECLINED:
+            case DISCARD_MISSION:
+                fightState = null;
                 playersMission = null;
                 gameStage = Stage.SYSTEM;
                 break;
@@ -120,7 +117,16 @@ public class GameState implements JSONconvertable {
                 break;
 
             //... generate relevant screen for each stage
-
+            case PROCESS_FIGHT_WIN:
+                if(playersMission != null)
+                    playersMission.processMissionAsWon(this);
+                else
+                    if(leadsFaction != null){
+                        playerCredits += 500; //faction reward
+                        playerLocation.setFaction(leadsFaction);
+                    }
+                gameStage = Stage.DISCARD_MISSION;
+                break;
             case LOAD_SAVED_GAME: App.app.loadGame(); break;
             case GOTO_GC_WEBSITE:
                 App.app.link("http://galacticconquests.com/");
@@ -188,7 +194,7 @@ public class GameState implements JSONconvertable {
         for(Ship ship : playerFleet) fleetArray.append(ship.asJsonObject());
         state.setJSONArray("playerFleet", fleetArray);
         state.setString("playerName", playerName);
-        state.setInt("numberOfGalacticCredits", numberOfGalacticCredits);
+        state.setInt("playerCredits", playerCredits);
         state.setString("leadsFaction", (leadsFaction == null) ? "NONE" : leadsFaction.name());
         state.setString("gameStage", gameStage.name());
         state.setInt("reputationWithVillt", reputationWithVillt);
@@ -279,5 +285,13 @@ public class GameState implements JSONconvertable {
 
     public FightState getFightState() {
         return fightState;
+    }
+
+    public Faction getLeadsFaction() {
+        return leadsFaction;
+    }
+
+    public void setLeadsFaction(Faction leadsFaction) {
+        this.leadsFaction = leadsFaction;
     }
 }

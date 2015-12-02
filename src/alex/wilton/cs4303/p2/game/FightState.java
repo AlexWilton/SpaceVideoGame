@@ -29,9 +29,17 @@ public class FightState {
 
 
     public void checkForCollision(){
-        app.fill(Color.white.getRGB());
+        app.stroke(Color.white.getRGB());
         for(DrawableShip enemy : enemies){
             app.line(player.getCenterPosition().x, player.getCenterPosition().y, enemy.getCenterPosition().x, enemy.getCenterPosition().y);
+            boolean collision = false;
+            for(PVector weaponDamagePt : player.getWeapaonDamagePts()){
+                if(enemy.containsPt(weaponDamagePt)) { collision = true; break; }
+                app.ellipse(weaponDamagePt.x, weaponDamagePt.y, 4,4);
+            }
+            if(collision) {
+               enemy.takeDamage(5);
+            }
         }
     }
 

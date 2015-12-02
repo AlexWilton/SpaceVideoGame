@@ -82,4 +82,8 @@ public class GalaxySystem implements JSONconvertable {
         app.strokeWeight(5);
         app.ellipse(mapLocation.x, mapLocation.y, 20, 20);
     }
+
+    public void setFaction(Faction faction) {
+        this.faction = faction;
+    }
 }

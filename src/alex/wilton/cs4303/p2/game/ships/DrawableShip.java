@@ -7,6 +7,9 @@ import processing.core.PConstants;
 import processing.core.PImage;
 import processing.core.PVector;
 
+import java.awt.*;
+import java.util.ArrayList;
+
 public class DrawableShip {
     private App app = App.app;
     private Ship ship;
@@ -19,6 +22,11 @@ public class DrawableShip {
     private float orientation;
     private static final float IMAGE_ROTATE_SHIFT = PConstants.HALF_PI;
 
+    public void takeDamage(int mag) {
+        hullStrength -= mag;
+    }
+
+
     enum TurningStatus { LEFT, RIGHT, NOT_TURNING}
     private TurningStatus turningStatus = TurningStatus.NOT_TURNING;
 
@@ -27,6 +35,8 @@ public class DrawableShip {
 
     private boolean weaponFiring = false;
     private int hullStrength = 1000;
+    private int frameLeftOfExplosion = (int) (4 * app.frameRate);
+    private int laserDistance = 150;
 
     public DrawableShip(Ship ship) {
         this.ship = ship;
@@ -44,11 +54,16 @@ public class DrawableShip {
         app.rotate(orientation + IMAGE_ROTATE_SHIFT);
 
         /* Draw */
-        if(weaponFiring) drawWeaponFire();
-        app.imageMode(App.CENTER);
-        app.ellipse(0, 0, 10, 10);
-        app.image(img, 0, 0, width, height);
-
+        if(hullStrength > 0) {
+            //not destroyed
+            if (weaponFiring) drawWeaponFire();
+            app.imageMode(App.CENTER);
+            app.image(img, 0, 0, width, height);
+        }else{
+            //exploding
+            app.ellipse(0, 0, width * frameLeftOfExplosion / 100, height * frameLeftOfExplosion / 100);
+            frameLeftOfExplosion--;
+        }
 
         /* Return to normal orientation/translation*/
         app.rotate(-orientation - IMAGE_ROTATE_SHIFT);
@@ -98,6 +113,28 @@ public class DrawableShip {
     }
 
 
+
+
+    public ArrayList<PVector> getWeapaonDamagePts() {
+        ArrayList<PVector> damagePts = new ArrayList<>();
+        if(!weaponFiring) return damagePts;
+
+        int dist = 0;
+        do{
+            PVector pt = new PVector((float) (centerPosition.x + dist * Math.cos(orientation)),
+                    (float) (centerPosition.y + dist * Math.sin(orientation)));
+            damagePts.add(pt);
+            dist++;
+        }while(damagePts.get(damagePts.size()-1).dist(centerPosition) < laserDistance);
+        return damagePts;
+    }
+
+
+    public boolean containsPt(PVector pt){
+        return      Math.pow(pt.x - centerPosition.x,2)/Math.pow(width/2,2)
+                +   Math.pow(pt.y - centerPosition.y, 2)/Math.pow(height/2,2) < 1;
+    }
+
     public void accelerate(float mag){
         float x = (float) Math.cos(orientation);
         float y = (float) Math.sin(orientation);
@@ -111,7 +148,6 @@ public class DrawableShip {
         accelerate(-0.1f);
         velocity.mult(0.8f); //apply more break drag
     }
-
 
 
     public void turnLeft(){
@@ -186,6 +222,10 @@ public class DrawableShip {
 
     public void setOrientation(float orientation) {
         this.orientation = orientation;
+    }
+
+    public boolean isExploded(){
+        return frameLeftOfExplosion <= 0;
     }
 
 
