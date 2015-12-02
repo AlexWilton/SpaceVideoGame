@@ -35,7 +35,7 @@ public class DrawableShip {
 
     private boolean weaponFiring = false;
     private int hullStrength = 1000;
-    private int frameLeftOfExplosion = (int) (3 * app.frameRate);
+    private int frameLeftOfExplosion = (int) (2 * app.frameRate);
     private int laserDistance = 150;
 
     public DrawableShip(Ship ship) {
@@ -72,10 +72,14 @@ public class DrawableShip {
     }
 
     private void drawWeaponFire() {
-        int distance = 150;
         app.strokeWeight(5);
         app.stroke(Faction.Villt.getFactionColour().getRGB(), 100);
-        app.line(0, 0, 0, -distance);
+        for(int i=100; i<laserDistance; i++){
+            int x = 0, y = -i;
+            if(app.blue(app.get(x,y)) != 0) break;
+
+            app.line(0, 0, x, y);
+        }
 
     }
 
