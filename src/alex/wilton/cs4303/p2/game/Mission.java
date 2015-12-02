@@ -91,6 +91,12 @@ public class Mission {
         state.setPlayerStanding(originFaction, newOriginStanding);
         state.setPlayerStanding(targetFaction, newTargetStanding);
 
+        //check for attacking own faction
+        if(state.getLeadsFaction() == targetFaction) {
+            state.setPlayerStanding(targetFaction, 10);
+            state.setLeadsFaction(null);
+        }
+
         //set new owner of system
         state.getPlayerLocation().setFaction(originFaction);
     }

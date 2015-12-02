@@ -29,10 +29,10 @@ public abstract class AbstractSystemScreen extends Screen {
 
         createdDisabledButton("Credits: " + state.getPlayerCredits() + " GC", 130,30, 200, 40);
 
-        String factionRepInfo = "Reputation with Faction: " + state.getPlayerStanding(system.getFaction());
+        String factionRepInfo = "Faction's perception of you: " + getRepAsAdjective(state.getPlayerStanding(system.getFaction()));
         if(state.getLeadsFaction() == state.getPlayerLocation().getFaction())
             factionRepInfo = "You are the " + state.getLeadsFaction().name() + " Faction Leader.";
-        createdDisabledButton( factionRepInfo, app.width/2,500, 400, 30);
+        createdDisabledButton( factionRepInfo, app.width/2, 500, (int) (0.6 * app.width), 30);
 
         system.drawPlanetInTopRight();
         DrawableShip ship = state.getPlayerFleet().get(0).createDrawableShipInstance();
@@ -42,5 +42,19 @@ public abstract class AbstractSystemScreen extends Screen {
 
         app.rectMode(App.CORNER); app.noFill();
         app.rect((float) (0.2 * app.width), 100, (float) (0.6 * app.width), app.height - 200);
+    }
+
+    private String getRepAsAdjective(int standing){
+        if(standing <= 10) return "Traitor!";
+        if(standing <= 30) return "Enemy!";
+        if(standing <= 38) return "V. Disliked.";
+        if(standing <= 45) return "Disliked.";
+        if(standing <= 55) return "Neutral.";
+        if(standing <= 60) return "Not Bad.";
+        if(standing <= 70) return "Positive.";
+        if(standing <= 80) return "V. Positive!";
+        if(standing <= 90) return "V.V. Positive!";
+        if(standing <= 100) return "Faction Here!";
+        return "UNKNOWN";
     }
 }

@@ -34,7 +34,10 @@ public class SystemScreen extends AbstractSystemScreen {
 
 
         if(atMissionTargetSystem){
-            drawMissionTargetTextAndButtons();
+            if(state.getLeadsFaction() == system.getFaction())
+                drawAttackOwnFactionTextAndButtons();
+            else
+                drawMissionTargetTextAndButtons();
         }else {
             if(state.getLeadsFaction() == system.getFaction()) { drawFactionLeaderMsgAndButtons(); return;}
             if(doesPlayerHaveNegativeStandingWithOwningFaction)
@@ -68,6 +71,20 @@ public class SystemScreen extends AbstractSystemScreen {
         app.fill(Color.WHITE.getRGB());
         createButton("FIGHT", (int) (app.width * 0.3), 400, 100, 50, Stage.FIGHT);
         createButton("BRIBE", (int) (app.width * 0.7), 400, 100, 50, Stage.BRIBE);
+    }
+
+    private void drawAttackOwnFactionTextAndButtons(){
+        app.textAlign(PConstants.LEFT);
+        app.fill(system.getFaction().getFactionColour().getRGB());
+        app.textSize(20);
+        String msg = "Oh Mighty Faction Leader, if you decide to attack your own Faction" +
+                " we will appoint a new leader and your reputation with us will be seriously damaged! " + state.getPlayerName() + "?!";
+        msg += "\n\nPlease think very carefully about what you are doing.";
+
+        app.text(msg, 10 + app.width / 5, 150, (float) (app.width * 0.6 - 20), 200);
+        app.fill(Color.WHITE.getRGB());
+        createButton("FIGHT (DROP FACTION LEADER POSITION)", (int) (app.width * 0.35), 360, 200, 100, Stage.FIGHT);
+        createButton("ABANDON MISSION (CONTINUE AS FACTION LEADER)", (int) (app.width * 0.65), 360, 200, 100, Stage.DISCARD_MISSION);
     }
 
     private void drawFriendlyMsgAndButtons() {

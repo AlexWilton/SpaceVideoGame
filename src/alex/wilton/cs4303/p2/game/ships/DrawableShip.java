@@ -35,7 +35,7 @@ public class DrawableShip {
 
     private boolean weaponFiring = false;
     private int hullStrength = 1000;
-    private int frameLeftOfExplosion = (int) (4 * app.frameRate);
+    private int frameLeftOfExplosion = (int) (3 * app.frameRate);
     private int laserDistance = 150;
 
     public DrawableShip(Ship ship) {

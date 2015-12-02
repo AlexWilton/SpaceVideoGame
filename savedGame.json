@@ -1,8 +1,8 @@
 {
   "reputationWithDoleo": 50,
   "playerLocation": {
-    "faction": "Doloe",
-    "id": 20
+    "faction": "Qalz",
+    "id": 9
   },
   "gameSetupShipSelector": {
     "useDefault": true,
@@ -10,8 +10,8 @@
   },
   "leadsFaction": "Qalz",
   "playerName": "Alex Testing123",
-  "reputationWithVillt": 50,
-  "playerCredits": 1500,
+  "reputationWithVillt": 45,
+  "playerCredits": 2000,
   "bribeAmount": 0,
   "gameStage": "SYSTEM",
   "reputationWithQalz": 50,
@@ -54,7 +54,7 @@
       "id": 8
     },
     {
-      "faction": "Villt",
+      "faction": "Qalz",
       "id": 9
     },
     {
@@ -74,7 +74,7 @@
       "id": 13
     },
     {
-      "faction": "Qalz",
+      "faction": "Doloe",
       "id": 14
     },
     {
@@ -86,7 +86,7 @@
       "id": 16
     },
     {
-      "faction": "Doloe",
+      "faction": "Qalz",
       "id": 17
     },
     {
