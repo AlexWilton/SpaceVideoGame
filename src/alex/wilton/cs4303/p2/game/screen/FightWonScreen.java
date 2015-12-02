@@ -44,6 +44,8 @@ public class FightWonScreen extends AbstractSystemScreen {
             msg += "\n\nAs a token of gratitude we will transfer you 500 GC for your personal use.";
             app.text(msg, 10 + app.width / 5, 150, (float) (app.width * 0.6 - 20), 200);
 
+        }else{
+            //todo  win fight against faction who doesn't like me screen (with no mission)
         }
 
 

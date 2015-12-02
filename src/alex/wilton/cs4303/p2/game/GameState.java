@@ -103,7 +103,6 @@ public class GameState implements JSONconvertable {
                 gameStage = Stage.SYSTEM;
                 break;
             case DISCARD_MISSION:
-                fightState = null;
                 playersMission = null;
                 gameStage = Stage.SYSTEM;
                 break;
@@ -118,14 +117,19 @@ public class GameState implements JSONconvertable {
 
             //... generate relevant screen for each stage
             case PROCESS_FIGHT_WIN:
-                if(playersMission != null)
+                if(playersMission != null && playerLocation == playersMission.getTargetSystem()) {
                     playersMission.processMissionAsWon(this);
-                else
-                    if(leadsFaction != null){
+                    playersMission = null;
+                }else if(leadsFaction != null){
                         playerCredits += 500; //faction reward
                         playerLocation.setFaction(leadsFaction);
+                    }else{
+                        int factionStanding = getPlayerStanding(playerLocation.getFaction());
+                        factionStanding -= 10;
+                        setPlayerStanding(playerLocation.getFaction(), factionStanding);
                     }
-                gameStage = Stage.DISCARD_MISSION;
+                fightState = null;
+                gameStage = Stage.SYSTEM;
                 break;
             case LOAD_SAVED_GAME: App.app.loadGame(); break;
             case GOTO_GC_WEBSITE:
@@ -231,6 +235,8 @@ public class GameState implements JSONconvertable {
     }
 
     public void setPlayerStanding(Faction faction, int newReputation) {
+        if(newReputation < 0 ) newReputation = 0; //min rep
+        if(newReputation > 100) newReputation = 100; //max rep
         switch (faction){
             case Doloe: reputationWithDoleo = newReputation; break;
             case Qalz: reputationWithQalz = newReputation; break;

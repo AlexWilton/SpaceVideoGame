@@ -3,7 +3,6 @@ package alex.wilton.cs4303.p2.game.screen;
 import alex.wilton.cs4303.p2.game.App;
 import alex.wilton.cs4303.p2.game.GalaxySystem;
 import alex.wilton.cs4303.p2.game.GameState;
-import alex.wilton.cs4303.p2.game.Stage;
 import alex.wilton.cs4303.p2.game.ships.DrawableShip;
 import processing.core.PConstants;
 import processing.core.PVector;
@@ -29,7 +28,7 @@ public abstract class AbstractSystemScreen extends Screen {
 
         createdDisabledButton("Credits: " + state.getPlayerCredits() + " GC", 130,30, 200, 40);
 
-        String factionRepInfo = "Faction's perception of you: " + getRepAsAdjective(state.getPlayerStanding(system.getFaction()));
+        String factionRepInfo = "Faction's perception of you: " + standingDescription(state.getPlayerStanding(system.getFaction()));
         if(state.getLeadsFaction() == state.getPlayerLocation().getFaction())
             factionRepInfo = "You are the " + state.getLeadsFaction().name() + " Faction Leader.";
         createdDisabledButton( factionRepInfo, app.width/2, 500, (int) (0.6 * app.width), 30);
@@ -44,17 +43,22 @@ public abstract class AbstractSystemScreen extends Screen {
         app.rect((float) (0.2 * app.width), 100, (float) (0.6 * app.width), app.height - 200);
     }
 
-    private String getRepAsAdjective(int standing){
-        if(standing <= 10) return "Traitor!";
-        if(standing <= 30) return "Enemy!";
-        if(standing <= 38) return "V. Disliked.";
-        if(standing <= 45) return "Disliked.";
-        if(standing <= 55) return "Neutral.";
-        if(standing <= 60) return "Not Bad.";
-        if(standing <= 70) return "Positive.";
-        if(standing <= 80) return "V. Positive!";
-        if(standing <= 90) return "V.V. Positive!";
-        if(standing <= 100) return "Faction Here!";
-        return "UNKNOWN";
+    private String standingDescription(int standing){
+        String str = "";
+        switch (standing - standing % 10){
+            case  0: str =  "Traitor!"; break;
+            case  10: str = "Dirt!"; break;
+            case  20: str =  "Enemy!"; break;
+            case  30: str =  "V. Disliked"; break;
+            case  40: str =  "Disliked"; break;
+            case  50: str =  "Neutral"; break;
+            case  60: str =  "Not Bad"; break;
+            case  70: str =  "Positive"; break;
+            case  80: str =  "V. Positive!"; break;
+            case  90: str =  "V.V. Positive!"; break;
+            case  100: str =  "Faction Hero!"; break;
+        }
+        str += " (" + standing + ")";
+        return str;
     }
 }
