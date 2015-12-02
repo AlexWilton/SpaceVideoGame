@@ -15,7 +15,7 @@ public class FightScreen extends Screen {
     private final DrawableShip ship;
     private final ArrayList<DrawableShip> enemies;
 
-    private static final int mapRadius = 1200;
+    public static final int mapRadius = 700;
 
     public FightScreen(GameState state) {
         super(state);
@@ -29,7 +29,6 @@ public class FightScreen extends Screen {
      */
     @Override
     protected void draw() {
-        app.background(Color.black.getRGB());
         app.fill(Color.WHITE.getRGB());
         app.text("Camera Location: (" + (int)fState.cameraLocation.x + "," + (int)fState.cameraLocation.y + ")", 100, 20 );
         app.text("SHIP Location: (" + (int)ship.getCenterPosition().x + "," + (int)ship.getCenterPosition().y + ")", 100, 50 );
@@ -38,13 +37,17 @@ public class FightScreen extends Screen {
 
         drawNonShipObjects();
         ship.draw();
+        for(DrawableShip enemyShip : enemies) enemyShip.draw();
 
         app.translate(fState.cameraLocation.x, fState.cameraLocation.y);
+
+        fState.checkForCollision();
     }
 
     private void drawNonShipObjects() {
 
-        app.background(Color.BLACK.getRGB());
+        app.background(Color.gray.getRGB());
+        app.fill(Color.BLACK.getRGB());
         app.ellipse(0, 0, mapRadius, mapRadius);
 
         /* Grid Lines*/
@@ -119,6 +122,8 @@ public class FightScreen extends Screen {
             case 'S':
             case 's':
                 ship.brake(); break;
+            case ' ':
+                ship.fireWeapon(); break;
         }
 
     }
@@ -146,7 +151,9 @@ public class FightScreen extends Screen {
                 break;
             case 'W': case 'w':
             case 'S': case 's':
-                ship.setAcceleration(new PVector(0,0));
+                ship.setAcceleration(new PVector(0,0)); break;
+            case ' ':
+                ship.stopFiringWeapon(); break;
         }
     }
 

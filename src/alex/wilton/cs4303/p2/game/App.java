@@ -28,10 +28,10 @@ public class App extends PApplet{
         gameState = GameState.createNewGameState();
         font = App.app.loadFont("fonts/DejaVuSansCondensed-Bold-48.vlw");
         app.textFont(font);
-        gameState.setGameStage(Stage.MAIN_MENU);
+        gameState.setGameStage(Stage.FIGHT);
         gameState.getPlayerFleet().add(new ShipB());
-//        gameState.setPlayerName("Alex Testing123");
-        gameState.setPlayerCredits(100);
+        gameState.setPlayerName("Alex Testing123");
+        gameState.setPlayerCredits(1000);
         gameState.setPlayerStanding(Faction.Villt, 0);
         gameState.setPlayerStanding(Faction.Doloe, 0);
         gameState.setPlayerStanding(Faction.Qalz, 0);

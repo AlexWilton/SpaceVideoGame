@@ -1,6 +1,8 @@
 package alex.wilton.cs4303.p2.game.ships;
 
 import alex.wilton.cs4303.p2.game.App;
+import alex.wilton.cs4303.p2.game.Faction;
+import alex.wilton.cs4303.p2.game.ships.VilltShip.VilltShip;
 import processing.core.PConstants;
 import processing.core.PImage;
 import processing.core.PVector;
@@ -23,6 +25,9 @@ public class DrawableShip {
     enum SideThrusterStatus { LEFT_THRUST, RIGHT_THRUST, NO_SIDE_THRUST}
     private SideThrusterStatus sideThrusterStatus = SideThrusterStatus.NO_SIDE_THRUST;
 
+    private boolean weaponFiring = false;
+    private int hullStrength = 1000;
+
     public DrawableShip(Ship ship) {
         this.ship = ship;
         img = ship.getImage();
@@ -39,12 +44,23 @@ public class DrawableShip {
         app.rotate(orientation + IMAGE_ROTATE_SHIFT);
 
         /* Draw */
+        if(weaponFiring) drawWeaponFire();
         app.imageMode(App.CENTER);
+        app.ellipse(0, 0, 10, 10);
         app.image(img, 0, 0, width, height);
+
 
         /* Return to normal orientation/translation*/
         app.rotate(-orientation - IMAGE_ROTATE_SHIFT);
         app.translate(-centerPosition.x, -centerPosition.y);
+
+    }
+
+    private void drawWeaponFire() {
+        int distance = 150;
+        app.strokeWeight(5);
+        app.stroke(Faction.Villt.getFactionColour().getRGB(), 100);
+        app.line(0, 0, 0, -distance);
 
     }
 
@@ -115,6 +131,12 @@ public class DrawableShip {
     public void rightThrust(){ sideThrusterStatus = SideThrusterStatus.RIGHT_THRUST; }
 
     public void stopSideThrust(){ sideThrusterStatus = SideThrusterStatus.NO_SIDE_THRUST; }
+
+
+    public void fireWeapon(){ weaponFiring = true; }
+
+    public void stopFiringWeapon(){ weaponFiring = false; }
+
 
     public Ship getShip(){return ship;}
 
