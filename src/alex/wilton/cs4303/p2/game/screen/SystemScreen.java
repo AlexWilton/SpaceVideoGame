@@ -40,12 +40,29 @@ public class SystemScreen extends AbstractSystemScreen {
                 drawMissionTargetTextAndButtons();
         }else {
             if(state.getLeadsFaction() == system.getFaction()) { drawFactionLeaderMsgAndButtons(); return;}
-            if(doesPlayerHaveNegativeStandingWithOwningFaction)
-                drawPrepareForBattleTextAndButtons();
+            if(doesPlayerHaveNegativeStandingWithOwningFaction) {
+                if(state.isJumpAllowed())
+                    drawJumpAllowedTextAndButtons();
+                else
+                    drawPrepareForBattleTextAndButtons();
+            }
             else
                 drawFriendlyMsgAndButtons();
         }
 
+    }
+
+    private void drawJumpAllowedTextAndButtons() {
+        app.textAlign(PConstants.LEFT);
+        app.fill(system.getFaction().getFactionColour().getRGB());
+        app.textSize(20);
+        String msg = "Please leave the " + system.getName() + " System Captain " + state.getPlayerName() + ".";
+        msg += "\n\nYou have defeated our forces, but we will be back to reclaim this system as soon as you leave.";
+        msg += "\n\nWe cannot stop you from using the hyper-jump link.";
+
+        app.text(msg, 10 + app.width / 5, 150, (float) (app.width * 0.6 - 20), 200);
+        app.fill(Color.WHITE.getRGB());
+        createButton("JUMP", (int) (app.width * 0.5), 400, 100, 50, Stage.HYPER_JUMP);
     }
 
     private void drawMissionTargetTextAndButtons() {

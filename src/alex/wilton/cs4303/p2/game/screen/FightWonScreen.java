@@ -45,12 +45,20 @@ public class FightWonScreen extends AbstractSystemScreen {
             app.text(msg, 10 + app.width / 5, 150, (float) (app.width * 0.6 - 20), 200);
 
         }else{
-            //todo  win fight against faction who doesn't like me screen (with no mission)
+            app.fill(Color.WHITE.getRGB()); app.textAlign(PConstants.LEFT); app.textSize(20);
+            app.text("Message from the " + state.getPlayerLocation().getFaction().name() + " Faction:", 10 + app.width / 5, 135);
+            app.textAlign(PConstants.LEFT);
+            app.fill(system.getFaction().getFactionColour().getRGB());
+            app.textSize(20);
+            String msg = "You may have won this battle, but we will be back to reclaim the " + system.getName() + " System as soon as you leave!";
+            msg += "\n\nAs we no longer have any forces in this system, we cannot stop you from using our hyper-space link.";
+            app.text(msg, 10 + app.width / 5, 150, (float) (app.width * 0.6 - 20), 200);
+
         }
 
 
         app.fill(Color.WHITE.getRGB());
-        createButton("Return To System Screen", (int) (app.width * 0.5), 400, 150, 50, Stage.PROCESS_FIGHT_WIN);
+        createButton("System Screen", (int) (app.width * 0.5), 400, 150, 50, Stage.PROCESS_FIGHT_WIN);
     }
 
 

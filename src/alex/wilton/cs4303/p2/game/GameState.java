@@ -35,6 +35,8 @@ public class GameState implements JSONconvertable {
     private int bribeAmount;
     private FightState fightState;
 
+    private boolean jumpAllowed; //can player jump if player is at a system owned by an enemy faction.
+
 
     public GameState(Galaxy galaxy, GalaxySystem playerLocation, ArrayList<Ship> playerFleet, String playerName, int numberOfGalacticCredits, Faction leadsFaction, Stage gameStage, int reputationWithVillt, int reputationWithQalz, int reputationWithDoleo, boolean isGameSetupCompleted, ShipSelector gameSetupShipSelector, GalaxySystem destinationSystem, int bribeAmount, int playerCredits) {
         this.galaxy = galaxy;
@@ -121,12 +123,15 @@ public class GameState implements JSONconvertable {
                     playersMission.processMissionAsWon(this);
                     playersMission = null;
                 }else if(leadsFaction != null){
-                        playerCredits += 500; //faction reward
-                        playerLocation.setFaction(leadsFaction);
-                    }else{
+                        //lose standing with faction player has attacked.
                         int factionStanding = getPlayerStanding(playerLocation.getFaction());
                         factionStanding -= 10;
                         setPlayerStanding(playerLocation.getFaction(), factionStanding);
+
+                        playerCredits += 500; //faction reward
+                        playerLocation.setFaction(leadsFaction); //player's faction takes over system
+                    }else{
+                        jumpAllowed = true;  //right earnt to jump.
                     }
                 fightState = null;
                 gameStage = Stage.SYSTEM;
@@ -140,6 +145,7 @@ public class GameState implements JSONconvertable {
                 playerLocation = destinationSystem;
                 destinationSystem = null;
                 gameStage = Stage.SYSTEM;
+                jumpAllowed  = false;  //reset after jump
                 break;
             case EXIT_GAME: System.exit(0);
             default: return new UnImplementedScreen(gameStage.name(), this);
@@ -299,5 +305,13 @@ public class GameState implements JSONconvertable {
 
     public void setLeadsFaction(Faction leadsFaction) {
         this.leadsFaction = leadsFaction;
+    }
+
+    public boolean isJumpAllowed() {
+        return jumpAllowed;
+    }
+
+    public void setJumpAllowed(boolean jumpAllowed) {
+        this.jumpAllowed = jumpAllowed;
     }
 }
