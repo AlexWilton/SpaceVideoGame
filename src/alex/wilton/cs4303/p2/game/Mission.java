@@ -64,8 +64,10 @@ public class Mission {
 
         //choose target
         GalaxySystem targetSystem;
+        int attemptNum = 1;
         do{
             targetSystem = state.getGalaxy().selectRandomSystem();
+            if(attemptNum++ == 100000) return null;
         } while(targetSystem.getFaction() == originFaction);
 
         //calculate distance+reward

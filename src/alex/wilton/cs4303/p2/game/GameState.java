@@ -92,7 +92,9 @@ public class GameState implements JSONconvertable {
             case HYPER_JUMP:    return new HyperJumpScreen(this);
             case MISSION:       return new MissionScreen(this);
             case BRIBE:         return new BribeScreen(this);
+            case GAME_VICTORY:  return new VictoryScreen(this);
             case FIGHT_WON:     return new FightWonScreen(this);
+            case FACTION_LEADER_OFFER: return new LeadershipOfferScreen(this);
             case FIGHT:
                 if(fightState == null) { fightState = FightState.setupFight(this); break;}
                 return new FightScreen(this);
@@ -116,7 +118,10 @@ public class GameState implements JSONconvertable {
                 playersMission.abandonMission(this);
                 gameStage = Stage.SYSTEM;
                 break;
-
+            case RESET:
+                App.app.newGame();
+                gameStage = Stage.MAIN_MENU;
+                break;
             //... generate relevant screen for each stage
             case PROCESS_FIGHT_WIN:
                 if(playersMission != null && playerLocation == playersMission.getTargetSystem()) {
@@ -135,6 +140,17 @@ public class GameState implements JSONconvertable {
                     }
                 fightState = null;
                 gameStage = Stage.SYSTEM;
+                checkForVictory();
+                break;
+            case BECOME_LEADER:
+                for(Faction faction : Faction.values()){
+                    if(getPlayerStanding(faction) == 100){ leadsFaction = faction; break; }
+                }
+                gameStage = Stage.SYSTEM;
+                break;
+            case REJECT_LEADERSHIP_OFFER:
+                setPlayerStanding(getPlayerLocation().getFaction(), 90);
+                gameStage = Stage.SYSTEM;
                 break;
             case LOAD_SAVED_GAME: App.app.loadGame(); break;
             case GOTO_GC_WEBSITE:
@@ -146,12 +162,28 @@ public class GameState implements JSONconvertable {
                 destinationSystem = null;
                 gameStage = Stage.SYSTEM;
                 jumpAllowed  = false;  //reset after jump
+                checkForFactionLeaderOffer();
                 break;
             case EXIT_GAME: System.exit(0);
             default: return new UnImplementedScreen(gameStage.name(), this);
         }
 
         return processStageThenGenerateScreen();
+    }
+
+    private void checkForVictory() {
+        if(leadsFaction != null){
+            boolean victory = true;
+            for(GalaxySystem system : galaxy.getSystems()){
+                if(system.getFaction() != leadsFaction) victory = false;
+            }
+            if(victory) gameStage = Stage.GAME_VICTORY;
+        }
+    }
+
+    private void checkForFactionLeaderOffer() {
+        if(leadsFaction != null) return;
+        if(getPlayerStanding(playerLocation.getFaction()) == 100) gameStage = Stage.FACTION_LEADER_OFFER;
     }
 
     private void processBribe() {

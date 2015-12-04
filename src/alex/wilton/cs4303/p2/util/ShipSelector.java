@@ -44,10 +44,11 @@ public class ShipSelector implements JSONconvertable{
             int shipCenterX = shipX + drawableShip.getWidth() / 2;
             int shipCenterY = shipY + drawableShip.getHeight() / 2;
             drawableShip.setCenterPosition(new PVector(shipCenterX, shipCenterY));
+            drawableShip.setOrientation(-App.HALF_PI);
             drawableShip.draw();
 
             if(i == selectedShipIndex)
-               app.rect(shipX, y + SELECTOR_PADDING, drawableShip.getWidth(), height - 2*SELECTOR_PADDING, 20);
+               app.rect(shipX-5, y + SELECTOR_PADDING, drawableShip.getWidth()+10, height - 2*SELECTOR_PADDING, 20);
 
         }
     }

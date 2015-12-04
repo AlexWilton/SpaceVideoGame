@@ -8,12 +8,11 @@ import java.awt.*;
 
 public class MissionScreen extends AbstractSystemScreen {
 
-    private Faction sysFaction;
+
     private Mission mission;
 
     public MissionScreen(GameState state) {
         super(state);
-        sysFaction = state.getPlayerLocation().getFaction();
         mission = state.getPlayersMission();
         if(mission == null){
             mission = Mission.createMission(state);
@@ -27,6 +26,8 @@ public class MissionScreen extends AbstractSystemScreen {
     @Override
     protected void draw() {
         super.draw();
+
+        if(mission == null){ showNoMissionAvailable(); return;}
 
         app.textSize(30); app.fill(mission.getOriginFaction().getFactionColour().getRGB());
         app.text("MISSION", app.width / 2, 30);
@@ -44,6 +45,18 @@ public class MissionScreen extends AbstractSystemScreen {
 
 
     }
+
+    private void showNoMissionAvailable() {
+        app.textSize(30); app.fill(Color.WHITE.getRGB());
+        app.text("NO POSSIBLE MISSIONS", app.width / 2, 30);
+        app.textSize(18);
+        app.textAlign(PConstants.LEFT);
+        app.textSize(20);
+        String msg = "NO MISSIONS CURRENTLY AVAILABLE!";
+        app.text(msg, 10 + app.width / 5, 120, (float) (app.width * 0.6 - 20), 200);
+        createButton("SYSTEM SCREEN", (int) (app.width * 0.5), 400, 200, 50, Stage.SYSTEM);
+    }
+
 
     private void showCurrentMissionInfo() {
         String msg = "STATUS: In Progress" +

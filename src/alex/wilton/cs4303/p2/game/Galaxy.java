@@ -35,7 +35,6 @@ public class Galaxy implements JSONconvertable{
             Faction faction = factionIterator.next();
             galaxySystems[systemIndex] = new GalaxySystem(id, faction, getSystemName(id), getSystemMapLocation(id));
         }
-
         Set<Link> links = getDefaultLinks();
 
         return new Galaxy(galaxySystems, links);

@@ -25,20 +25,24 @@ public class App extends PApplet{
     public void setup() {
         frame.setResizable(false);
         size(SCREEN_WIDTH, SCREEN_HEIGHT);
-        gameState = GameState.createNewGameState();
-        gameState.setPlayersMission(new Mission(Faction.Doloe, gameState.getPlayerLocation(), 4, 300));
-        gameState.getPlayersMission().setStatus(Mission.Status.ACCEPTED);
         font = App.app.loadFont("fonts/DejaVuSansCondensed-Bold-48.vlw");
         app.textFont(font);
-        gameState.setGameStage(Stage.FIGHT);
+        newGame();
+//        gameState.setPlayersMission(new Mission(Faction.Doloe, gameState.getPlayerLocation(), 4, 300));
+//        gameState.getPlayersMission().setStatus(Mission.Status.ACCEPTED);
+        gameState.setGameStage(Stage.SYSTEM);
 //        gameState.setLeadsFaction(Faction.Qalz);
         gameState.getPlayerFleet().add(new ShipB());
         gameState.setPlayerName("Alex Testing123");
         gameState.setPlayerCredits(1000);
-        gameState.setPlayerStanding(Faction.Villt, 50);
+        gameState.setPlayerStanding(Faction.Villt, 100);
         gameState.setPlayerStanding(Faction.Doloe, 50);
         gameState.setPlayerStanding(Faction.Qalz, 50);
 
+    }
+
+    public void newGame(){
+        gameState = GameState.createNewGameState();
     }
 
     public void draw(){
