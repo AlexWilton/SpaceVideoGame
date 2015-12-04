@@ -2,15 +2,15 @@
   "reputationWithDoleo": 50,
   "playerLocation": {
     "faction": "Villt",
-    "id": 4
+    "id": 6
   },
   "gameSetupShipSelector": {
     "useDefault": true,
     "selectShipIndex": 0
   },
-  "leadsFaction": "Villt",
+  "leadsFaction": "NONE",
   "playerName": "Alex Testing123",
-  "reputationWithVillt": 100,
+  "reputationWithVillt": 50,
   "playerCredits": 1000,
   "bribeAmount": 0,
   "gameStage": "SYSTEM",
@@ -22,11 +22,11 @@
       "id": 0
     },
     {
-      "faction": "Villt",
+      "faction": "Qalz",
       "id": 1
     },
     {
-      "faction": "Villt",
+      "faction": "Doloe",
       "id": 2
     },
     {
@@ -34,11 +34,11 @@
       "id": 3
     },
     {
-      "faction": "Villt",
+      "faction": "Qalz",
       "id": 4
     },
     {
-      "faction": "Villt",
+      "faction": "Doloe",
       "id": 5
     },
     {
@@ -46,11 +46,11 @@
       "id": 6
     },
     {
-      "faction": "Villt",
+      "faction": "Qalz",
       "id": 7
     },
     {
-      "faction": "Villt",
+      "faction": "Doloe",
       "id": 8
     },
     {
@@ -58,11 +58,11 @@
       "id": 9
     },
     {
-      "faction": "Villt",
+      "faction": "Qalz",
       "id": 10
     },
     {
-      "faction": "Villt",
+      "faction": "Doloe",
       "id": 11
     },
     {
@@ -70,11 +70,11 @@
       "id": 12
     },
     {
-      "faction": "Villt",
+      "faction": "Qalz",
       "id": 13
     },
     {
-      "faction": "Villt",
+      "faction": "Doloe",
       "id": 14
     },
     {
@@ -82,11 +82,11 @@
       "id": 15
     },
     {
-      "faction": "Villt",
+      "faction": "Qalz",
       "id": 16
     },
     {
-      "faction": "Villt",
+      "faction": "Doloe",
       "id": 17
     },
     {
@@ -94,11 +94,11 @@
       "id": 18
     },
     {
-      "faction": "Villt",
+      "faction": "Qalz",
       "id": 19
     },
     {
-      "faction": "Villt",
+      "faction": "Doloe",
       "id": 20
     },
     {
@@ -106,7 +106,7 @@
       "id": 21
     },
     {
-      "faction": "Villt",
+      "faction": "Qalz",
       "id": 22
     }
   ]},

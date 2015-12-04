@@ -93,6 +93,7 @@ public class GameState implements JSONconvertable {
             case MISSION:       return new MissionScreen(this);
             case BRIBE:         return new BribeScreen(this);
             case GAME_VICTORY:  return new VictoryScreen(this);
+            case GAME_STALEMATE: return new StaleMateScreen(this);
             case FIGHT_WON:     return new FightWonScreen(this);
             case FACTION_LEADER_OFFER: return new LeadershipOfferScreen(this);
             case FIGHT:
@@ -143,9 +144,9 @@ public class GameState implements JSONconvertable {
                 checkForVictory();
                 break;
             case BECOME_LEADER:
-                for(Faction faction : Faction.values()){
-                    if(getPlayerStanding(faction) == 100){ leadsFaction = faction; break; }
-                }
+                Faction faction = playerLocation.getFaction();
+                if(getPlayerStanding(faction) == 100) leadsFaction = faction;
+
                 gameStage = Stage.SYSTEM;
                 break;
             case REJECT_LEADERSHIP_OFFER:
@@ -172,13 +173,14 @@ public class GameState implements JSONconvertable {
     }
 
     private void checkForVictory() {
-        if(leadsFaction != null){
-            boolean victory = true;
-            for(GalaxySystem system : galaxy.getSystems()){
-                if(system.getFaction() != leadsFaction) victory = false;
-            }
-            if(victory) gameStage = Stage.GAME_VICTORY;
-        }
+        Faction controllingFaction = galaxy.factionInControl();
+        if(controllingFaction == null) return;
+
+        if(controllingFaction == leadsFaction)
+            gameStage = Stage.GAME_VICTORY;
+        else
+            gameStage = Stage.GAME_STALEMATE;
+
     }
 
     private void checkForFactionLeaderOffer() {
@@ -345,5 +347,9 @@ public class GameState implements JSONconvertable {
 
     public void setJumpAllowed(boolean jumpAllowed) {
         this.jumpAllowed = jumpAllowed;
+    }
+
+    public void setPlayerLocation(GalaxySystem playerLocation) {
+        this.playerLocation = playerLocation;
     }
 }

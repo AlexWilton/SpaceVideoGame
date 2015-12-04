@@ -15,7 +15,7 @@ public class FightScreen extends Screen {
     private final DrawableShip ship;
     private final ArrayList<DrawableShip> enemies;
 
-    public static final int mapRadius = 700;
+    public static final int mapRadius = 1200;
 
     public FightScreen(GameState state) {
         super(state);
@@ -43,6 +43,8 @@ public class FightScreen extends Screen {
 
         app.translate(fState.cameraLocation.x, fState.cameraLocation.y);
 
+        app.fill(Color.white.getRGB());
+        app.text("FPS: " + (int)app.frameRate, app.width/2, 30);
     }
 
     private void checkForEndFight() {
@@ -68,6 +70,8 @@ public class FightScreen extends Screen {
             app.line(-mapRadius, i, mapRadius, i);
         }
 
+        /* Planet */
+        state.getPlayerLocation().drawPlanetInCenterForFightScreen();
 
 
     }

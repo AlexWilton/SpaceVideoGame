@@ -1,5 +1,6 @@
 package alex.wilton.cs4303.p2.game;
 
+import alex.wilton.cs4303.p2.game.entity.staticImage.Planet;
 import alex.wilton.cs4303.p2.game.screen.FightScreen;
 import alex.wilton.cs4303.p2.game.ships.DoloeShip.DoloeShipA;
 import alex.wilton.cs4303.p2.game.ships.DrawableShip;
@@ -7,9 +8,7 @@ import alex.wilton.cs4303.p2.game.ships.QalzShip.QalzShipA;
 import alex.wilton.cs4303.p2.game.ships.VilltShip.VilltShipA;
 import processing.core.PVector;
 
-import java.awt.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class FightState {
     private App app = App.app;
@@ -29,7 +28,8 @@ public class FightState {
 
 
     public void checkForCollision(){
-        app.stroke(Color.white.getRGB());
+
+        //check for enemy taking damage
         for(DrawableShip enemy : enemies){
             boolean collision = false;
             for(PVector weaponDamagePt : player.getWeapaonDamagePts()){
@@ -39,6 +39,27 @@ public class FightState {
                enemy.takeDamage(5);
             }
         }
+
+        for(PVector pt : player.getCircumferencePts()) app.ellipse(pt.x, pt.y, 3, 3);
+        Planet planet = location.getPlanet();
+        for(PVector pt : planet.getCircumferencePts()) app.ellipse(pt.x, pt.y, 3, 3);
+
+        // prevent object (e.g. ships and planet) collision.
+        ArrayList<DrawableObject> objects = new ArrayList<>(); objects.addAll(enemies); objects.add(player); objects.add(planet);
+        for(DrawableObject objA : objects){
+            if(!(objA instanceof DrawableShip)) continue;
+            for(PVector ptAroundA : objA.getCircumferencePts()) {
+                for (DrawableObject objB : objects) {
+                    if(objA == objB) continue;
+                    if(objB.containsPt(ptAroundA)){
+                        ((DrawableShip) objA).impulseAwayFrom(objB.getCenterPosition());
+                        return;
+                    }
+
+                }
+            }
+        }
+
     }
 
     public static FightState setupFight(GameState state){
@@ -61,12 +82,12 @@ public class FightState {
     private static PVector getRandomPosition() {
         float x,y, distanceToPlanet;
         do{
-            x = (float) Math.random() * FightScreen.mapRadius;
-            y = (float) Math.random() * FightScreen.mapRadius;
+            x = (float) Math.random() * FightScreen.mapRadius/2;
+            y = (float) Math.random() * FightScreen.mapRadius/2;
             if(Math.random() < 0.5) x *= -1;
             if(Math.random() < 0.5) y *= -1;
             distanceToPlanet = App.dist(0,0,x,y);
-        }while( !(distanceToPlanet < FightScreen.mapRadius - 400 && distanceToPlanet > 150));
+        }while( !(distanceToPlanet < FightScreen.mapRadius/2 - 100 && distanceToPlanet > 150));
         return new PVector(x,y);
     }
 

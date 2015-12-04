@@ -86,4 +86,13 @@ public class GalaxySystem implements JSONconvertable {
     public void setFaction(Faction faction) {
         this.faction = faction;
     }
+
+    public void drawPlanetInCenterForFightScreen() {
+        Planet planet = Planet.getPlanet(id);
+        planet.drawInCenter();
+    }
+
+    public Planet getPlanet() {
+        return Planet.getPlanet(id);
+    }
 }

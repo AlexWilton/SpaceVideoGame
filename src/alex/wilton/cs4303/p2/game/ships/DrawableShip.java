@@ -1,6 +1,7 @@
 package alex.wilton.cs4303.p2.game.ships;
 
 import alex.wilton.cs4303.p2.game.App;
+import alex.wilton.cs4303.p2.game.DrawableObject;
 import alex.wilton.cs4303.p2.game.Faction;
 import alex.wilton.cs4303.p2.game.ships.VilltShip.VilltShip;
 import processing.core.PConstants;
@@ -8,9 +9,10 @@ import processing.core.PImage;
 import processing.core.PVector;
 
 import java.awt.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class DrawableShip {
+public class DrawableShip extends DrawableObject{
     private App app = App.app;
     private Ship ship;
     private PImage img;
@@ -24,6 +26,13 @@ public class DrawableShip {
 
     public void takeDamage(int mag) {
         hullStrength -= mag;
+    }
+
+    public void impulseAwayFrom(PVector repulsionPt) {
+        PVector dir = new PVector(repulsionPt.x - centerPosition.x, repulsionPt.y - centerPosition.y);
+        dir.normalize();
+        dir.mult(-0.1f);
+        velocity.add(dir);
     }
 
 
@@ -59,6 +68,7 @@ public class DrawableShip {
             if (weaponFiring) drawWeaponFire();
             app.imageMode(App.CENTER);
             app.image(img, 0, 0, width, height);
+
         }else{
             //exploding
             app.ellipse(0, 0, width * frameLeftOfExplosion / 100, height * frameLeftOfExplosion / 100);
@@ -76,7 +86,7 @@ public class DrawableShip {
         app.stroke(Faction.Villt.getFactionColour().getRGB(), 100);
         for(int i=100; i<laserDistance; i++){
             int x = 0, y = -i;
-            if(app.blue(app.get(x,y)) != 0) break;
+            if(app.blue(app.get(x, y)) != 0) break;
 
             app.line(0, 0, x, y);
         }
@@ -86,6 +96,10 @@ public class DrawableShip {
     private void update() {
         centerPosition.add(velocity);
         velocity.add(acceleration);
+
+        //apply drag
+        velocity.mult(0.99f);
+
 
         //enforce max speed
         if(velocity.mag() > ship.getMaxSpeed())
@@ -131,6 +145,30 @@ public class DrawableShip {
             dist++;
         }while(damagePts.get(damagePts.size()-1).dist(centerPosition) < laserDistance);
         return damagePts;
+    }
+
+    private static ArrayList<PVector> ptsAroundOrigin = null;
+    public ArrayList<PVector> getCircumferencePts(){
+        if(ptsAroundOrigin == null){
+            ptsAroundOrigin = new ArrayList<>();
+            double halfWidth = width/2, halfHeight = height/2;
+            for(int degrees=0; degrees<360; degrees += 10) {
+                float rads = App.radians(degrees);
+                float x1 = (float) (halfWidth*halfHeight/Math.sqrt(Math.pow(halfHeight,2) + Math.pow(halfWidth,2) * Math.pow(Math.tan((double)rads),2)));
+                float x2 = -x1;
+                float y1 = (float) (halfHeight * Math.sqrt(1 - Math.pow(x1,2)/Math.pow(halfWidth,2)));
+                float y2 = -y1;
+                ptsAroundOrigin.add(new PVector(x1,  y1));
+                ptsAroundOrigin.add(new PVector(x1,  y2));
+                ptsAroundOrigin.add(new PVector(x2,  y1));
+                ptsAroundOrigin.add(new PVector(x2,  y2));
+            }
+        }
+        ArrayList<PVector> pts = new ArrayList<>();
+        for(PVector originPt : ptsAroundOrigin) {
+            pts.add(new PVector(originPt.x + centerPosition.x, originPt.y + centerPosition.y));
+        }
+        return pts;
     }
 
 

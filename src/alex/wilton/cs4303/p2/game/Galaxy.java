@@ -36,7 +36,6 @@ public class Galaxy implements JSONconvertable{
             galaxySystems[systemIndex] = new GalaxySystem(id, faction, getSystemName(id), getSystemMapLocation(id));
         }
         Set<Link> links = getDefaultLinks();
-
         return new Galaxy(galaxySystems, links);
     }
 
@@ -51,6 +50,18 @@ public class Galaxy implements JSONconvertable{
             if(link.leftId == id || link.rightId == id) connectingLinks.add(link);
         }
         return connectingLinks;
+    }
+
+    /**
+     * Find faction in control of the galaxy (faction who controls every system).
+     * @return Faction in control. (or null if no faction in control.
+     */
+    public Faction factionInControl() {
+        Faction faction = systems[0].getFaction();
+        for(GalaxySystem system : systems){
+            if(system.getFaction() != faction) return null;
+        }
+        return faction;
     }
 
 

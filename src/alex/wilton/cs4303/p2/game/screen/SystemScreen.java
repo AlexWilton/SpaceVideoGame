@@ -3,6 +3,7 @@ package alex.wilton.cs4303.p2.game.screen;
 import alex.wilton.cs4303.p2.game.GameState;
 import alex.wilton.cs4303.p2.game.Stage;
 import processing.core.PConstants;
+import processing.event.KeyEvent;
 
 import java.awt.*;
 
@@ -117,8 +118,13 @@ public class SystemScreen extends AbstractSystemScreen {
         app.text(msg, 10 + app.width / 5, 150, (float) (app.width * 0.6 - 20), 200);
         app.fill(Color.WHITE.getRGB());
         createButton("JUMP", (int) (app.width * 0.3), 400, 100, 50, Stage.HYPER_JUMP);
-        String missionBtnText = (state.getPlayersMission() == null) ? "REQUEST\nMISSION" : "CURRENT\nMISSION";
-        createButton(missionBtnText, (int) (app.width * 0.5), 400, 100, 50, Stage.MISSION);
+            String missionBtnText = (state.getPlayersMission() == null) ? "REQUEST\nMISSION" : "CURRENT\nMISSION";
+        if(state.getLeadsFaction() == null) {
+            createButton(missionBtnText, (int) (app.width * 0.5), 400, 100, 50, Stage.MISSION);
+        }else{
+            createButton(missionBtnText, (int) (app.width * 0.435), 400, 100, 50, Stage.MISSION);
+            createButton("ATTACK!", (int) (app.width * 0.565), 400, 100, 50, Stage.FIGHT);
+        }
         createButton("HANGAR", (int) (app.width * 0.7), 400, 100, 50, Stage.HANGAR);
     }
 
@@ -137,5 +143,15 @@ public class SystemScreen extends AbstractSystemScreen {
         String missionBtnText = (state.getPlayersMission() == null) ? "DEMAND\nMISSION" : "CURRENT\nMISSION";
         createButton(missionBtnText, (int) (app.width * 0.5), 400, 100, 50, Stage.MISSION);
         createButton("HANGAR", (int) (app.width * 0.7), 400, 100, 50, Stage.HANGAR);
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        super.keyPressed(e);
+        if(e.getKey() == 'j' || e.getKeyCode() == 'J'){
+            boolean doesPlayerHaveNegativeStandingWithOwningFaction = state.getPlayerStanding(system.getFaction()) < 50;
+            if(state.isJumpAllowed() || !doesPlayerHaveNegativeStandingWithOwningFaction)
+                state.setGameStage(Stage.HYPER_JUMP);
+        }
     }
 }
