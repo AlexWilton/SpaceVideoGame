@@ -44,12 +44,8 @@ public class FightState {
             }
         }
 
-        for(PVector pt : player.getCircumferencePts()) app.ellipse(pt.x, pt.y, 3, 3);
-        Planet planet = location.getPlanet();
-        for(PVector pt : planet.getCircumferencePts()) app.ellipse(pt.x, pt.y, 3, 3);
-
         // prevent object (e.g. ships and planet) collision.
-        ArrayList<DrawableObject> objects = new ArrayList<>(); objects.addAll(enemies); objects.add(player); objects.add(planet);
+        ArrayList<DrawableObject> objects = new ArrayList<>(); objects.addAll(enemies); objects.add(player); objects.add(location.getPlanet());
         for(DrawableObject objA : objects){
             if(!(objA instanceof DrawableShip)) continue;
             for(PVector ptAroundA : objA.getCircumferencePts()) {

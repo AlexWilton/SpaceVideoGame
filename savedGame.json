@@ -1,17 +1,17 @@
 {
   "reputationWithDoleo": 50,
   "playerLocation": {
-    "faction": "Villt",
-    "id": 6
+    "faction": "Doloe",
+    "id": 11
   },
   "gameSetupShipSelector": {
     "useDefault": true,
     "selectShipIndex": 0
   },
   "leadsFaction": "NONE",
-  "playerName": "Alex Testing123",
+  "playerName": "Alex",
   "reputationWithVillt": 50,
-  "playerCredits": 1000,
+  "playerCredits": 0,
   "bribeAmount": 0,
   "gameStage": "SYSTEM",
   "reputationWithQalz": 50,
@@ -110,14 +110,8 @@
       "id": 22
     }
   ]},
-  "playerFleet": [
-    {
-      "imageFilePath": "images/ships/playerShip/ShipB.png",
-      "shipName": "ShipB"
-    },
-    {
-      "imageFilePath": "images/ships/playerShip/ShipA.png",
-      "shipName": "ShipA"
-    }
-  ]
+  "playerFleet": [{
+    "imageFilePath": "images/ships/playerShip/ShipA.png",
+    "shipName": "ShipA"
+  }]
 }

@@ -94,6 +94,7 @@ public class GameState implements JSONconvertable {
             case BRIBE:         return new BribeScreen(this);
             case GAME_VICTORY:  return new VictoryScreen(this);
             case GAME_STALEMATE: return new StaleMateScreen(this);
+            case GAME_LOST:     return new GameOverScreen(this);
             case FIGHT_WON:     return new FightWonScreen(this);
             case FACTION_LEADER_OFFER: return new LeadershipOfferScreen(this);
             case FIGHT:

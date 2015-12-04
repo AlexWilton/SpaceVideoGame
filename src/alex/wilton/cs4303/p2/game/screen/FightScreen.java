@@ -44,7 +44,7 @@ public class FightScreen extends Screen {
         app.translate(fState.cameraLocation.x, fState.cameraLocation.y);
 
         app.fill(Color.white.getRGB());
-        app.text("FPS: " + (int)app.frameRate, app.width/2, 30);
+        app.text("FPS: " + (int)app.frameRate + "   HEALTH: " + (int)fState.player.getShip().getHullStrength(), app.width/2, 30);
     }
 
     private void checkForEndFight() {
