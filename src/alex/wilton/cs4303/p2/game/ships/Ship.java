@@ -16,10 +16,57 @@ public abstract class Ship{
     public PImage image;
     public Ship(){
         image = ImageCache.getImage(imageFilePath());
+        setShipConfig();
     }
 
-    private float engineStrength = 0.5f;
-    private float maxSpeed = 1.5f;
+    /* SHIP CONFIGURATION */
+    private float engineStrength;
+    private float maxSpeed;
+    private int hullStrength;
+    private int laserDistance;
+
+    private void setShipConfig() {
+        if(this instanceof PlayerShip){
+            engineStrength = 0.5f;
+            maxSpeed = 2.5f;
+            hullStrength = 1000;
+            laserDistance = 150;
+        }else{
+            String fullShipClass = this.getClass().getSimpleName();
+            String shipClass = fullShipClass.substring(fullShipClass.length()-1, fullShipClass.length());
+            switch (shipClass){
+                case "A":
+                    engineStrength = 0.1f;
+                    maxSpeed = 0.5f;
+                    hullStrength = 100;
+                    laserDistance = 90;
+                    break;
+                case "B":
+                    engineStrength = 0.3f;
+                    maxSpeed = 1f;
+                    hullStrength = 300;
+                    laserDistance = 150;
+                    break;
+                case "C":
+                    engineStrength = 0.6f;
+                    maxSpeed = 1.5f;
+                    hullStrength = 700;
+                    laserDistance = 150;
+                    break;
+                case "D":
+                    engineStrength = 0.9f;
+                    maxSpeed = 2.0f;
+                    hullStrength = 1200;
+                    laserDistance = 150;
+                    break;
+                default:
+                    System.out.println("Error! Unknown Ship Class Type");
+            }
+        }
+    }
+
+
+
 
     /**
      * Determine Filepath of Ship image. (Based on
@@ -60,5 +107,21 @@ public abstract class Ship{
 
     public float getMaxSpeed() {
         return maxSpeed;
+    }
+
+    public int getHullStrength() {
+        return hullStrength;
+    }
+
+    public int getLaserDistance() {
+        return laserDistance;
+    }
+
+    public void setHullStrength(int hullStrength) {
+        this.hullStrength = hullStrength;
+    }
+
+    public void setLaserDistance(int laserDistance) {
+        this.laserDistance = laserDistance;
     }
 }

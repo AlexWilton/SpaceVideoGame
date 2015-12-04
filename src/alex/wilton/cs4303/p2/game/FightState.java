@@ -1,11 +1,15 @@
 package alex.wilton.cs4303.p2.game;
 
+import alex.wilton.cs4303.p2.game.aiPilots.MoveTowardAndShootPilot;
 import alex.wilton.cs4303.p2.game.entity.staticImage.Planet;
 import alex.wilton.cs4303.p2.game.screen.FightScreen;
 import alex.wilton.cs4303.p2.game.ships.DoloeShip.DoloeShipA;
+import alex.wilton.cs4303.p2.game.ships.DoloeShip.DoloeShipD;
 import alex.wilton.cs4303.p2.game.ships.DrawableShip;
 import alex.wilton.cs4303.p2.game.ships.QalzShip.QalzShipA;
+import alex.wilton.cs4303.p2.game.ships.QalzShip.QalzShipD;
 import alex.wilton.cs4303.p2.game.ships.VilltShip.VilltShipA;
+import alex.wilton.cs4303.p2.game.ships.VilltShip.VilltShipD;
 import processing.core.PVector;
 
 import java.util.ArrayList;
@@ -66,17 +70,21 @@ public class FightState {
         ArrayList<DrawableShip> enemies = new ArrayList<>();
         DrawableShip enemy = null;
         switch (state.getPlayerLocation().getFaction()){
-            case Doloe: enemy = new DoloeShipA().createDrawableShipInstance(); break;
-            case Qalz:  enemy = new QalzShipA().createDrawableShipInstance(); break;
-            case Villt: enemy = new VilltShipA().createDrawableShipInstance(); break;
+            case Doloe: enemy = new DoloeShipD().createDrawableShipInstance(); break;
+            case Qalz:  enemy = new QalzShipD().createDrawableShipInstance(); break;
+            case Villt: enemy = new VilltShipD().createDrawableShipInstance(); break;
         }
 
         enemy.setCenterPosition(getRandomPosition());
         enemies.add(enemy);
 
         DrawableShip playerShip = state.getPlayerFleet().get(0).createDrawableShipInstance();
-        playerShip.setCenterPosition(new PVector(0,0));
-        return new FightState(state.getPlayerLocation(), playerShip, enemies);
+        playerShip.setCenterPosition(getRandomPosition());
+
+        FightState fightState = new FightState(state.getPlayerLocation(), playerShip, enemies);
+        enemy.assignAiPilot(new MoveTowardAndShootPilot(enemy, fightState));
+
+        return fightState;
     }
 
     private static PVector getRandomPosition() {
