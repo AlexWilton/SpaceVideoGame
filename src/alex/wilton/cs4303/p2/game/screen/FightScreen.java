@@ -6,7 +6,9 @@ import processing.core.PVector;
 import processing.event.KeyEvent;
 
 import java.awt.*;
-import java.util.ArrayList;
+import java.lang.reflect.Array;
+import java.util.*;
+import java.util.List;
 
 
 public class FightScreen extends Screen {
@@ -51,6 +53,8 @@ public class FightScreen extends Screen {
         boolean playerWins = true;
         for(DrawableShip enemy : enemies) if(!enemy.isExploded()) playerWins = false;
         if(playerWins) state.setGameStage(Stage.FIGHT_WON);
+
+        if(ship.getShip().getHullStrength() <= 0) state.setGameStage(Stage.GAME_LOST);
     }
 
     private void drawNonShipObjects() {
@@ -113,9 +117,7 @@ public class FightScreen extends Screen {
         super.keyPressed(e);
 
         switch (e.getKeyCode()){
-            case App.UP:
-                upPressed = true;
-                ship.accelerate((wPressed) ? 0.2f : 0.1f); break;
+            case App.UP:    ship.accelerate(); break;
             case App.DOWN: ship.brake(); break;
             case App.RIGHT: ship.turnRight(); break;
             case App.LEFT: ship.turnLeft(); break;
@@ -131,8 +133,7 @@ public class FightScreen extends Screen {
                 break;
             case 'W':
             case 'w':
-                wPressed = true;
-                ship.accelerate((upPressed) ? 0.2f : 0.1f);
+                ship.accelerate();
                 break;
             case 'S':
             case 's':
@@ -143,9 +144,6 @@ public class FightScreen extends Screen {
 
     }
 
-    boolean wPressed = false;
-    boolean upPressed = false;
-
     @Override
     public void keyReleased(KeyEvent e){
         super.keyReleased(e);
@@ -154,7 +152,6 @@ public class FightScreen extends Screen {
             case App.UP:
             case App.DOWN:
                 ship.setAcceleration(new PVector(0,0));
-                upPressed = false;
                 break;
             case App.LEFT:
             case App.RIGHT:
@@ -170,11 +167,41 @@ public class FightScreen extends Screen {
                 break;
             case 'W': case 'w':
             case 'S': case 's':
-                wPressed = false;
                 ship.setAcceleration(new PVector(0,0)); break;
             case ' ':
                 ship.stopFiringWeapon(); break;
         }
     }
 
+    private static DrawableObject disallowedArea = null;
+    public static DrawableObject getDisallowedArea() {
+        if (disallowedArea == null) {
+            disallowedArea = new DrawableObject() {
+                public boolean impulseAwayFromCenter(){
+                    return false;
+                }
+                @Override
+                public List<PVector> getCircumferencePts() {
+                    ArrayList<PVector> pts = new ArrayList<>();
+                    for (int deg = 0; deg < 360; deg++) {
+                        float rads = App.radians(deg);
+                        pts.add(new PVector(mapRadius * App.cos(rads), mapRadius * App.sin(rads)));
+                    }
+                    return pts;
+                }
+
+                @Override
+                public boolean containsPt(PVector pt) {
+                    return App.dist(0, 0, pt.x, pt.y) > mapRadius/2;
+                }
+
+                @Override
+                public PVector getCenterPosition() {
+                    return new PVector(0,0);
+                }
+
+            };
+        }
+        return disallowedArea;
+    }
 }

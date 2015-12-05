@@ -10,5 +10,8 @@ public abstract class DrawableObject {
     public abstract List<PVector> getCircumferencePts();
     public abstract boolean containsPt(PVector pt);
     public abstract PVector getCenterPosition();
+    public boolean impulseAwayFromCenter(){
+        return true;
+    }
 
 }

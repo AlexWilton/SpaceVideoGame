@@ -34,7 +34,7 @@ public abstract class AbstractSystemScreen extends Screen {
         createdDisabledButton( factionRepInfo, app.width/2, 500, (int) (0.6 * app.width), 30);
 
         system.drawPlanetInTopRight();
-        DrawableShip ship = state.getPlayerFleet().get(0).createDrawableShipInstance();
+        DrawableShip ship = state.getPlayerShip().createDrawableShipInstance();
         ship.setCenterPosition(new PVector(app.width/10, 250));
         ship.setOrientation(PConstants.PI/2);
         ship.draw();

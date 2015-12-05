@@ -29,10 +29,10 @@ public class DrawableShip extends DrawableObject{
         ship.setHullStrength(ship.getHullStrength() - mag);
     }
 
-    public void impulseAwayFrom(PVector repulsionPt) {
+    public void impulseAwayFrom(PVector repulsionPt, boolean impulseAwayFromCenter) {
         PVector dir = new PVector(repulsionPt.x - centerPosition.x, repulsionPt.y - centerPosition.y);
         dir.normalize();
-        dir.mult(-0.1f);
+        if(impulseAwayFromCenter) dir.mult(-1);
         dir.setMag(velocity.mag());
         velocity.add(dir);
     }
@@ -63,6 +63,7 @@ public class DrawableShip extends DrawableObject{
 
     public void draw(){
         update();
+
         /*Rotate image around its center then draw it*/
         app.translate(centerPosition.x, centerPosition.y);
         app.rotate(orientation + IMAGE_ROTATE_SHIFT);
@@ -75,9 +76,12 @@ public class DrawableShip extends DrawableObject{
             app.image(img, 0, 0, width, height);
 
         }else{
+            stopFiringWeapon();
             //exploding
-            app.ellipse(0, 0, width * frameLeftOfExplosion / 100, height * frameLeftOfExplosion / 100);
-            frameLeftOfExplosion--;
+            if(frameLeftOfExplosion > 0) {
+                app.ellipse(0, 0, width * frameLeftOfExplosion / 100, height * frameLeftOfExplosion / 100);
+                frameLeftOfExplosion--;
+            }
         }
 
         /* Return to normal orientation/translation*/
@@ -131,7 +135,7 @@ public class DrawableShip extends DrawableObject{
                 break;
         }
         thrust.normalize();
-        thrust.mult(0.1f);
+        thrust.mult(ship.getEngineStrength());
         velocity.add(thrust);
 
     }
@@ -188,6 +192,10 @@ public class DrawableShip extends DrawableObject{
                 +   Math.pow(pt.y - centerPosition.y, 2)/Math.pow(height/2,2) < 1;
     }
 
+    public void accelerate(){
+        accelerate(ship.getEngineStrength());
+    }
+
     public void accelerate(float mag){
         float x = (float) Math.cos(orientation);
         float y = (float) Math.sin(orientation);
@@ -198,8 +206,8 @@ public class DrawableShip extends DrawableObject{
     }
 
     public void brake(){
-        accelerate(-0.1f);
-        velocity.mult(0.8f); //apply more break drag
+        float mag = ship.getEngineStrength();
+        accelerate(-mag);
     }
 
 

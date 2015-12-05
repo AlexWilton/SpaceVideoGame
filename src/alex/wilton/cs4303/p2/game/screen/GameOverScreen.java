@@ -40,7 +40,8 @@ public class GameOverScreen extends Screen {
     }
 
     private void drawButtons() {
-        createButton("MAIN MENU", 130, (int) (app.height * 0.75), 180, 50, Stage.RESET);
+        createButton("CONTINUE\n(UNDO BATTLE)", 130, (int) (app.height * 0.6), 180, 50, Stage.UNDO_FIGHT);
+        createButton("NEW GAME", 130, (int) (app.height * 0.75), 180, 50, Stage.RESET);
         createButton("QUIT", 130, (int) (app.height * 0.9), 180, 50, Stage.EXIT_GAME);
     }
 

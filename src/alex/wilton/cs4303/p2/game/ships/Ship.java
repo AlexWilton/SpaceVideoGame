@@ -29,8 +29,8 @@ public abstract class Ship{
         if(this instanceof PlayerShip){
             engineStrength = 0.5f;
             maxSpeed = 2.5f;
-            hullStrength = 1000;
-            laserDistance = 150;
+            hullStrength = 2000;
+            laserDistance = 160;
         }else{
             String fullShipClass = this.getClass().getSimpleName();
             String shipClass = fullShipClass.substring(fullShipClass.length()-1, fullShipClass.length());
@@ -39,25 +39,25 @@ public abstract class Ship{
                     engineStrength = 0.1f;
                     maxSpeed = 0.5f;
                     hullStrength = 100;
-                    laserDistance = 90;
+                    laserDistance = 120;
                     break;
                 case "B":
-                    engineStrength = 0.3f;
+                    engineStrength = 0.2f;
                     maxSpeed = 1f;
-                    hullStrength = 300;
-                    laserDistance = 150;
+                    hullStrength = 200;
+                    laserDistance = 125;
                     break;
                 case "C":
-                    engineStrength = 0.6f;
+                    engineStrength = 0.3f;
                     maxSpeed = 1.5f;
-                    hullStrength = 700;
-                    laserDistance = 150;
+                    hullStrength = 300;
+                    laserDistance = 130;
                     break;
                 case "D":
-                    engineStrength = 0.9f;
+                    engineStrength = 0.5f;
                     maxSpeed = 2.0f;
-                    hullStrength = 1200;
-                    laserDistance = 150;
+                    hullStrength = 500;
+                    laserDistance = 135;
                     break;
                 default:
                     System.out.println("Error! Unknown Ship Class Type");
@@ -82,9 +82,6 @@ public abstract class Ship{
         return imgFilePath;
     }
 
-    public void drawShip(int x, int y){
-        app.image(image, x,  y, 80, 100);
-    }
 
     public DrawableShip createDrawableShipInstance(){
         return new DrawableShip(this);
@@ -96,9 +93,25 @@ public abstract class Ship{
 
     public JSONObject asJsonObject(){
         JSONObject ship = new JSONObject();
-        ship.setString("imageFilePath", imageFilePath());
-        ship.setString("shipName", this.getClass().getSimpleName());
+        ship.setInt("hullStrength", hullStrength);
+        ship.setString("shipName", this.getClass().getName());
         return ship;
+    }
+
+    public static Ship parseJson(JSONObject jsonState) {
+        try {
+            Class c = Class.forName(jsonState.getString("shipName"));
+            Ship ship = (Ship) c.newInstance();
+            ship.setHullStrength(jsonState.getInt("hullStrength"));
+            return ship;
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public float getEngineStrength() {

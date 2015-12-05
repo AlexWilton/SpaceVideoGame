@@ -30,11 +30,11 @@ public class App extends PApplet{
         newGame();
 //        gameState.setPlayersMission(new Mission(Faction.Doloe, gameState.getPlayerLocation(), 4, 300));
 //        gameState.getPlayersMission().setStatus(Mission.Status.ACCEPTED);
-        gameState.setGameStage(Stage.FIGHT);
+        gameState.setGameStage(Stage.SYSTEM);
 //        gameState.setLeadsFaction(Faction.Qalz);
-        gameState.getPlayerFleet().add(new ShipB());
-        gameState.setPlayerName("Alex Testing123");
-        gameState.setPlayerCredits(1000);
+//        gameState.setPlayerShip(new ShipB());
+        gameState.setPlayerName("Alex Testing 123");
+//        gameState.setPlayerCredits(1000);
 //        gameState.setPlayerStanding(Faction.Villt, 50);
 //        gameState.setPlayerStanding(Faction.Doloe, 50);
 //        gameState.setPlayerStanding(Faction.Qalz, 50);

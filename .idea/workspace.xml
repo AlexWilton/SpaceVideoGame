@@ -16,6 +16,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/screen/FightScreen.class" afterPath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/screen/FightScreen.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/FightState$1.class" afterPath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/FightState$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/FightState.class" afterPath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/FightState.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/Galaxy$Link.class" afterPath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/Galaxy$Link.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/Galaxy.class" afterPath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/Galaxy.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/GalaxySystem.class" afterPath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/GalaxySystem.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/GameState$1.class" afterPath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/GameState$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/GameState.class" afterPath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/GameState.class" />
@@ -23,11 +25,22 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/Mission.class" afterPath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/Mission.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/screen/MissionScreen$1.class" afterPath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/screen/MissionScreen$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/screen/MissionScreen.class" afterPath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/screen/MissionScreen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/entity/staticImage/Planet.class" afterPath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/entity/staticImage/Planet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/ships/Ship.class" afterPath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/ships/Ship.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/util/ShipSelector.class" afterPath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/util/ShipSelector.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/Stage.class" afterPath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/Stage.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/screen/SystemScreen.class" afterPath="$PROJECT_DIR$/out/production/SpaceVideoGame/alex/wilton/cs4303/p2/game/screen/SystemScreen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/AbstractSystemScreen.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/AbstractSystemScreen.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/App.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/App.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/DrawableObject.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/DrawableObject.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/DrawableShip.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/DrawableShip.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/FightScreen.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/FightScreen.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/FightState.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/FightState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/GameOverScreen.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/GameOverScreen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/GameState.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/GameState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/aiPilots/MoveTowardAndShootPilot.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/aiPilots/MoveTowardAndShootPilot.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/Ship.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/Ship.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Stage.java" afterPath="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Stage.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/savedGame.json" afterPath="$PROJECT_DIR$/savedGame.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -53,21 +66,52 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="App.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.39473686">
+              <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DrawableShip.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DrawableShip.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/DrawableShip.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8467742">
-              <caret line="96" column="20" selection-start-line="96" selection-start-column="20" selection-end-line="96" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="80" column="37" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
+              <folding>
+                <element signature="e#948#949#0" expanded="true" />
+                <element signature="e#1014#1015#0" expanded="true" />
+                <element signature="method#getCircumferencePts#0;class#DrawableShip#0" expanded="false" />
+                <element signature="e#6718#6719#0" expanded="true" />
+                <element signature="e#6770#6771#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Ship.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/Ship.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="35" column="36" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
+              <folding>
+                <element signature="e#3796#3797#0" expanded="true" />
+                <element signature="e#3833#3834#0" expanded="true" />
+                <element signature="e#4006#4007#0" expanded="true" />
+                <element signature="e#4042#4043#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameOverScreen.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/GameOverScreen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="42" column="45" selection-start-line="42" selection-start-column="45" selection-end-line="42" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -77,7 +121,50 @@
         <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/FightScreen.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="27" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
+              <caret line="119" column="36" selection-start-line="119" selection-start-column="36" selection-end-line="119" selection-end-column="36" />
+              <folding>
+                <element signature="e#5364#5365#0" expanded="true" />
+                <element signature="e#5416#5417#0" expanded="true" />
+                <element signature="e#5935#5936#0" expanded="true" />
+                <element signature="e#6022#6023#0" expanded="true" />
+                <element signature="e#6102#6103#0" expanded="true" />
+                <element signature="e#6165#6166#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameState.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/GameState.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#11892#11893#0" expanded="true" />
+                <element signature="e#11925#11926#0" expanded="true" />
+                <element signature="e#13405#13406#0" expanded="true" />
+                <element signature="e#13449#13450#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MoveTowardAndShootPilot.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/aiPilots/MoveTowardAndShootPilot.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractSystemScreen.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/AbstractSystemScreen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -87,12 +174,22 @@
         <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/FightState.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <caret line="127" column="134" selection-start-line="127" selection-start-column="134" selection-end-line="127" selection-end-column="134" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#setupFight#0;class#FightState#0" expanded="false" />
-                <element signature="method#getRandomPosition#0;class#FightState#0" expanded="false" />
+                <element signature="e#5743#5744#0" expanded="true" />
+                <element signature="e#5805#5806#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="URLClassLoader.java" pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/src.zip!/java/net/URLClassLoader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="380" column="0" selection-start-line="380" selection-start-column="0" selection-end-line="380" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -119,14 +216,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/util/ButtonFactory.java" />
-        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/playerShip/ShipA.java" />
-        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/playerShip/PlayerShip.java" />
-        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/VilltShip/VilltShip.java" />
-        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/VilltShip/VilltShipA.java" />
-        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/VilltShip/VilltShipB.java" />
-        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/VilltShip/VilltShipC.java" />
-        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/VilltShip/VilltShipD.java" />
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/util/ImageCache.java" />
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/QalzShip/QalzShip.java" />
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/QalzShip/QalzShipA.java" />
@@ -140,36 +229,44 @@
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/DoloeShip/DoloeShipD.java" />
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/MainMenuScreen.java" />
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/System.java" />
-        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/util/ShipSelector.java" />
-        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/util/JSONconvertable.java" />
         <option value="$PROJECT_DIR$/savedGame.json" />
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/util/DashedLine.java" />
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/util/DashedLineDrawer.java" />
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/CustomPlayScreen.java" />
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/CampaignScreen.java" />
-        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/NewCampaignScreen.java" />
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/HyperJumpScreen.java" />
-        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Galaxy.java" />
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/UnImplementedScreen.java" />
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Faction.java" />
-        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/entity/staticImage/Planet.java" />
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/util/Button.java" />
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/BribeScreen.java" />
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/Screen.java" />
-        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/Ship.java" />
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/FightMapSquare.java" />
-        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/GalaxySystem.java" />
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Stage.java" />
-        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/GameState.java" />
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/FightWonScreen.java" />
-        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/MissionScreen.java" />
-        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/SystemScreen.java" />
+        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/util/ShipSelector.java" />
+        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/LeadershipOfferScreen.java" />
+        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/NewCampaignScreen.java" />
+        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/VictoryScreen.java" />
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Mission.java" />
-        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/AbstractSystemScreen.java" />
-        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/App.java" />
-        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/FightState.java" />
+        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/MissionScreen.java" />
+        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/StaleMateScreen.java" />
+        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/SystemScreen.java" />
+        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Galaxy.java" />
+        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/GalaxySystem.java" />
+        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/entity/staticImage/Planet.java" />
+        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/AIShipPilot.java" />
+        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/aiPilots/AIShipPilot.java" />
+        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/DrawableObject.java" />
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/FightScreen.java" />
+        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/util/JSONconvertable.java" />
+        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/AbstractSystemScreen.java" />
+        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/GameState.java" />
+        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/aiPilots/MoveTowardAndShootPilot.java" />
         <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/DrawableShip.java" />
+        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/GameOverScreen.java" />
+        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/FightState.java" />
+        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/Ship.java" />
+        <option value="$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/App.java" />
       </list>
     </option>
   </component>
@@ -193,7 +290,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="726" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -218,8 +315,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -382,8 +477,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="entity" />
+              <option name="myItemId" value="screen" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BribeScreen" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ClassTreeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -408,85 +507,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="staticImage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpaceVideoGame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpaceVideoGame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpaceVideoGame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpaceVideoGame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ships" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="VilltShip" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpaceVideoGame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpaceVideoGame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ships" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpaceVideoGame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpaceVideoGame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value=".idea" />
+              <option name="myItemId" value="aiPilots" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -934,7 +963,8 @@
       <workItem from="1448038326304" duration="313000" />
       <workItem from="1448460866977" duration="1019000" />
       <workItem from="1449057923930" duration="7959000" />
-      <workItem from="1449074235106" duration="7524000" />
+      <workItem from="1449074235106" duration="29966000" />
+      <workItem from="1449261141797" duration="7796000" />
     </task>
     <task id="LOCAL-00001" summary="cities can now be destroyed">
       <created>1443199942094</created>
@@ -1122,41 +1152,92 @@
       <option name="project" value="LOCAL" />
       <updated>1449080901029</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="minor changes">
+      <created>1449090632808</created>
+      <option name="number" value="00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1449090632808</updated>
+    </task>
+    <task id="LOCAL-00033" summary="minor improvements">
+      <created>1449097530207</created>
+      <option name="number" value="00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1449097530207</updated>
+    </task>
+    <task id="LOCAL-00034" summary="screen fixed for allowing jump post-battle">
+      <created>1449137502591</created>
+      <option name="number" value="00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1449137502591</updated>
+    </task>
+    <task id="LOCAL-00035" summary="you can now win!">
+      <created>1449229372240</created>
+      <option name="number" value="00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1449229372240</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Collision Detection added">
+      <created>1449245464190</created>
+      <option name="number" value="00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1449245464190</updated>
+    </task>
+    <task id="LOCAL-00037" summary="AI pilot added">
+      <created>1449250571594</created>
+      <option name="number" value="00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1449250571594</updated>
+    </task>
+    <task id="LOCAL-00038" summary="looking good! need to check for weapon fire">
+      <created>1449251227410</created>
+      <option name="number" value="00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1449251227410</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="168318000" />
+    <option name="totallyTimeSpent" value="198556000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="726" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="728" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32176656" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329653" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3207547" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328594" sideWeight="0.503231" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3280757" sideWeight="0.49676898" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17350158" sideWeight="0.4911147" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17295597" sideWeight="0.4911147" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31861198" sideWeight="0.49583334" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24717286" sideWeight="0.4868421" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24717286" sideWeight="0.47137403" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32704404" sideWeight="0.49791667" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.4923664" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24717286" sideWeight="0.5131579" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6072555" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.50763357" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6069182" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="399" y="298" width="481" height="175" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3280757" sideWeight="0.49791667" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1200,13 +1281,6 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="fix uses max number of cities instead of hardcoded 5" />
-    <MESSAGE value="splitting particles added.&#10;bombers added.&#10;src files for processing sound added." />
-    <MESSAGE value="sound used" />
-    <MESSAGE value="Lots of javadocing and refractoring" />
-    <MESSAGE value="javadoc improved" />
-    <MESSAGE value="removed semicolon" />
-    <MESSAGE value="final" />
     <MESSAGE value="missing?" />
     <MESSAGE value="Program restructed" />
     <MESSAGE value="images add" />
@@ -1225,11 +1299,18 @@
     <MESSAGE value="progress on fight" />
     <MESSAGE value="fight won now possible" />
     <MESSAGE value="rep described with words" />
-    <option name="LAST_COMMIT_MESSAGE" value="rep described with words" />
+    <MESSAGE value="minor changes" />
+    <MESSAGE value="minor improvements" />
+    <MESSAGE value="screen fixed for allowing jump post-battle" />
+    <MESSAGE value="you can now win!" />
+    <MESSAGE value="Collision Detection added" />
+    <MESSAGE value="AI pilot added" />
+    <MESSAGE value="looking good! need to check for weapon fire" />
+    <option name="LAST_COMMIT_MESSAGE" value="looking good! need to check for weapon fire" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="17" />
+      <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1238,75 +1319,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/images/ships/playerShip/ShipD.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/ships/playerShip/ShipE.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/core.jar!/processing/data/JSONObject.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="572" column="48" selection-start-line="572" selection-start-column="42" selection-end-line="572" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/QalzShip/QalzShipA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/util/JSONconvertable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14191853">
-          <caret line="6" column="30" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/ships/playerShip/ShipA.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/savedGame.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3678474">
-          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/core.jar!/processing/core/PConstants.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0952381">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/core.jar!/processing/core/PApplet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3452381">
-          <caret line="6164" column="16" selection-start-line="6164" selection-start-column="16" selection-end-line="6164" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/galaxy.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/images/galaxy.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1355,26 +1367,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/util/ShipSelector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="33" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Galaxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="183" column="5" selection-start-line="183" selection-start-column="5" selection-end-line="183" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#4843#4844#0" expanded="false" />
-            <element signature="e#4886#4887#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/UnImplementedScreen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42079207">
@@ -1388,32 +1380,11 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/entity/staticImage/Planet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6942149">
-          <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
-          <folding>
-            <element signature="e#412#413#0" expanded="false" />
-            <element signature="e#503#504#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/HyperJumpScreen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="112" column="27" selection-start-line="112" selection-start-column="27" selection-end-line="112" selection-end-column="27" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/NewCampaignScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="90" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1454,14 +1425,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="70" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/Ship.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -1509,7 +1472,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="31" column="45" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1521,18 +1483,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/FightWonScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7883065">
+          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/NewCampaignScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/util/ShipSelector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="46" column="41" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Stage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+          <caret line="28" column="121" selection-start-line="28" selection-start-column="121" selection-end-line="28" selection-end-column="121" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/VictoryScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="86" selection-start-line="41" selection-start-column="86" selection-end-line="41" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Mission.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/MissionScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.39112905">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/StaleMateScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="88" selection-start-line="33" selection-start-column="88" selection-end-line="33" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/LeadershipOfferScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="95" selection-start-line="42" selection-start-column="95" selection-end-line="42" selection-end-column="95" />
           <folding />
         </state>
       </provider>
@@ -1540,27 +1558,137 @@
     <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/SystemScreen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="153" column="52" selection-start-line="153" selection-start-column="52" selection-end-line="153" selection-end-column="52" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/AbstractSystemScreen.java">
+    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Galaxy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.858871">
-          <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="136" column="0" selection-start-line="136" selection-start-column="0" selection-end-line="137" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/GalaxySystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76209676">
-          <caret line="85" column="45" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="95" column="36" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="36" />
           <folding>
-            <element signature="e#2069#2070#0" expanded="true" />
+            <element signature="e#2239#2240#0" expanded="true" />
+            <element signature="e#2282#2283#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/entity/staticImage/Planet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="66" column="54" selection-start-line="66" selection-start-column="54" selection-end-line="66" selection-end-column="54" />
+          <folding>
+            <element signature="e#1923#1924#0" expanded="false" />
+            <element signature="e#1985#1986#0" expanded="false" />
+            <element signature="e#2041#2042#0" expanded="false" />
+            <element signature="e#2080#2081#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/aiPilots/AIShipPilot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21169356">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/VilltShip/VilltShipA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06048387">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/VilltShip/VilltShip.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12096774">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/DrawableObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#335#336#0" expanded="true" />
+            <element signature="e#362#363#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/util/JSONconvertable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/src.zip!/java/net/URLClassLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="380" column="0" selection-start-line="380" selection-start-column="0" selection-end-line="380" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/AbstractSystemScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/aiPilots/MoveTowardAndShootPilot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/DrawableShip.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="80" column="37" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
+          <folding>
+            <element signature="e#948#949#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="method#getCircumferencePts#0;class#DrawableShip#0" expanded="false" />
+            <element signature="e#6718#6719#0" expanded="true" />
+            <element signature="e#6770#6771#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/FightScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="119" column="36" selection-start-line="119" selection-start-column="36" selection-end-line="119" selection-end-column="36" />
+          <folding>
+            <element signature="e#5364#5365#0" expanded="true" />
+            <element signature="e#5416#5417#0" expanded="true" />
+            <element signature="e#5935#5936#0" expanded="true" />
+            <element signature="e#6022#6023#0" expanded="true" />
+            <element signature="e#6102#6103#0" expanded="true" />
+            <element signature="e#6165#6166#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1568,31 +1696,21 @@
     <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/GameState.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="121" column="41" selection-start-line="121" selection-start-column="41" selection-end-line="121" selection-end-column="41" />
+          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#10444#10445#0" expanded="true" />
-            <element signature="e#10479#10480#0" expanded="true" />
-            <element signature="e#10536#10537#0" expanded="true" />
-            <element signature="e#10584#10585#0" expanded="true" />
+            <element signature="e#11892#11893#0" expanded="true" />
+            <element signature="e#11925#11926#0" expanded="true" />
+            <element signature="e#13405#13406#0" expanded="true" />
+            <element signature="e#13449#13450#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/FightWonScreen.java">
+    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/GameOverScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58064514">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/Mission.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.268145">
-          <caret line="89" column="32" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="45" selection-start-line="42" selection-start-column="45" selection-end-line="42" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -1600,35 +1718,32 @@
     <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/FightState.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <caret line="127" column="134" selection-start-line="127" selection-start-column="134" selection-end-line="127" selection-end-column="134" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#setupFight#0;class#FightState#0" expanded="false" />
-            <element signature="method#getRandomPosition#0;class#FightState#0" expanded="false" />
+            <element signature="e#5743#5744#0" expanded="true" />
+            <element signature="e#5805#5806#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/Ship.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="36" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
+          <folding>
+            <element signature="e#3796#3797#0" expanded="true" />
+            <element signature="e#3833#3834#0" expanded="true" />
+            <element signature="e#4006#4007#0" expanded="true" />
+            <element signature="e#4042#4043#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/screen/FightScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="27" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/alex/wilton/cs4303/p2/game/ships/DrawableShip.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8467742">
-          <caret line="96" column="20" selection-start-line="96" selection-start-column="20" selection-end-line="96" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.39473686">
+          <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
           <folding />
         </state>
       </provider>

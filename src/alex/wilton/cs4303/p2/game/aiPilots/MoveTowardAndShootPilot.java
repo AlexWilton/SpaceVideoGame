@@ -21,8 +21,8 @@ public class MoveTowardAndShootPilot extends AIShipPilot {
         PVector aiLoc = ship.getCenterPosition();
         double angle = Math.atan2(playerLoc.y - aiLoc.y, playerLoc.x - aiLoc.x);
 
-        if((ship.getOrientation() > App.PI-0.03 && angle < -(App.PI-0.03))
-            || (ship.getOrientation() < -(App.PI-0.03)  &&  angle > App.PI-0.03 )){
+        if((ship.getOrientation() > App.PI-0.1 && angle < -(App.PI-0.1))
+            || (ship.getOrientation() < -(App.PI-0.1)  &&  angle > App.PI-0.1 )){
             ship.setOrientation((float)angle);
         }
         if(ship.getOrientation() > angle)
@@ -34,13 +34,13 @@ public class MoveTowardAndShootPilot extends AIShipPilot {
         //move towards player if out of weapons range, move away if too close
         double distToPlayer = App.dist(aiLoc.x, aiLoc.y, playerLoc.x, playerLoc.y);
         if(distToPlayer > ship.getWeaponRange() + 5){
-            ship.accelerate(0.05f);
+            ship.accelerate();
         }else if(distToPlayer < ship.getWeaponRange() - 5){
             ship.brake();
         }
 
         //check if weapon should fire/stop firing
-        if(distToPlayer < ship.getWeaponRange() + ship.getWidth()/2)
+        if(distToPlayer < ship.getWeaponRange() + ship.getWidth())
             ship.fireWeapon();
         else
             ship.stopFiringWeapon();

@@ -3,6 +3,8 @@ package alex.wilton.cs4303.p2.game;
 import alex.wilton.cs4303.p2.game.screen.*;
 import alex.wilton.cs4303.p2.game.ships.Ship;
 
+import alex.wilton.cs4303.p2.game.ships.playerShip.PlayerShip;
+import alex.wilton.cs4303.p2.game.ships.playerShip.ShipB;
 import alex.wilton.cs4303.p2.util.JSONconvertable;
 import alex.wilton.cs4303.p2.util.ShipSelector;
 import processing.data.JSONArray;
@@ -16,7 +18,8 @@ import java.util.ArrayList;
 public class GameState implements JSONconvertable {
     private Galaxy galaxy;
     private GalaxySystem playerLocation;
-    private ArrayList<Ship> playerFleet;
+//    private ArrayList<Ship> playerFleet;
+    private PlayerShip playerShip;
     private String playerName;
     private int playerCredits;
     private Faction leadsFaction; //null if leads no faction
@@ -38,10 +41,10 @@ public class GameState implements JSONconvertable {
     private boolean jumpAllowed; //can player jump if player is at a system owned by an enemy faction.
 
 
-    public GameState(Galaxy galaxy, GalaxySystem playerLocation, ArrayList<Ship> playerFleet, String playerName, int numberOfGalacticCredits, Faction leadsFaction, Stage gameStage, int reputationWithVillt, int reputationWithQalz, int reputationWithDoleo, boolean isGameSetupCompleted, ShipSelector gameSetupShipSelector, GalaxySystem destinationSystem, int bribeAmount, int playerCredits) {
+    public GameState(Galaxy galaxy, GalaxySystem playerLocation, PlayerShip playerShip, String playerName, int numberOfGalacticCredits, Faction leadsFaction, Stage gameStage, int reputationWithVillt, int reputationWithQalz, int reputationWithDoleo, boolean isGameSetupCompleted, ShipSelector gameSetupShipSelector, GalaxySystem destinationSystem, int bribeAmount, int playerCredits) {
         this.galaxy = galaxy;
         this.playerLocation = playerLocation;
-        this.playerFleet = playerFleet;
+        this.playerShip = playerShip;
         this.playerName = playerName;
         this.playerCredits = numberOfGalacticCredits;
         this.leadsFaction = leadsFaction;
@@ -63,14 +66,14 @@ public class GameState implements JSONconvertable {
         return new GameState(
         galaxy,
         galaxy.selectRandomSystem(),
-        new ArrayList<Ship>(),
+        null, //no ship selected
         "", //empty name
         0, //no credits
         null, //leads no faction
         Stage.MAIN_MENU, //begin with main menu
         50, //neutral Villt reputation
         50, //neutral Qalz reputation
-        50, //netural Dol'eo reputation
+        50, //neutral Dol'eo reputation
         false, //game not yet set up
         ShipSelector.createDefaultSelector(),
         null,
@@ -123,6 +126,11 @@ public class GameState implements JSONconvertable {
             case RESET:
                 App.app.newGame();
                 gameStage = Stage.MAIN_MENU;
+                break;
+            case UNDO_FIGHT:
+                playerShip = fightState.getPlayerShipInPreBattleState();
+                fightState = null;
+                gameStage = Stage.SYSTEM;
                 break;
             //... generate relevant screen for each stage
             case PROCESS_FIGHT_WIN:
@@ -205,7 +213,7 @@ public class GameState implements JSONconvertable {
     }
 
     private void setupGame() {
-        playerFleet.add(gameSetupShipSelector.getSelectedShip());
+        playerShip = (PlayerShip) gameSetupShipSelector.getSelectedShip();
         playerLocation = galaxy.selectRandomSystem();
         isGameSetupCompleted = true;
         setGameStage(Stage.SYSTEM);
@@ -235,9 +243,7 @@ public class GameState implements JSONconvertable {
         JSONObject state = new JSONObject();
         state.setJSONObject("galaxy", galaxy.asJSONObject());
         state.setJSONObject("playerLocation", playerLocation.asJSONObject());
-        JSONArray fleetArray = new JSONArray();
-        for(Ship ship : playerFleet) fleetArray.append(ship.asJsonObject());
-        state.setJSONArray("playerFleet", fleetArray);
+        state.setJSONObject("playerShip", (playerShip == null) ? null : playerShip.asJsonObject());
         state.setString("playerName", playerName);
         state.setInt("playerCredits", playerCredits);
         state.setString("leadsFaction", (leadsFaction == null) ? "NONE" : leadsFaction.name());
@@ -286,8 +292,8 @@ public class GameState implements JSONconvertable {
     }
 
 
-    public ArrayList<Ship> getPlayerFleet() {
-        return playerFleet;
+    public PlayerShip getPlayerShip() {
+        return playerShip;
     }
 
     public Galaxy getGalaxy() {
@@ -352,5 +358,9 @@ public class GameState implements JSONconvertable {
 
     public void setPlayerLocation(GalaxySystem playerLocation) {
         this.playerLocation = playerLocation;
+    }
+
+    public void setPlayerShip(ShipB playerShip) {
+        this.playerShip = playerShip;
     }
 }
