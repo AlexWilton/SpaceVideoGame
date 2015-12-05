@@ -30,7 +30,7 @@ public class App extends PApplet{
         newGame();
 //        gameState.setPlayersMission(new Mission(Faction.Doloe, gameState.getPlayerLocation(), 4, 300));
 //        gameState.getPlayersMission().setStatus(Mission.Status.ACCEPTED);
-        gameState.setGameStage(Stage.HANGAR);
+        gameState.setGameStage(Stage.HYPER_JUMP);
 //        gameState.setLeadsFaction(Faction.Qalz);
         gameState.setPlayerShip(new ShipB());
         gameState.setPlayerName("Alex Wilton");

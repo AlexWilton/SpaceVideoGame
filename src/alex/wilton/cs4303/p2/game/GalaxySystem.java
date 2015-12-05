@@ -2,6 +2,7 @@ package alex.wilton.cs4303.p2.game;
 
 import alex.wilton.cs4303.p2.game.entity.staticImage.Planet;
 import alex.wilton.cs4303.p2.util.JSONconvertable;
+import processing.core.PConstants;
 import processing.core.PVector;
 import processing.data.JSONObject;
 
@@ -53,7 +54,17 @@ public class GalaxySystem implements JSONconvertable {
 
 
     public void drawAsWhiteOnMap() {
-        drawOnMap(Color.WHITE);
+        app.stroke(Color.white.getRGB(), 1000); app.fill(Color.white.getRGB());
+        app.strokeWeight(0);
+        app.ellipse(mapLocation.x, mapLocation.y, 25, 25);
+
+
+        app.stroke(faction.getFactionColour().getRGB(), 1000);
+        app.fill(faction.getFactionColour().getRGB());
+        app.ellipse(mapLocation.x, mapLocation.y, 20, 20);
+
+
+//        drawOnMap(Color.WHITE);
     }
 
     public void drawWhiteLineOnMap(PVector from){
@@ -80,6 +91,7 @@ public class GalaxySystem implements JSONconvertable {
     public void drawOnMap(Color color) {
         app.stroke(color.getRGB(), 1000); app.noFill();
         app.strokeWeight(5);
+        app.ellipseMode(PConstants.CENTER);
         app.ellipse(mapLocation.x, mapLocation.y, 20, 20);
     }
 

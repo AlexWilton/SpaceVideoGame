@@ -114,7 +114,7 @@ public class DrawableShip extends DrawableObject{
         float distToPlanet = App.dist(0,0,centerPosition.x, centerPosition.y);
         if(distToPlanet > Planet.getDiameter()/2 ) {
             PVector gravity = centerPosition.get();
-            gravity.setMag(-10 / distToPlanet);
+            gravity.setMag(-5 / distToPlanet);
             velocity.add(gravity);
         }
 

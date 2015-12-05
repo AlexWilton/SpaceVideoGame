@@ -1,8 +1,8 @@
 {
   "reputationWithDoleo": 50,
   "playerLocation": {
-    "faction": "Villt",
-    "id": 15
+    "faction": "Doloe",
+    "id": 5
   },
   "gameSetupShipSelector": {
     "useDefault": true,
@@ -11,14 +11,14 @@
   "leadsFaction": "NONE",
   "playerName": "Alex Wilton",
   "reputationWithVillt": 50,
-  "playerCredits": 673,
+  "playerCredits": 350,
   "bribeAmount": 0,
   "gameStage": "SYSTEM",
   "playerShip": {
     "hull": 2000,
     "shipName": "alex.wilton.cs4303.p2.game.ships.playerShip.ShipA"
   },
-  "reputationWithQalz": 45,
+  "reputationWithQalz": 50,
   "isGameSetupCompleted": true,
   "galaxy": {"systems": [
     {
