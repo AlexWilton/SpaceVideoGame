@@ -6,9 +6,7 @@ import alex.wilton.cs4303.p2.game.ships.QalzShip.QalzShip;
 import alex.wilton.cs4303.p2.game.ships.VilltShip.VilltShip;
 import alex.wilton.cs4303.p2.game.ships.playerShip.PlayerShip;
 import alex.wilton.cs4303.p2.util.ImageCache;
-import alex.wilton.cs4303.p2.util.JSONconvertable;
 import processing.core.PImage;
-import processing.core.PVector;
 import processing.data.JSONObject;
 
 public abstract class Ship{
@@ -21,15 +19,22 @@ public abstract class Ship{
 
     /* SHIP CONFIGURATION */
     private float engineStrength;
-    private float maxSpeed;
-    private int hullStrength;
+    private int maxHull;
+
     private int laserDistance;
+    private int laserCoolDown;
+
+    private int hull;
+    private int missiles;
+
+    private int turningSpeed;
+
+
 
     private void setShipConfig() {
         if(this instanceof PlayerShip){
             engineStrength = 0.5f;
-            maxSpeed = 2.5f;
-            hullStrength = 2000;
+            maxHull = 2000;
             laserDistance = 160;
         }else{
             String fullShipClass = this.getClass().getSimpleName();
@@ -37,32 +42,29 @@ public abstract class Ship{
             switch (shipClass){
                 case "A":
                     engineStrength = 0.1f;
-                    maxSpeed = 0.5f;
-                    hullStrength = 100;
+                    maxHull = 100;
                     laserDistance = 120;
                     break;
                 case "B":
                     engineStrength = 0.2f;
-                    maxSpeed = 1f;
-                    hullStrength = 200;
+                    maxHull = 200;
                     laserDistance = 125;
                     break;
                 case "C":
                     engineStrength = 0.3f;
-                    maxSpeed = 1.5f;
-                    hullStrength = 300;
+                    maxHull = 300;
                     laserDistance = 130;
                     break;
                 case "D":
                     engineStrength = 0.5f;
-                    maxSpeed = 2.0f;
-                    hullStrength = 500;
+                    maxHull = 500;
                     laserDistance = 135;
                     break;
                 default:
                     System.out.println("Error! Unknown Ship Class Type");
             }
         }
+        hull = maxHull;
     }
 
 
@@ -93,7 +95,7 @@ public abstract class Ship{
 
     public JSONObject asJsonObject(){
         JSONObject ship = new JSONObject();
-        ship.setInt("hullStrength", hullStrength);
+        ship.setInt("hull", hull);
         ship.setString("shipName", this.getClass().getName());
         return ship;
     }
@@ -102,7 +104,7 @@ public abstract class Ship{
         try {
             Class c = Class.forName(jsonState.getString("shipName"));
             Ship ship = (Ship) c.newInstance();
-            ship.setHullStrength(jsonState.getInt("hullStrength"));
+            ship.setHull(jsonState.getInt("hull"));
             return ship;
             } catch (InstantiationException e) {
                 e.printStackTrace();
@@ -119,22 +121,58 @@ public abstract class Ship{
     }
 
     public float getMaxSpeed() {
-        return maxSpeed;
+        return engineStrength*5;
     }
 
-    public int getHullStrength() {
-        return hullStrength;
+    public int getHull() {
+        return hull;
+    }
+
+    public int getMaxHull() {
+        return maxHull;
+    }
+
+    public void setMaxHull(int maxHull) {
+        this.maxHull = maxHull;
     }
 
     public int getLaserDistance() {
         return laserDistance;
     }
 
-    public void setHullStrength(int hullStrength) {
-        this.hullStrength = hullStrength;
+    public void setHull(int hull) {
+        this.hull = hull;
     }
 
     public void setLaserDistance(int laserDistance) {
         this.laserDistance = laserDistance;
+    }
+
+    public void setEngineStrength(float engineStrength) {
+        this.engineStrength = engineStrength;
+    }
+
+    public int getLaserCoolDown() {
+        return laserCoolDown;
+    }
+
+    public void setLaserCoolDown(int laserCoolDown) {
+        this.laserCoolDown = laserCoolDown;
+    }
+
+    public int getMissiles() {
+        return missiles;
+    }
+
+    public void setMissiles(int missiles) {
+        this.missiles = missiles;
+    }
+
+    public int getTurningSpeed() {
+        return turningSpeed;
+    }
+
+    public void setTurningSpeed(int turningSpeed) {
+        this.turningSpeed = turningSpeed;
     }
 }

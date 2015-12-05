@@ -4,7 +4,7 @@ import alex.wilton.cs4303.p2.game.App;
 import alex.wilton.cs4303.p2.game.DrawableObject;
 import alex.wilton.cs4303.p2.game.Faction;
 import alex.wilton.cs4303.p2.game.aiPilots.AIShipPilot;
-import alex.wilton.cs4303.p2.game.aiPilots.MoveTowardAndShootPilot;
+import alex.wilton.cs4303.p2.game.entity.staticImage.Planet;
 import processing.core.PConstants;
 import processing.core.PImage;
 import processing.core.PVector;
@@ -26,7 +26,7 @@ public class DrawableShip extends DrawableObject{
     private AIShipPilot aiPilot = null;
 
     public void takeDamage(int mag) {
-        ship.setHullStrength(ship.getHullStrength() - mag);
+        ship.setHull(ship.getHull() - mag);
     }
 
     public void impulseAwayFrom(PVector repulsionPt, boolean impulseAwayFromCenter) {
@@ -69,7 +69,7 @@ public class DrawableShip extends DrawableObject{
         app.rotate(orientation + IMAGE_ROTATE_SHIFT);
 
         /* Draw */
-        if(ship.getHullStrength() > 0) {
+        if(ship.getHull() > 0) {
             //not destroyed
             if (weaponFiring) drawWeaponFire();
             app.imageMode(App.CENTER);
@@ -110,6 +110,13 @@ public class DrawableShip extends DrawableObject{
         //apply drag
         velocity.mult(0.99f);
 
+        //apply gravity towards planet
+        float distToPlanet = App.dist(0,0,centerPosition.x, centerPosition.y);
+        if(distToPlanet > Planet.getDiameter()/2 ) {
+            PVector gravity = centerPosition.get();
+            gravity.setMag(-10 / distToPlanet);
+            velocity.add(gravity);
+        }
 
         //enforce max speed
         if(velocity.mag() > ship.getMaxSpeed())

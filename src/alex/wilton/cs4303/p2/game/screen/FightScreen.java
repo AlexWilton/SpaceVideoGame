@@ -6,7 +6,6 @@ import processing.core.PVector;
 import processing.event.KeyEvent;
 
 import java.awt.*;
-import java.lang.reflect.Array;
 import java.util.*;
 import java.util.List;
 
@@ -46,7 +45,7 @@ public class FightScreen extends Screen {
         app.translate(fState.cameraLocation.x, fState.cameraLocation.y);
 
         app.fill(Color.white.getRGB());
-        app.text("FPS: " + (int)app.frameRate + "   HEALTH: " + (int)fState.player.getShip().getHullStrength(), app.width/2, 30);
+        app.text("FPS: " + (int)app.frameRate + "   HEALTH: " + (int)fState.player.getShip().getHull(), app.width/2, 30);
     }
 
     private void checkForEndFight() {
@@ -54,7 +53,7 @@ public class FightScreen extends Screen {
         for(DrawableShip enemy : enemies) if(!enemy.isExploded()) playerWins = false;
         if(playerWins) state.setGameStage(Stage.FIGHT_WON);
 
-        if(ship.getShip().getHullStrength() <= 0) state.setGameStage(Stage.GAME_LOST);
+        if(ship.getShip().getHull() <= 0) state.setGameStage(Stage.GAME_LOST);
     }
 
     private void drawNonShipObjects() {

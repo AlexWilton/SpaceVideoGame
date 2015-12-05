@@ -95,6 +95,7 @@ public class GameState implements JSONconvertable {
             case HYPER_JUMP:    return new HyperJumpScreen(this);
             case MISSION:       return new MissionScreen(this);
             case BRIBE:         return new BribeScreen(this);
+            case HANGAR:        return new HangarScreen(this);
             case GAME_VICTORY:  return new VictoryScreen(this);
             case GAME_STALEMATE: return new StaleMateScreen(this);
             case GAME_LOST:     return new GameOverScreen(this);
@@ -175,7 +176,13 @@ public class GameState implements JSONconvertable {
                 checkForFactionLeaderOffer();
                 break;
             case EXIT_GAME: System.exit(0);
-            default: return new UnImplementedScreen(gameStage.name(), this);
+            default:
+                if(gameStage.name().startsWith("HANGAR_")) {
+                    (new HangarScreen(this)).processOption(gameStage);
+                    gameStage = Stage.HANGAR;
+                    break;
+                }
+                return new UnImplementedScreen(gameStage.name(), this);
         }
 
         return processStageThenGenerateScreen();

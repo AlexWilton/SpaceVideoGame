@@ -71,4 +71,9 @@ public class Planet extends DrawableObject{
     public PVector getCenterPosition() {
         return new PVector(0,0);
     }
+
+    public static int getDiameter(){
+        Planet p = getPlanet(0);
+        return p.image.width*2;
+    }
 }
