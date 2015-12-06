@@ -37,6 +37,7 @@ public class App extends PApplet{
         gameState.setPlayerName("Alex Wilton");
         gameState.setPlayerCredits(10300);
         gameState.getPlayerShip().setHull(3000002);
+        gameState.getPlayerShip().setMissiles(100);
 //        gameState.setPlayerStanding(Faction.Villt, 50);
 //        gameState.setPlayerStanding(Faction.Doloe, 50);
 //        gameState.setPlayerStanding(Faction.Qalz, 50);

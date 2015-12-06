@@ -46,10 +46,20 @@ public class FightState {
 
         for(DrawableShip enemy : enemies){
 
-            //check for enemy taking damage
+            //check for enemy taking laser damage
             for(PVector weaponDamagePt : player.getWeapaonDamagePts()){
                 if(enemy.containsPt(weaponDamagePt)) {
                     enemy.takeDamage(5);
+                    break;
+                }
+            }
+
+            //check for enemy taking missile damage
+            for(Missile missile : player.getMissiles()){
+                if(missile.isExploded()) continue;
+                if(enemy.containsPt(missile.getPosition())) {
+                    enemy.takeDamage(150);
+                    missile.setExploded(true);
                     break;
                 }
             }

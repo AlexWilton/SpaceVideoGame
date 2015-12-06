@@ -3,6 +3,7 @@ package alex.wilton.cs4303.p2.game.ships;
 import alex.wilton.cs4303.p2.game.App;
 import alex.wilton.cs4303.p2.game.DrawableObject;
 import alex.wilton.cs4303.p2.game.Faction;
+import alex.wilton.cs4303.p2.game.Missile;
 import alex.wilton.cs4303.p2.game.aiPilots.AIShipPilot;
 import alex.wilton.cs4303.p2.game.entity.staticImage.Planet;
 import processing.core.PConstants;
@@ -20,7 +21,6 @@ public class DrawableShip extends DrawableObject{
 
     private PVector centerPosition; //(x,y) of ship's center point.
     private PVector velocity;
-    private PVector acceleration;
     private float orientation;
     private static final float IMAGE_ROTATE_SHIFT = PConstants.HALF_PI;
     private AIShipPilot aiPilot = null;
@@ -41,8 +41,6 @@ public class DrawableShip extends DrawableObject{
         this.aiPilot = aiPilot;
     }
 
-
-
     enum TurningStatus { LEFT, RIGHT, NOT_TURNING}
     private TurningStatus turningStatus = TurningStatus.NOT_TURNING;
 
@@ -52,19 +50,18 @@ public class DrawableShip extends DrawableObject{
     enum ForwardThrusterStatus { FORWARD_THRUST, BACKWARD_THRUST, NONE }
     private ForwardThrusterStatus forwardThrusterStatus = ForwardThrusterStatus.NONE;
 
-    private boolean weaponFiring = false;
+    private boolean laserFiring = false;
 
     private int frameLeftOfExplosion = (int) (2 * app.frameRate);
     private int weaponFiringTime = 0;
     private int laserRechargeTime = 0;
+    private ArrayList<Missile> missiles = new ArrayList<>();
 
     public DrawableShip(Ship ship) {
         this.ship = ship;
         img = ship.getImage();
         orientation = 0;
         velocity = new PVector(0,0);
-        acceleration = new PVector(0,0);
-
     }
 
     public void draw(){
@@ -75,12 +72,12 @@ public class DrawableShip extends DrawableObject{
 
         /* Draw */
         if(ship.getHull() > 0) {
-            //not destroyed
-            if (weaponFiring) drawWeaponFire();
+
+            drawLaserFire();
             app.imageMode(App.CENTER);
             app.image(img, 0, 0, width, height);
 
-        }else{
+        }else{ //destroyed...
             stopFiringWeapon();
 
             //exploding
@@ -102,10 +99,20 @@ public class DrawableShip extends DrawableObject{
 
     }
 
-    private void drawWeaponFire() {
-        app.strokeWeight(5);
-        app.stroke(Faction.Villt.getFactionColour().getRGB());
-        app.line(0,0,0,-ship.getLaserDistance());
+    private void drawLaserFire() {
+        //LASER
+        if(laserFiring) {
+            app.strokeWeight(5);
+            app.stroke(Faction.Villt.getFactionColour().getRGB());
+            app.line(0, 0, 0, -ship.getLaserDistance());
+        }
+    }
+
+    public void drawAndUpdateMissiles(){
+        for(Missile missile : missiles){
+            missile.update();
+            missile.draw();
+        }
     }
 
     private void update() {
@@ -129,7 +136,7 @@ public class DrawableShip extends DrawableObject{
 
 
         //apply turn
-        orientation = calucaleNewOrientationAfterRotation();
+        orientation = calculateNewOrientationAfterRotation();
 
         //apply main (forward/backward) thrust
         PVector mainThrust = new PVector(App.cos(orientation),App.sin(orientation));
@@ -162,14 +169,14 @@ public class DrawableShip extends DrawableObject{
         if(weaponFiringTime > 0){
             weaponFiringTime--;
             if(weaponFiringTime == 0){
-                weaponFiring = false;
+                laserFiring = false;
                 laserRechargeTime = (int) ((0.5+500.0/ship.getLaserRechargeSpeed()) * app.frameRate);
             }
         }
 
     }
 
-    public float calucaleNewOrientationAfterRotation(){
+    public float calculateNewOrientationAfterRotation(){
         float newOrientation = orientation;
         switch (turningStatus){
             case LEFT: newOrientation -= ship.getTurningSpeed()*0.001; break;
@@ -183,7 +190,7 @@ public class DrawableShip extends DrawableObject{
 
     public ArrayList<PVector> getWeapaonDamagePts() {
         ArrayList<PVector> damagePts = new ArrayList<>();
-        if(!weaponFiring) return damagePts;
+        if(!laserFiring) return damagePts;
 
         int dist = 0;
         do{
@@ -264,18 +271,26 @@ public class DrawableShip extends DrawableObject{
 
 
     public void fireWeapon(){
-        if(laserRechargeTime == 0 && !weaponFiring) {
+        if(laserRechargeTime == 0 && !laserFiring) {
             weaponFiringTime = (int) (3 * app.frameRate);
-            weaponFiring = true;
+            laserFiring = true;
         }
     }
 
-    public void stopFiringWeapon(){ weaponFiring = false; }
+    public void stopFiringWeapon(){ laserFiring = false; }
 
     public int getWeaponRange(){
         return ship.getLaserDistance();
     }
 
+    public void fireMissile(){
+        if(ship.getMissiles() > 0){
+            ship.setMissiles(ship.getMissiles()-1);
+            PVector velocity = new PVector(App.cos(orientation), App.sin(orientation));
+            velocity.setMag(5);
+            missiles.add(new Missile(centerPosition.get(), velocity ));
+        }
+    }
 
     public Ship getShip(){return ship;}
 
@@ -325,5 +340,9 @@ public class DrawableShip extends DrawableObject{
 
     public int getLaserRechargeTime() {
         return laserRechargeTime;
+    }
+
+    public ArrayList<Missile> getMissiles() {
+        return missiles;
     }
 }

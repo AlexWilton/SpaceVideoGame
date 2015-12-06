@@ -38,6 +38,7 @@ public class FightScreen extends Screen {
 
         drawNonShipObjects();
         ship.draw();
+        ship.drawAndUpdateMissiles();
         for(DrawableShip enemyShip : enemies) enemyShip.draw();
         fState.checkForCollision();
         state.getPlayerLocation().drawPlanetInCenterForFightScreen();
@@ -120,6 +121,8 @@ public class FightScreen extends Screen {
             case App.DOWN: ship.accelarateBackwards(); break;
             case App.RIGHT: ship.turnRight(); break;
             case App.LEFT: ship.turnLeft(); break;
+            case App.ENTER:case App.RETURN:
+                ship.fireMissile(); break;
         }
         switch (e.getKey()){
             case 'A':

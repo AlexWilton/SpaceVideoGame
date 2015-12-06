@@ -3,10 +3,7 @@ package alex.wilton.cs4303.p2.game.aiPilots;
 import alex.wilton.cs4303.p2.game.App;
 import alex.wilton.cs4303.p2.game.FightState;
 import alex.wilton.cs4303.p2.game.ships.DrawableShip;
-import processing.core.PConstants;
 import processing.core.PVector;
-
-import java.awt.*;
 
 public class MoveTowardAndShootPilot extends AIShipPilot {
 
@@ -28,7 +25,7 @@ public class MoveTowardAndShootPilot extends AIShipPilot {
         double angleBetween2 = Math.PI*2 - angleBetween1;
         double minBefore = Math.min(angleBetween1, angleBetween2);
         ship.turnLeft(); //tests whether turning left makes us closer to our desired angle compared.
-        currentOrientation = ship.calucaleNewOrientationAfterRotation();
+        currentOrientation = ship.calculateNewOrientationAfterRotation();
         if(currentOrientation < 0) currentOrientation += Math.PI*2;
         angleBetween1 = Math.abs(desiredOrientation - currentOrientation);
         angleBetween2 = Math.PI*2 - angleBetween1;
