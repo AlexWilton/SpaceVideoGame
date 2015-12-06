@@ -90,7 +90,6 @@ public class FightState {
 
     private static ArrayList<DrawableShip> setupEnemies(Faction faction, int battleType){
         ArrayList<DrawableShip> enemies = new ArrayList<>();
-
         for(int i=0; i<4-battleType; i++) {
             DrawableShip enemy = null;
             switch (faction) {

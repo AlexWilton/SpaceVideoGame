@@ -111,7 +111,6 @@ public class DrawableShip extends DrawableObject{
     private void update() {
         if(aiPilot != null && ship.getHull() > 0) aiPilot.checkForAiMove();
         centerPosition.add(velocity);
-//        velocity.add(acceleration);
 
         //apply drag
         velocity.mult(0.99f);
@@ -130,10 +129,7 @@ public class DrawableShip extends DrawableObject{
 
 
         //apply turn
-        switch (turningStatus){
-            case LEFT: orientation -= ship.getTurningSpeed()*0.001; break;
-            case RIGHT: orientation += ship.getTurningSpeed()*0.001; break;
-        }
+        orientation = calucaleNewOrientationAfterRotation();
 
         //apply main (forward/backward) thrust
         PVector mainThrust = new PVector(App.cos(orientation),App.sin(orientation));
@@ -173,7 +169,16 @@ public class DrawableShip extends DrawableObject{
 
     }
 
-
+    public float calucaleNewOrientationAfterRotation(){
+        float newOrientation = orientation;
+        switch (turningStatus){
+            case LEFT: newOrientation -= ship.getTurningSpeed()*0.001; break;
+            case RIGHT: newOrientation += ship.getTurningSpeed()*0.001; break;
+        }
+        if(newOrientation > Math.PI*2) newOrientation -= Math.PI*2;
+        if(newOrientation < 0) newOrientation += Math.PI*2;
+        return newOrientation;
+    }
 
 
     public ArrayList<PVector> getWeapaonDamagePts() {
@@ -227,22 +232,10 @@ public class DrawableShip extends DrawableObject{
 
     public void accelerate(){
         forwardThrusterStatus = ForwardThrusterStatus.FORWARD_THRUST;
-//        accelerate(ship.getEngineStrength());
     }
-
-//    public void accelerate(float mag){
-//        float x = (float) Math.cos(orientation);
-//        float y = (float) Math.sin(orientation);
-//        acceleration = new PVector(x,y);
-//        acceleration.normalize();
-//        acceleration.mult(ship.getEngineStrength());
-//        acceleration.mult(mag);
-//    }
 
     public void accelarateBackwards(){
         forwardThrusterStatus = ForwardThrusterStatus.BACKWARD_THRUST;
-//        float mag = ship.getEngineStrength();
-//        accelerate(-mag);
     }
 
 
@@ -318,14 +311,6 @@ public class DrawableShip extends DrawableObject{
         this.velocity = velocity;
     }
 
-    public PVector getAcceleration() {
-        return acceleration;
-    }
-
-    public void setAcceleration(PVector acceleration) {
-        this.acceleration = acceleration;
-    }
-
     public float getOrientation() {
         return orientation;
     }
@@ -338,5 +323,7 @@ public class DrawableShip extends DrawableObject{
         return frameLeftOfExplosion <= 0;
     }
 
-
+    public int getLaserRechargeTime() {
+        return laserRechargeTime;
+    }
 }

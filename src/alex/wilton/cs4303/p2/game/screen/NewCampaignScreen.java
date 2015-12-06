@@ -39,7 +39,7 @@ public class NewCampaignScreen extends Screen{
         app.text("PLAYER NAME: ", app.width / 3, 150);
         String name = state.getPlayerName();
         if(name.equals("")) name = "[ENTER PLAYER NAME HERE]"; //use placeholder for empty name
-        createTextBox(name, (int) (app.width * 0.7), 150, 340, 40);
+        createButton(name, (int) (app.width * 0.7), 150, 340, 40, Stage.NEW_CAMPAIGN);
         app.text("SHIP SELECTOR: ", app.width / 3, 230);
 
         shipSelector.draw();

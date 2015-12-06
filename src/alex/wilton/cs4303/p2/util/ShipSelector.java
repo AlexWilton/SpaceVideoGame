@@ -8,6 +8,7 @@ import alex.wilton.cs4303.p2.game.ships.playerShip.*;
 import processing.core.PVector;
 import processing.data.JSONObject;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -34,6 +35,7 @@ public class ShipSelector implements JSONconvertable{
     }
 
     public void draw() {
+        app.stroke(Color.white.getRGB());
         app.rectMode(App.CORNER);
         app.rect(x, y, width, height);
         app.imageMode(App.CORNER);

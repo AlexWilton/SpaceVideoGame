@@ -45,8 +45,10 @@ public class FightScreen extends Screen {
 
         app.translate(fState.cameraLocation.x, fState.cameraLocation.y);
 
-        app.fill(Color.white.getRGB());
-        app.text("FPS: " + (int)app.frameRate + "   HEALTH: " + (int)fState.player.getShip().getHull(), app.width/2, 30);
+        app.fill(Color.white.getRGB()); app.textSize(18);
+        app.text("FPS: " + (int)app.frameRate + "   HULL HEALTH: " + fState.player.getShip().getHull()
+                +"   LASER: " + ((ship.getLaserRechargeTime() == 0) ? "READY" : "CHARGING ("+(ship.getLaserRechargeTime()/60)+")")
+                , app.width/2, 30);
     }
 
     private void checkForEndFight() {
