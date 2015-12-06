@@ -5,8 +5,6 @@ import alex.wilton.cs4303.p2.game.FightState;
 import alex.wilton.cs4303.p2.game.ships.DrawableShip;
 import processing.core.PVector;
 
-import java.awt.*;
-
 public class MoveTowardAndShootPilot extends AIShipPilot {
 
 
@@ -36,7 +34,7 @@ public class MoveTowardAndShootPilot extends AIShipPilot {
         if(distToPlayer > ship.getWeaponRange() + 5){
             ship.accelerate();
         }else if(distToPlayer < ship.getWeaponRange() - 5){
-            ship.brake();
+            ship.accelarateBackwards();
         }
 
         //check if weapon should fire/stop firing

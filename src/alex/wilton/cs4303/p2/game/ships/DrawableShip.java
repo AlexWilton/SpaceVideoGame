@@ -42,15 +42,21 @@ public class DrawableShip extends DrawableObject{
     }
 
 
+
     enum TurningStatus { LEFT, RIGHT, NOT_TURNING}
     private TurningStatus turningStatus = TurningStatus.NOT_TURNING;
 
     enum SideThrusterStatus { LEFT_THRUST, RIGHT_THRUST, NO_SIDE_THRUST}
     private SideThrusterStatus sideThrusterStatus = SideThrusterStatus.NO_SIDE_THRUST;
 
+    enum ForwardThrusterStatus { FORWARD_THRUST, BACKWARD_THRUST, NONE }
+    private ForwardThrusterStatus forwardThrusterStatus = ForwardThrusterStatus.NONE;
+
     private boolean weaponFiring = false;
 
     private int frameLeftOfExplosion = (int) (2 * app.frameRate);
+    private int weaponFiringTime = 0;
+    private int laserRechargeTime = 0;
 
     public DrawableShip(Ship ship) {
         this.ship = ship;
@@ -63,7 +69,6 @@ public class DrawableShip extends DrawableObject{
 
     public void draw(){
         update();
-
         /*Rotate image around its center then draw it*/
         app.translate(centerPosition.x, centerPosition.y);
         app.rotate(orientation + IMAGE_ROTATE_SHIFT);
@@ -77,9 +82,16 @@ public class DrawableShip extends DrawableObject{
 
         }else{
             stopFiringWeapon();
+
             //exploding
             if(frameLeftOfExplosion > 0) {
-                app.ellipse(0, 0, width * frameLeftOfExplosion / 100, height * frameLeftOfExplosion / 100);
+                switch (frameLeftOfExplosion % 3){
+                    case 0: app.fill(231, 76, 60); break;
+                    case 1: app.fill(211, 84, 0); break;
+                    case 2: app.fill(241, 196, 15); break;
+                }
+                app.noStroke();
+                app.ellipse(0, 0, width * frameLeftOfExplosion / 100, width * frameLeftOfExplosion / 100);
                 frameLeftOfExplosion--;
             }
         }
@@ -92,20 +104,14 @@ public class DrawableShip extends DrawableObject{
 
     private void drawWeaponFire() {
         app.strokeWeight(5);
-        app.stroke(Faction.Villt.getFactionColour().getRGB(), 100);
-        for(int i=100; i<ship.getLaserDistance(); i++){
-            int x = 0, y = -i;
-            if(app.blue(app.get(x, y)) != 0) break;
-
-            app.line(0, 0, x, y);
-        }
-
+        app.stroke(Faction.Villt.getFactionColour().getRGB());
+        app.line(0,0,0,-ship.getLaserDistance());
     }
 
     private void update() {
-        if(aiPilot != null) aiPilot.checkForAiMove();
+        if(aiPilot != null && ship.getHull() > 0) aiPilot.checkForAiMove();
         centerPosition.add(velocity);
-        velocity.add(acceleration);
+//        velocity.add(acceleration);
 
         //apply drag
         velocity.mult(0.99f);
@@ -125,25 +131,45 @@ public class DrawableShip extends DrawableObject{
 
         //apply turn
         switch (turningStatus){
-            case LEFT: orientation -= 0.02; break;
-            case RIGHT: orientation += 0.02; break;
+            case LEFT: orientation -= ship.getTurningSpeed()*0.001; break;
+            case RIGHT: orientation += ship.getTurningSpeed()*0.001; break;
         }
 
+        //apply main (forward/backward) thrust
+        PVector mainThrust = new PVector(App.cos(orientation),App.sin(orientation));
+        switch (forwardThrusterStatus){
+            case FORWARD_THRUST:  mainThrust.setMag(ship.getEngineStrength()); break;
+            case BACKWARD_THRUST: mainThrust.setMag(-ship.getEngineStrength()); break;
+            case NONE: mainThrust.setMag(0); break;
+        }
+        velocity.add(mainThrust);
+
         //apply side-thrust
-        PVector thrust = new PVector(0,0);
+        PVector sideThrust = null;
         switch (sideThrusterStatus){
             case LEFT_THRUST:
                 double angle = orientation - PConstants.HALF_PI;
-                thrust = new PVector((float) Math.cos(angle), (float) Math.sin(angle));
+                sideThrust = new PVector((float) Math.cos(angle), (float) Math.sin(angle));
                 break;
             case RIGHT_THRUST:
                 angle = orientation + PConstants.HALF_PI;
-                thrust = new PVector((float) Math.cos(angle), (float) Math.sin(angle));
+                sideThrust = new PVector((float) Math.cos(angle), (float) Math.sin(angle));
                 break;
         }
-        thrust.normalize();
-        thrust.mult(ship.getEngineStrength());
-        velocity.add(thrust);
+        if(sideThrust != null) {
+            sideThrust.setMag(ship.getEngineStrength());
+            velocity.add(sideThrust);
+        }
+
+        //laser timer 3 sec for firing time, recharge time variable.
+        if(laserRechargeTime > 0) laserRechargeTime--;
+        if(weaponFiringTime > 0){
+            weaponFiringTime--;
+            if(weaponFiringTime == 0){
+                weaponFiring = false;
+                laserRechargeTime = (int) ((0.5+500.0/ship.getLaserRechargeSpeed()) * app.frameRate);
+            }
+        }
 
     }
 
@@ -200,21 +226,28 @@ public class DrawableShip extends DrawableObject{
     }
 
     public void accelerate(){
-        accelerate(ship.getEngineStrength());
+        forwardThrusterStatus = ForwardThrusterStatus.FORWARD_THRUST;
+//        accelerate(ship.getEngineStrength());
     }
 
-    public void accelerate(float mag){
-        float x = (float) Math.cos(orientation);
-        float y = (float) Math.sin(orientation);
-        acceleration = new PVector(x,y);
-        acceleration.normalize();
-        acceleration.mult(ship.getEngineStrength());
-        acceleration.mult(mag);
+//    public void accelerate(float mag){
+//        float x = (float) Math.cos(orientation);
+//        float y = (float) Math.sin(orientation);
+//        acceleration = new PVector(x,y);
+//        acceleration.normalize();
+//        acceleration.mult(ship.getEngineStrength());
+//        acceleration.mult(mag);
+//    }
+
+    public void accelarateBackwards(){
+        forwardThrusterStatus = ForwardThrusterStatus.BACKWARD_THRUST;
+//        float mag = ship.getEngineStrength();
+//        accelerate(-mag);
     }
 
-    public void brake(){
-        float mag = ship.getEngineStrength();
-        accelerate(-mag);
+
+    public void stopAcceleration() {
+        forwardThrusterStatus = ForwardThrusterStatus.NONE;
     }
 
 
@@ -237,7 +270,12 @@ public class DrawableShip extends DrawableObject{
     public void stopSideThrust(){ sideThrusterStatus = SideThrusterStatus.NO_SIDE_THRUST; }
 
 
-    public void fireWeapon(){ weaponFiring = true; }
+    public void fireWeapon(){
+        if(laserRechargeTime == 0 && !weaponFiring) {
+            weaponFiringTime = (int) (3 * app.frameRate);
+            weaponFiring = true;
+        }
+    }
 
     public void stopFiringWeapon(){ weaponFiring = false; }
 

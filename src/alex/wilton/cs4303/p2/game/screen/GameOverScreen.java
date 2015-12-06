@@ -31,7 +31,7 @@ public class GameOverScreen extends Screen {
         app.fill(Color.BLACK.getRGB());
         app.rect(app.width/2, app.height/2, app.width/2, app.height/3);
         createdDisabledButton("GAME OVER!\n\nPLAYER " + state.getPlayerName().toUpperCase()
-                        + "\n\nLike a good Captain you were it your ship as it was destroyed by a " +
+                        + "\n\nLike a good Captain you went down with your ship as it was destroyed by a " +
                         state.getPlayerLocation().getFaction().name() + " Faction member." +
                         "\n\nBetter luck in the next life!",
                 app.width / 2, app.height / 2, app.width / 2, app.height / 3);

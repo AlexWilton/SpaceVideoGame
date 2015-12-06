@@ -4,6 +4,7 @@ import alex.wilton.cs4303.p2.game.Stage;
 
 public class Button {
     private String text;
+    private int textSize = 18;
     private int x,y,width, height;
     private Stage newStageOnClick;
     private boolean disabled = false;
@@ -19,6 +20,16 @@ public class Button {
 
     public Button(String text, int x, int y, int width, int height, Stage gameStage, boolean disabled) {
         this(text, x, y, width, height, gameStage);
+        this.disabled = disabled;
+    }
+
+    public Button(String text, int x, int y, int width, int height, Stage newStageOnClick, int textSize) {
+        this(text,x,y,width,height,newStageOnClick);
+        this.textSize = textSize;
+    }
+
+    public Button(String text, int x, int y, int width, int height, Stage newStageOnClick, boolean disabled, int textSize) {
+        this(text,x,y,width,height,newStageOnClick, textSize);
         this.disabled = disabled;
     }
 
@@ -60,4 +71,7 @@ public class Button {
         return disabled;
     }
 
+    public int getTextSize() {
+        return textSize;
+    }
 }

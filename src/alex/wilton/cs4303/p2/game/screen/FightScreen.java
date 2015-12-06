@@ -16,7 +16,7 @@ public class FightScreen extends Screen {
     private final DrawableShip ship;
     private final ArrayList<DrawableShip> enemies;
 
-    public static final int mapRadius = 1200;
+    public static final int mapRadius = 1500;
 
     public FightScreen(GameState state) {
         super(state);
@@ -40,6 +40,7 @@ public class FightScreen extends Screen {
         ship.draw();
         for(DrawableShip enemyShip : enemies) enemyShip.draw();
         fState.checkForCollision();
+        state.getPlayerLocation().drawPlanetInCenterForFightScreen();
         checkForEndFight();
 
         app.translate(fState.cameraLocation.x, fState.cameraLocation.y);
@@ -72,9 +73,6 @@ public class FightScreen extends Screen {
         for (int i = -mapRadius; i < mapRadius+gridSpacing; i+=gridSpacing) {
             app.line(-mapRadius, i, mapRadius, i);
         }
-
-        /* Planet */
-        state.getPlayerLocation().drawPlanetInCenterForFightScreen();
 
 
     }
@@ -117,7 +115,7 @@ public class FightScreen extends Screen {
 
         switch (e.getKeyCode()){
             case App.UP:    ship.accelerate(); break;
-            case App.DOWN: ship.brake(); break;
+            case App.DOWN: ship.accelarateBackwards(); break;
             case App.RIGHT: ship.turnRight(); break;
             case App.LEFT: ship.turnLeft(); break;
         }
@@ -136,7 +134,7 @@ public class FightScreen extends Screen {
                 break;
             case 'S':
             case 's':
-                ship.brake(); break;
+                ship.accelarateBackwards(); break;
             case ' ':
                 ship.fireWeapon(); break;
         }
@@ -150,7 +148,7 @@ public class FightScreen extends Screen {
         switch (e.getKeyCode()){
             case App.UP:
             case App.DOWN:
-                ship.setAcceleration(new PVector(0,0));
+                ship.stopAcceleration();
                 break;
             case App.LEFT:
             case App.RIGHT:
@@ -166,7 +164,7 @@ public class FightScreen extends Screen {
                 break;
             case 'W': case 'w':
             case 'S': case 's':
-                ship.setAcceleration(new PVector(0,0)); break;
+                ship.stopAcceleration(); break;
             case ' ':
                 ship.stopFiringWeapon(); break;
         }

@@ -18,6 +18,7 @@ import alex.wilton.cs4303.p2.game.ships.VilltShip.VilltShipB;
 import alex.wilton.cs4303.p2.game.ships.VilltShip.VilltShipC;
 import alex.wilton.cs4303.p2.game.ships.VilltShip.VilltShipD;
 import alex.wilton.cs4303.p2.game.ships.playerShip.PlayerShip;
+import com.sun.istack.internal.NotNull;
 import processing.core.PVector;
 import processing.data.JSONObject;
 
@@ -117,6 +118,8 @@ public class FightState {
                         case 3 : enemy = new VilltShipD().createDrawableShipInstance(); break;
                     }
                     break;
+                default:
+                    System.err.println("UNKNOWN FACTION!");
             }
             enemy.setCenterPosition(getRandomPosition());
             enemies.add(enemy);

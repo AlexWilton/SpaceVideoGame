@@ -22,7 +22,7 @@ public abstract class Ship{
     private int maxHull;
 
     private int laserDistance;
-    private int laserCoolDown;
+    private int laserRechargeSpeed;
 
     private int hull;
     private int missiles;
@@ -36,29 +36,39 @@ public abstract class Ship{
             engineStrength = 0.5f;
             maxHull = 2000;
             laserDistance = 160;
+            turningSpeed = 20;
+            laserRechargeSpeed = 100;
         }else{
             String fullShipClass = this.getClass().getSimpleName();
             String shipClass = fullShipClass.substring(fullShipClass.length()-1, fullShipClass.length());
             switch (shipClass){
                 case "A":
-                    engineStrength = 0.1f;
+                    engineStrength = 0.15f;
                     maxHull = 100;
                     laserDistance = 120;
+                    turningSpeed = 10;
+                    laserRechargeSpeed = 100;
                     break;
                 case "B":
                     engineStrength = 0.2f;
                     maxHull = 200;
                     laserDistance = 125;
+                    turningSpeed = 10;
+                    laserRechargeSpeed = 200;
                     break;
                 case "C":
                     engineStrength = 0.3f;
                     maxHull = 300;
                     laserDistance = 130;
+                    turningSpeed = 10;
+                    laserRechargeSpeed = 250;
                     break;
                 case "D":
-                    engineStrength = 0.5f;
+                    engineStrength = 0.4f;
                     maxHull = 500;
-                    laserDistance = 135;
+                    laserDistance = 140;
+                    turningSpeed = 10;
+                    laserRechargeSpeed = 300;
                     break;
                 default:
                     System.out.println("Error! Unknown Ship Class Type");
@@ -95,7 +105,13 @@ public abstract class Ship{
 
     public JSONObject asJsonObject(){
         JSONObject ship = new JSONObject();
+        ship.setFloat("engineStrength", engineStrength);
         ship.setInt("hull", hull);
+        ship.setInt("maxHull", maxHull);
+        ship.setInt("laserDistance", laserDistance);
+        ship.setInt("laserRechargeSpeed", laserRechargeSpeed);
+        ship.setInt("missiles", missiles);
+        ship.setInt("turningSpeed", turningSpeed);
         ship.setString("shipName", this.getClass().getName());
         return ship;
     }
@@ -105,6 +121,13 @@ public abstract class Ship{
             Class c = Class.forName(jsonState.getString("shipName"));
             Ship ship = (Ship) c.newInstance();
             ship.setHull(jsonState.getInt("hull"));
+            ship.setEngineStrength(jsonState.getFloat("engineStrength"));
+            ship.setMaxHull(jsonState.getInt("maxHull"));
+            ship.setLaserDistance(jsonState.getInt("laserDistance"));
+            ship.setLaserRechargeSpeed(jsonState.getInt("laserRechargeSpeed"));
+            ship.setHull(jsonState.getInt("hull"));
+            ship.setMissiles(jsonState.getInt("missiles"));
+            ship.setTurningSpeed(jsonState.getInt("turningSpeed"));
             return ship;
             } catch (InstantiationException e) {
                 e.printStackTrace();
@@ -152,12 +175,12 @@ public abstract class Ship{
         this.engineStrength = engineStrength;
     }
 
-    public int getLaserCoolDown() {
-        return laserCoolDown;
+    public int getLaserRechargeSpeed() {
+        return laserRechargeSpeed;
     }
 
-    public void setLaserCoolDown(int laserCoolDown) {
-        this.laserCoolDown = laserCoolDown;
+    public void setLaserRechargeSpeed(int laserRechargeSpeed) {
+        this.laserRechargeSpeed = laserRechargeSpeed;
     }
 
     public int getMissiles() {

@@ -65,7 +65,6 @@ public abstract class Screen{
         app.strokeWeight(3);
         app.stroke(Color.WHITE.getRGB());
         app.textAlign(App.CENTER, App.CENTER);
-        app.textSize(18);
         for(Button button : screenButtons){
             boolean disabled = button.getDisabled();
             app.stroke(Color.WHITE.getRGB(), (disabled) ? 100 : 1000);
@@ -81,6 +80,7 @@ public abstract class Screen{
 
             app.rect(button.getX(), button.getY(), button.getWidth(), button.getHeight());
             app.fill(((mouseOver && !disabled) ? (Color.BLACK) : (Color.WHITE)).getRGB()); app.noFill();
+            app.textSize(button.getTextSize());
             app.text(   button.getText(), button.getX() + BUTTON_TEXT_PADDING,
                         button.getY() + BUTTON_TEXT_PADDING,
                         button.getWidth() - BUTTON_TEXT_PADDING*2,
@@ -88,8 +88,16 @@ public abstract class Screen{
         }
     }
 
+    protected void createButton(String text, int x, int y, int width, int height, Stage newStageOnClick, int textSize){
+        if(newStageOnClick != null)
+            screenButtons.add(new Button(text, x, y, width, height, newStageOnClick, textSize));
+        else
+            screenButtons.add(new Button(text, x, y, width, height, state.getGameStage(), true, textSize));
+    }
+
+
     protected void createButton(String text, int x, int y, int width, int height, Stage newStageOnClick){
-        screenButtons.add(new Button(text, x, y, width, height, newStageOnClick));
+        createButton(text, x, y, width, height, newStageOnClick, 18);
     }
 
     protected void createdDisabledButton(String text, int x, int y, int width, int height){

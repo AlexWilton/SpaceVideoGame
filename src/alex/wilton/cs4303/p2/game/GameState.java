@@ -370,4 +370,8 @@ public class GameState implements JSONconvertable {
     public void setPlayerShip(ShipB playerShip) {
         this.playerShip = playerShip;
     }
+
+    public void setIsGameSetupCompleted(boolean isGameSetupCompleted) {
+        this.isGameSetupCompleted = isGameSetupCompleted;
+    }
 }
