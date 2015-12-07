@@ -54,4 +54,15 @@ public class SoundEffects {
         missileLaunch.play();
         missileLaunch.rewind();
     }
+
+    public static void playBackgroundMusic() {
+        if(missileLaunch == null) {
+            if (minim == null) {
+                minim = new Minim(App.app);
+            }
+            missileLaunch = minim.loadFile("sounds/music.wav");
+        }
+        missileLaunch.play();
+        missileLaunch.rewind();
+    }
 }

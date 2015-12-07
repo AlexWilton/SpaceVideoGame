@@ -3,6 +3,7 @@ package cs4303.p2.game.drawable;
 import cs4303.p2.game.App;
 import cs4303.p2.game.Faction;
 import cs4303.p2.game.Missile;
+import cs4303.p2.game.SoundEffects;
 import cs4303.p2.game.aiPilots.AIShipPilot;
 import cs4303.p2.game.ships.Ship;
 import processing.core.PConstants;
@@ -52,6 +53,7 @@ public class DrawableShip extends DrawableObject {
     private boolean laserFiring = false;
 
     private int frameLeftOfExplosion = (int) (2 * app.frameRate);
+    private boolean explosionSoundPlayed = false;
     private int weaponFiringTime = 0;
     private int laserRechargeTime = 0;
     private ArrayList<Missile> missiles = new ArrayList<>();
@@ -78,6 +80,7 @@ public class DrawableShip extends DrawableObject {
 
         }else{ //destroyed...
             stopFiringWeapon();
+            if(!explosionSoundPlayed) {SoundEffects.playBigExplosion();  explosionSoundPlayed = true; }
 
             //exploding
             if(frameLeftOfExplosion > 0) {

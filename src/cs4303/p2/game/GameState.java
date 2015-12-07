@@ -218,6 +218,7 @@ public class GameState implements JSONconvertable {
         playerLocation = galaxy.selectRandomSystem();
         isGameSetupCompleted = true;
         setGameStage(Stage.SYSTEM);
+        SoundEffects.playBackgroundMusic();
     }
 
 
