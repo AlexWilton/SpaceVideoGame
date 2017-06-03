@@ -29,3 +29,8 @@ The following documentation can be found in the documentation directory:
 - Design Document (Original + Revised)
 - Testing Document
 - Design + Implemenation Decision Essay
+
+GAME SCREENSHOTS
+---------------------------------
+
+![Main Menu](/screenshots/home.jpg?raw=true)
