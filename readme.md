@@ -1,5 +1,5 @@
 l/////////////////////////////
-  GALACTIC CONQUESTS README
+# GALACTIC CONQUESTS README
 /////////////////////////////
 
 
@@ -11,15 +11,15 @@ This is a self-contained jar which contains copys of all the needed libraries an
 
 COMPILE/RUN from Source Cocde
 ---------------------------------
--Download and install intellij.
--Open the SpaceVideoGame directory as a project.
--Compile the project. Run the main method in the Main class (located in the main package).
+- Download and install intellij.
+- Open the SpaceVideoGame directory as a project.
+- Compile the project. Run the main method in the Main class (located in the main package).
 
 
 DOCUMENTATION
 ---------------------------------
 The following documentation can be found in the documentation directory:
--Player Manuel
--Design Document (Original + Revised)
--Testing Document
--Design + Implemenation Decision Essay
+- Player Manuel
+- Design Document (Original + Revised)
+- Testing Document
+- Design + Implemenation Decision Essay
