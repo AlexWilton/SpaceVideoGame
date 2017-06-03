@@ -32,5 +32,11 @@ The following documentation can be found in the documentation directory:
 
 GAME SCREENSHOTS
 ---------------------------------
-
+### Main Menu
 ![Main Menu](/screenshots/home.jpg?raw=true)
+### Battle Screen
+![Battle](/screenshots/battle.jpg?raw=true)
+### Galaxy View
+![Galaxy View](/screenshots/galaxyView.jpg?raw=true)
+### Mission Request Screen
+![Missions](/screenshots/mission.jpg?raw=true)
