@@ -2,6 +2,12 @@ l/////////////////////////////
 # GALACTIC CONQUESTS README
 /////////////////////////////
 
+ABOUT
+---------------------------------
+During my third year at St Andrews University, I took a module in Video Game Development. My oringal aim was to continue developing "Galatic Conquests" and eventually publish it, however, due to limited ability to publish processing (java applets) I have decided to make the game open source. Built using the processsing platform, I've adapted it to run in a more java-style project setup. The game is in a playable state, however, it still needs a little work to make it truly awesome! 
+
+Hope you enjoy playing it. Pull Requests welcome :D
+
 
 RUN
 ---------------------------------
